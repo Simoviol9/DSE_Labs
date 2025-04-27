@@ -1,0 +1,87 @@
+------------------------------------
+-- Group 8 - Laboratory 4
+-- Exercise 5 - 16-bit counter (structural)
+-- VHDL code of T-type flip flop
+------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity device is
+	port (
+		CLOCK_50: in std_logic;
+		SW: in STD_LOGIC_VECTOR(7 downto 0);
+		KEY: in STD_LOGIC_VECTOR( 3 downto 0);
+		HEX0, HEX1, HEX2, HEX3: out STD_LOGIC_VECTOR(6 downto 0);
+		LEDR: out STD_LOGIC_VECTOR(9 downto 0);
+	);
+end device;
+
+architecture behaviour of device is
+
+component reactionTimer is
+	port (
+		STOP, CLK, RST : in STD_LOGIC;
+		IN1            : in STD_LOGIC_VECTOR(7 downto 0);
+		COUNT          : out STD_LOGIC_VECTOR(15 downto 0)
+	);
+end reactionTimer;
+component THOUSAND_COMPARATOR is
+    Port (
+        value_in      : in  std_logic_vector(11 downto 0);  -- Input value (0 to 4095)
+        thousands_out : out std_logic_vector(3 downto 0)    -- Output: corresponding thousand (0 to 4 in binary)
+    );
+end component;
+
+component THOUSAND_SUBTRACTOR is
+    Port (
+        value_in     : in  std_logic_vector(11 downto 0); -- Original value (0 to 4095)
+        thousands    : in  std_logic_vector(3 downto 0);  -- Thousands digit from comparator (0 to 4)
+        hundreds_out : out std_logic_vector(3 downto 0)   -- Output: hundreds digit (0 to 9 in binary)
+    );
+end component;
+
+component HUNDREDS_SUBTRACTOR is
+    Port (
+        value_in  : in  std_logic_vector(11 downto 0);  -- Original 12-bit value (0 to 4095)
+        thousands : in  std_logic_vector(2 downto 0);   -- Thousands digit (0 to 4 in binary)
+        hundreds  : in  std_logic_vector(3 downto 0);   -- Hundreds digit (0 to 9 in binary)
+        tens_out  : out std_logic_vector(3 downto 0)    -- Output: tens digit (0 to 9 in binary)
+    );
+end component;
+
+signal A: std_logic_vector(15 downto 0);
+signal thousand, hundred, ten: std_logic_vector(3 downto 0)
+begin
+
+uut: reactionTimer
+		port(
+		STOP => KEY(3),
+		CLK => CLOCK_50,
+		RST => KEY(0),
+		IN1 => SW,
+		COUNT => A;
+		);
+U1: THOUSAND_COMPARATOR
+Port map (
+        value_in => A(11 downto 0),
+        thousands_out => thousand
+    );
+	 
+	 U2: THOUSAND_SUBTRACTOR
+	 Port map(
+        value_in => A(11 downto 0)
+        thousands => thousand;
+        hundreds_out => hundred
+    );
+	 
+	 U3: HUNDREDS_SUBTRACTOR
+	 Port map(
+        value_in => A(11 downto 0)
+         thousands => thousand;
+        hundreds => hundred;   -- Hundreds digit (0 to 9 in binary)
+        tens_out=> ten
+    );
+
+
+end behaviour;

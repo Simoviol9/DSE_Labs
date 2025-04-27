@@ -1,0 +1,294 @@
+vsim -gui work.controlunit_tb
+# vsim -gui work.controlunit_tb 
+# Start time: 13:43:57 on Apr 24,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.controlunit_tb(behavior)
+# Loading work.controlunit(behavior)
+add wave -position insertpoint sim:/controlunit_tb/UUT/*
+restart
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 13:51:56 on Apr 24,2025, Elapsed time: 0:07:59
+# Errors: 0, Warnings: 1
+vsim -gui work.processingunit_tb
+# vsim -gui work.processingunit_tb 
+# Start time: 13:52:08 on Apr 24,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.processingunit_tb(behaviour)
+# Loading work.processingunit(structural)
+# Loading work.shiftregn(structure)
+# Loading work.regn(behavior)
+# Loading work.multiplier_05(structure)
+# Loading work.multiplier_2(structure)
+# Loading work.multiplier_4(structure)
+# Loading work.multiplier_025(structure)
+# Loading work.rca_13bit(structural)
+# Loading work.fulladder(stuctural)
+# Loading work.mux(structural)
+add wave -position insertpoint  \
+sim:/processingunit_tb/OUT_INT \
+sim:/processingunit_tb/OUT_DEC
+add wave -position insertpoint sim:/processingunit_tb/UUT/*
+restart
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui work.converterunit_tb
+# End time: 16:17:32 on Apr 24,2025, Elapsed time: 2:25:24
+# Errors: 0, Warnings: 1
+# vsim -gui work.converterunit_tb 
+# Start time: 16:17:32 on Apr 24,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.converterunit_tb(behavioral)
+# Loading work.converterunit(structural)
+# Loading work.rca_11bit(structural)
+# Loading work.fulladder(stuctural)
+# Loading work.mux(structural)
+# Loading work.mux2x1_11bit(behavioral)
+# Loading work.intervaldetector(behavioral)
+# Loading work.mux3x1_8bit(behavioral)
+# Loading work.regn(behavior)
+add wave -position insertpoint sim:/converterunit_tb/UUT/*
+add wave -position insertpoint  \
+sim:/converterunit_tb/integerPart
+run
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /converterunit_tb/UUT/U3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /converterunit_tb/UUT/U3
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 16:31:29 on Apr 24,2025, Elapsed time: 0:13:57
+# Errors: 0, Warnings: 3
+vsim -gui work.datapath_tb
+# vsim -gui work.datapath_tb 
+# Start time: 16:31:42 on Apr 24,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.datapath_tb(behavioral)
+# Loading work.datapath(structure)
+# Loading work.modulocounter(structure)
+# Loading work.elemcounter(structure)
+# Loading work.flipflop(behavior)
+# Loading work.mux(structural)
+# Loading work.comparator(dataflow)
+# Loading work.delayunit(structure)
+# Loading work.regn(behavior)
+# Loading work.processingunit(structural)
+# Loading work.shiftregn(structure)
+# Loading work.multiplier_05(structure)
+# Loading work.multiplier_2(structure)
+# Loading work.multiplier_4(structure)
+# Loading work.multiplier_025(structure)
+# Loading work.rca_13bit(structural)
+# Loading work.fulladder(stuctural)
+# Loading work.converterunit(structural)
+# Loading work.rca_11bit(structural)
+# Loading work.mux2x1_11bit(behavioral)
+# Loading work.intervaldetector(behavioral)
+# Loading work.mux3x1_8bit(behavioral)
+# Loading work.mux10bit(structural)
+add wave -position insertpoint sim:/datapath_tb/UUT/*
+run
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/UUT/U2/U3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/UUT/U2/U3
+run
+run
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 140 ns  Iteration: 0  Instance: /datapath_tb
+run
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 160 ns  Iteration: 0  Instance: /datapath_tb
+run
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 180 ns  Iteration: 0  Instance: /datapath_tb
+run
+run
+run
+run
+quit -sim
+# End time: 16:54:29 on Apr 24,2025, Elapsed time: 0:22:47
+# Errors: 0, Warnings: 6
+vsim -gui work.digitalfilter_tb
+# vsim -gui work.digitalfilter_tb 
+# Start time: 22:16:11 on Apr 24,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.digitalfilter_tb(behaviour)
+# Loading work.digitalfilter(structure)
+# Loading work.datapath(structure)
+# Loading work.modulocounter(structure)
+# Loading work.elemcounter(structure)
+# Loading work.flipflop(behavior)
+# Loading work.mux(structural)
+# Loading work.comparator(dataflow)
+# Loading work.delayunit(structure)
+# Loading work.regn(behavior)
+# Loading work.processingunit(structural)
+# Loading work.shiftregn(structure)
+# Loading work.multiplier_05(structure)
+# Loading work.multiplier_2(structure)
+# Loading work.multiplier_4(structure)
+# Loading work.multiplier_025(structure)
+# Loading work.rca_13bit(structural)
+# Loading work.fulladder(stuctural)
+# Loading work.converterunit(structural)
+# Loading work.rca_11bit(structural)
+# Loading work.mux2x1_11bit(behavioral)
+# Loading work.intervaldetector(behavioral)
+# Loading work.mux3x1_8bit(behavioral)
+# Loading work.mux10bit(structural)
+# Loading work.controlunit(behavior)
+# Loading work.memory(bahaviour)
+add wave -position insertpoint sim:/digitalfilter_tb/UUT/*
+add wave -position insertpoint  \
+sim:/digitalfilter_tb/UUT/MEMA/mem(0) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(1) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(2) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(3) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(4) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(5) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(6) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(7) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(8) \
+sim:/digitalfilter_tb/UUT/MEMA/mem(9)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/MEMB
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/MEMA
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/DP/U2/U3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/DP/U2/U3
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/digitalfilter_tb/UUT/MEMB/mem(0) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(1) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(2) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(3) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(4) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(5) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(6) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(7) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(8) \
+sim:/digitalfilter_tb/UUT/MEMB/mem(9)
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+restart
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/MEMB
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/MEMA
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/DP/U2/U3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb/UUT/DP/U2/U3
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 0 ps  Iteration: 0  Instance: /digitalfilter_tb
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 22:47:11 on Apr 24,2025, Elapsed time: 0:31:00
+# Errors: 0, Warnings: 6

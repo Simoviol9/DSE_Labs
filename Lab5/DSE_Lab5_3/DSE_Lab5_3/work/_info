@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+Etwo_process_fsm
+Z0 w1744556571
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3
+Z4 8C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM.vhd
+Z5 FC:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM.vhd
+l0
+L11
+VL::j:Og7;m<o`4ki?G@Ij0
+!s100 1Sa8HJCV:hBGh9;mfXMIg1
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1744560619
+!i10b 1
+Z8 !s108 1744560619.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM.vhd|
+Z10 !s107 C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehaviour
+R1
+R2
+DEx4 work 15 two_process_fsm 0 22 L::j:Og7;m<o`4ki?G@Ij0
+l24
+L20
+VUQl4Gk_0`6nBk`JfXaJVP1
+!s100 2:XmXoZinNPac8:a?BKjX0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etwo_process_fsm_tb
+Z13 w1744560607
+R1
+R2
+R3
+Z14 8C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM_tb.vhd
+Z15 FC:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM_tb.vhd
+l0
+L10
+Vm=Q>:f[mMNOLfMFIA8haQ0
+!s100 DV`NQiB2mfgbB[;E>NKMd2
+R6
+32
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM_tb.vhd|
+Z17 !s107 C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/DSE_Lab5_3/two_process_FSM_tb.vhd|
+!i113 1
+R11
+R12
+Atestbench
+R1
+R2
+Z18 DEx4 work 18 two_process_fsm_tb 0 22 m=Q>:f[mMNOLfMFIA8haQ0
+l26
+L13
+V]k?6k0UCg]3IZn9V2BOkm3
+!s100 ^2hg>MKFO^<]KkZkAg7hA0
+R6
+32
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12

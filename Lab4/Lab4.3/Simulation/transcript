@@ -1,0 +1,49 @@
+# Load canceled
+# Compile of counter16bit_struc.vhd failed with 5 errors.
+# Compile of counter16bit_struc_tb.vhd was successful.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of counter16bit_struc.vhd failed with 5 errors.
+# Compile of counter16bit_struc_tb.vhd was successful.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of counter16bit_struc.vhd failed with 3 errors.
+# Compile of counter16bit_struc_tb.vhd was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of counter16bit_struc.vhd failed with 3 errors.
+# Compile of counter16bit_struc_tb.vhd was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of counter16bit_struc.vhd was successful.
+# Compile of counter16bit_struc_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.counter16bit_tb
+# vsim -gui work.counter16bit_tb 
+# Start time: 18:02:50 on Mar 24,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.counter16bit_tb(behaviout)
+# Loading work.counter16bit(behaviour)
+add wave -position insertpoint  \
+sim:/counter16bit_tb/EN \
+sim:/counter16bit_tb/COUNT \
+sim:/counter16bit_tb/CLR \
+sim:/counter16bit_tb/CLK
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /counter16bit_tb
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 18:05:11 on Mar 24,2025, Elapsed time: 0:02:21
+# Errors: 0, Warnings: 11
+# Closing project C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/Lab4_3.mpf

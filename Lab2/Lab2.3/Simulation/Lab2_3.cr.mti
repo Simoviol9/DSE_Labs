@@ -1,0 +1,63 @@
+C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/part3.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/part3.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Part3
+-- Compiling architecture Behavior of Part3
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux
+-- Compiling architecture Structural of mux
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/part3_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/part3_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity part3_tb
+-- Compiling architecture Behavior of part3_tb
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/circuitA.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/circuitA.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity circuitA
+-- Compiling architecture Behavior of circuitA
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/comparator.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/comparator.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity comparator
+-- Compiling architecture Behavior of comparator
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/decoder7.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/decoder7.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity decoder7
+-- Compiling architecture Behaviour of decoder7
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/circuitB.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.3/Simulation/circuitB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity circuitB
+-- Compiling architecture Behavior of circuitB
+
+} {} {}}

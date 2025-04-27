@@ -1,0 +1,37 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ENTITY testbench_ex2 IS
+END testbench_ex2;
+
+ARCHITECTURE Behavior OF testbench_ex2 IS
+
+	COMPONENT mux21
+		PORT (
+			SW : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+			LEDR : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	SIGNAL A, B, Z : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL SEL : STD_LOGIC;
+
+BEGIN
+	PROCESS
+	BEGIN
+		A <= "0101"; -- Set A to the value 0101
+		B <= "1111"; -- Set B to the value 1111
+
+		SEL <= '0'; -- Set SEL to the value 0
+		WAIT FOR 20 ns;
+		SEL <= '1'; -- Change SEL
+		WAIT FOR 20 ns;
+		A <= "1010"; -- Change A (no change in M)
+		WAIT FOR 20 ns;
+		B <= "0000"; -- Change B
+		WAIT;
+	END PROCESS;
+
+	MUX_UT : mux21
+	PORT MAP(SW(3 DOWNTO 0) => A, SW(7 DOWNTO 4) => B, SW(8) => SEL, LEDR => Z);
+
+END Behavior;

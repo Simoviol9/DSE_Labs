@@ -1,0 +1,57 @@
+vsim -gui work.hello_fsm_tb
+# vsim -gui work.hello_fsm_tb 
+# Start time: 14:57:42 on Apr 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.hello_fsm_tb(behaviour)
+# Loading work.hello_fsm(structure)
+# Loading work.fsm(behaviour)
+# Loading ieee.numeric_std(body)
+# Loading work.shiftregn(structure)
+# Loading work.regn(behavior)
+# Loading work.mux7bit(stuctural)
+# Loading work.pulse1hz(structural)
+# Loading work.modulocounter(structure)
+# Loading work.elemcounter(structure)
+# Loading work.flipflop(behavior)
+# Loading work.mux(stuctural)
+# Loading work.comparator(dataflow)
+add wave -position insertpoint sim:/hello_fsm_tb/UUT/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 16:00:08 on Apr 14,2025, Elapsed time: 1:02:26
+# Errors: 0, Warnings: 1
+quit -sim

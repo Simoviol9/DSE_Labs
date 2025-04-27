@@ -1,0 +1,23 @@
+vsim -gui work.counter16bit_tb
+# vsim -gui work.counter16bit_tb 
+# Start time: 02:48:08 on Apr 08,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.counter16bit_tb(behaviout)
+# Loading work.counter16bit(structure)
+# Loading work.t_flipflop(behaviour)
+add wave -position insertpoint sim:/counter16bit_tb/UUT/*
+add wave -position insertpoint sim:/counter16bit_tb/UUT/*
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /counter16bit_tb
+run
+run
+run
+run
+run
+quit -sim
+# End time: 03:09:35 on Apr 08,2025, Elapsed time: 0:21:27
+# Errors: 0, Warnings: 2

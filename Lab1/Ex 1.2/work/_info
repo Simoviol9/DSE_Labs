@@ -1,0 +1,154 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Emux21
+Z0 w1741880396
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 49
+Z3 dC:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2
+Z4 8C:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/2to1mux.vhd
+Z5 FC:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/2to1mux.vhd
+l0
+Z6 L10 1
+VhUlh@U<@57cJ?:UPTDa;h0
+!s100 6BlkDiSDz3cN=A_e1ioFU3
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1741880403
+!i10b 1
+Z9 !s108 1741880403.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/2to1mux.vhd|
+Z11 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/2to1mux.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Adataflow
+R1
+R2
+DEx4 work 5 mux21 0 22 hUlh@U<@57cJ?:UPTDa;h0
+!i122 49
+l20
+L17 13
+VV7dLBkXBIU`BPbm3HSNM90
+!s100 2ZVZLF2@182YfXKF=:RWe1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehavior
+R1
+R2
+DEx4 work 5 mux21 0 22 6kE_3z6mKd^f@NF]acMJY0
+!i122 41
+l13
+L10 13
+VbTIoS@][o]_9f0TC3Q6Dl2
+!s100 `610_Ac9zWfVik:QdDgnE0
+R7
+32
+!s110 1741534464
+!i10b 1
+!s108 1741534464.000000
+R10
+R11
+!i113 1
+R12
+R13
+w1741534460
+Etestbench2
+Z14 w1741123284
+R1
+R2
+!i122 13
+R3
+Z15 8C:\Users\viola\Desktop\DSE\Laboratory\Lab1\Ex 1.2\testbench.vhd
+Z16 FC:\Users\viola\Desktop\DSE\Laboratory\Lab1\Ex 1.2\testbench.vhd
+l0
+L5 1
+VHOBe77>VWdWWNb5;;gEYO2
+!s100 oaLS[<EFYWQ]z]4?E=E]W3
+R7
+32
+Z17 !s110 1741123306
+!i10b 1
+Z18 !s108 1741123306.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\viola\Desktop\DSE\Laboratory\Lab1\Ex 1.2\testbench.vhd|
+Z20 !s107 C:\Users\viola\Desktop\DSE\Laboratory\Lab1\Ex 1.2\testbench.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R1
+R2
+DEx4 work 10 testbench2 0 22 HOBe77>VWdWWNb5;;gEYO2
+!i122 13
+l19
+L8 30
+Vc4JN0iY;[=Hn]7IV^SU>e1
+!s100 iCX=3NBWT:OH_Ui[g]jbE1
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Etestbench_ex2
+Z21 w1741880331
+R1
+R2
+!i122 50
+R3
+Z22 8C:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/testbench.vhd
+Z23 FC:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/testbench.vhd
+l0
+R6
+V2^GEocTEiCbJ2WAMFH1eZ3
+!s100 Uh@fOK>o]Ho?Tf3XQ?oPX1
+R7
+32
+R8
+!i10b 1
+R9
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/testbench.vhd|
+Z25 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab1/Ex 1.2/testbench.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R1
+R2
+DEx4 work 13 testbench_ex2 0 22 2^GEocTEiCbJ2WAMFH1eZ3
+!i122 50
+l25
+L13 32
+VcV9Va?Kok20V?IG9GWDhO3
+!s100 5ZiFSe^Yf`gIonK`=4=kS2
+R7
+32
+R8
+!i10b 1
+R9
+R24
+R25
+!i113 1
+R12
+R13

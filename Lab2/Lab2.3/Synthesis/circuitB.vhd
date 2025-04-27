@@ -1,0 +1,21 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY circuitB IS
+	PORT (
+		input : IN STD_LOGIC;
+		Display : OUT STD_LOGIC_VECTOR(0 TO 6)
+	);
+END circuitB;
+
+ARCHITECTURE Behavior OF circuitB IS
+BEGIN
+	PROCESS (INPUT)
+	BEGIN
+		IF INPUT = '1' THEN
+			DISPLAY <= "1001111";
+		ELSE
+			DISPLAY <= "1111111";
+		END IF;
+	END PROCESS;
+END Behavior;

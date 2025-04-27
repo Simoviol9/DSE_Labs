@@ -1,0 +1,293 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Edecoder7
+Z0 w1742231870
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 122
+Z3 dC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation
+Z4 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/decoder7.vhd
+Z5 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/decoder7.vhd
+l0
+L20 1
+VMCm?zczU;4[J48QJGaE2^1
+!s100 SkWl`U2kAQ_=2Mc_k?mDO3
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1742664368
+!i10b 1
+Z8 !s108 1742664368.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/decoder7.vhd|
+Z10 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/decoder7.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavior
+R1
+R2
+DEx4 work 8 decoder7 0 22 MCm?zczU;4[J48QJGaE2^1
+!i122 122
+l28
+L27 13
+V8mJUkn6E>1gfY^8Y]Inga2
+!s100 WFFOcEEk:Q4@?BT6Q9Rn70
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ehard_block
+Z13 w1741640130
+Z14 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z15 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ]lnLY_M[kb3fWjbKaDc;_1
+Z16 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+R1
+R2
+Z17 DPx9 cycloneiv 20 cycloneiv_components 0 22 J>QEYeEXjZb^Cnb3?e1D40
+!i122 115
+R3
+Z18 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/Lab2_2_time.vho
+Z19 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/Lab2_2_time.vho
+l0
+L35 1
+VA@mL2FA]aXV3INlRb<>JX2
+!s100 Q?IbEnM>aW3cc=hi`GCc71
+R6
+32
+Z20 !s110 1742425397
+!i10b 1
+Z21 !s108 1742425397.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/Lab2_2_time.vho|
+Z23 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/Lab2_2_time.vho|
+!i113 1
+R11
+R12
+Astructure
+R14
+R15
+R16
+R1
+R2
+R17
+DEx4 work 10 hard_block 0 22 A@mL2FA]aXV3INlRb<>JX2
+!i122 115
+l65
+L51 20
+VK=H@ehhmel9KmzDJ97oR31
+!s100 MPImK?KHJknNI^00mCc<L1
+R6
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R11
+R12
+Emux
+Z24 w1742231976
+R1
+R2
+!i122 123
+R3
+Z25 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/mux.vhd
+Z26 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/mux.vhd
+l0
+L9 1
+VziO?[jH<3[zD6:jHOg^VE1
+!s100 LQaVTCFJb`K2C<d]cKf3_1
+R6
+32
+R7
+!i10b 1
+R8
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/mux.vhd|
+Z28 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/mux.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+DEx4 work 3 mux 0 22 ziO?[jH<3[zD6:jHOg^VE1
+!i122 123
+l23
+L16 13
+VVEcUfFaAW9naXo=C]Z;OJ3
+!s100 j4zA2RnN@:[ETDP^QoicI2
+R6
+32
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12
+Epart2
+Z29 w1742231720
+R1
+R2
+!i122 124
+R3
+Z30 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2.vhd
+Z31 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2.vhd
+l0
+L10 1
+VhiE^V0SnL^hFhZS2Hj@UN3
+!s100 abG7Ez9K9Q>FSSX?9dKnF1
+R6
+32
+R7
+!i10b 1
+R8
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2.vhd|
+Z33 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+DEx4 work 5 part2 0 22 hiE^V0SnL^hFhZS2Hj@UN3
+!i122 124
+l38
+L17 37
+VTQE82[aoPgC5dgA=_h5Wb2
+!s100 dTeKDS<aHb1KNE@<RW2OF0
+R6
+32
+R7
+!i10b 1
+R8
+R32
+R33
+!i113 1
+R11
+R12
+Astructure
+R14
+R15
+R16
+R1
+R2
+R17
+DEx4 work 5 part2 0 22 `jLFjNm6^j1znVROJWC7T0
+!i122 115
+l254
+L132 1560
+VdzMKWOYbK<hkQI<OPlo6d2
+!s100 OF=hO8?dm?M[C<NB=1;^h0
+R6
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R11
+R12
+R19
+R13
+R18
+Epart2_tb
+Z34 w1741641924
+R1
+R2
+!i122 121
+R3
+Z35 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2_tb.vhd
+Z36 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2_tb.vhd
+l0
+L5 1
+VUdThYQZ[ZZVzV_02Tg8f41
+!s100 53aB;gnOhmMld944aXR720
+R6
+32
+R7
+!i10b 1
+R8
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2_tb.vhd|
+Z38 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2_tb.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+DEx4 work 8 part2_tb 0 22 UdThYQZ[ZZVzV_02Tg8f41
+!i122 121
+l21
+L8 44
+VH8=h5;IR4?Y]7]LV>FnO<0
+!s100 `Rn=G5Igb38Y<CPDE`m?o1
+R6
+32
+R7
+!i10b 1
+R8
+R37
+R38
+!i113 1
+R11
+R12
+Eshifter
+Z39 w1742231912
+Z40 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R1
+R2
+!i122 125
+R3
+Z41 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/shifter.vhd
+Z42 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/shifter.vhd
+l0
+L11 1
+VkOec>:To[JcZY56?6AO5f3
+!s100 T<ClMkD[BzBWE[l9Z3USL2
+R6
+32
+Z43 !s110 1742664369
+!i10b 1
+Z44 !s108 1742664369.000000
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/shifter.vhd|
+Z46 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/shifter.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R40
+R1
+R2
+Z47 DEx4 work 7 shifter 0 22 kOec>:To[JcZY56?6AO5f3
+!i122 125
+l19
+Z48 L18 23
+Z49 Vin8YQ3;lNAWBX:QiFCKeg2
+Z50 !s100 _<8:Yk1WAA^S^N7CcXYF_1
+R6
+32
+R43
+!i10b 1
+R44
+R45
+R46
+!i113 1
+R11
+R12

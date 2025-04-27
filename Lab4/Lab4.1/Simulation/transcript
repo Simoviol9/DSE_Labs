@@ -1,0 +1,47 @@
+# Compile of gated_SRlatch.vhd was successful.
+# Compile of gated_SRlatch_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.gated_srlatch_tb
+# vsim -gui work.gated_srlatch_tb 
+# Start time: 01:47:25 on Apr 08,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.gated_srlatch_tb(testbench)
+# Loading work.gated_srlatch(structural)
+add wave -position insertpoint sim:/gated_srlatch_tb/uut/*
+run
+run
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 260 ns ###############
+#       Signal: /gated_srlatch_tb/uut/Qa @ sub-iteration 0 at Value X (C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch.vhd:11)
+#       Signal: /gated_srlatch_tb/Q @ sub-iteration 0 at Value Z (C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch_tb.vhd:16)
+#       Signal: /gated_srlatch_tb/uut/Qb @ sub-iteration 0 at Value X (C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch.vhd:11)
+#   Active process: /gated_srlatch_tb/uut/line__17 @ sub-iteration 1
+#     Source: C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch_tb.vhd:24
+#   Active process: /gated_srlatch_tb/uut/line__18 @ sub-iteration 1
+#     Source: C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch_tb.vhd:24
+#   Active process: /gated_srlatch_tb/uut/line__19 @ sub-iteration 1
+#     Source: C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch_tb.vhd:24
+#       Signal: /gated_srlatch_tb/Q @ sub-iteration 2 at Value X (C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch_tb.vhd:16)
+#       Signal: /gated_srlatch_tb/uut/Qb @ sub-iteration 2 at Value Z (C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch.vhd:11)
+#       Signal: /gated_srlatch_tb/uut/Qa @ sub-iteration 2 at Value Z (C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch.vhd:11)
+#   Active process: /gated_srlatch_tb/uut/line__18 @ sub-iteration 3
+#     Source: C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation/gated_SRlatch_tb.vhd:24
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 260 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 260 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 260 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 260 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 260 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 260 ns.
+quit -sim
+# End time: 02:38:39 on Apr 08,2025, Elapsed time: 0:51:14
+# Errors: 6, Warnings: 6

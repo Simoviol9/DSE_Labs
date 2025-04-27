@@ -1,0 +1,66 @@
+------------------------------------
+-- Group 8 - Laboratory 3
+-- Exercise 3 - 4-bit ripple carry adder
+-- VHDL code of testbench
+------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity signedAdder_tb is
+end signedAdder_tb;
+
+architecture Behavior of signedAdder_tb is
+
+	component signedAdder is
+		port (
+			IN1, IN2       : in  SIGNED(3 downto 0);
+			IN3, CLK, RESN : in  STD_LOGIC;
+			OUT1           : out SIGNED(3 downto 0);
+			OUT2           : out STD_LOGIC
+		);
+	end component;
+
+	signal A, B, S               : SIGNED(3 downto 0);
+	signal OVF, Clock, ResetN, C : STD_LOGIC;
+begin
+
+	process
+	begin
+		A      <= "0001";
+		B      <= "0001";
+		C      <= '0';
+		ResetN <= '1';
+		Clock  <= '0';
+		wait for 20 ns;
+		Clock <= '1';
+		wait for 20 ns;
+		Clock <= '0';
+		A     <= "1111";
+		B     <= "0001";
+		C     <= '0';
+		wait for 20 ns;
+		Clock <= '1';
+		wait for 20 ns;
+		Clock <= '0';
+		A     <= "1011";
+		B     <= "0000";
+		C     <= '1';
+		wait for 20 ns;
+		Clock <= '1';
+		wait for 20 ns;
+		Clock <= '0';
+		wait for 20 ns;
+		Clock <= '1';
+		wait for 20 ns;
+		Clock  <= '0';
+		ResetN <= '0';
+		wait for 20 ns;
+		Clock <= '1';
+		wait;
+	end process;
+	DUT : signedAdder
+	port map(A, B, C, Clock, ResetN, S, OVF);
+
+end Behavior;

@@ -1,0 +1,173 @@
+vsim -gui work.digitflashing_tb
+# vsim -gui work.digitflashing_tb 
+# Start time: 23:17:13 on Apr 07,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.digitflashing_tb(behaviour)
+# Loading work.digitflashing(structure)
+# Loading work.modulocounter(structure)
+# Loading work.elemcounter(structure)
+# Loading work.flipflop(behavior)
+# Loading work.mux(stuctural)
+# Loading work.comparator(dataflow)
+add wave -position insertpoint sim:/digitflashing_tb/UUT/*
+add wave -position insertpoint  \
+sim:/digitflashing_tb/UUT/MOD50M_26BIT_CNT/LD
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of digitFlashing.vhd was successful.
+# Compile of moduloCounter.vhd was successful.
+# Compile of elementaryCounter.vhd was successful.
+# Compile of mux.vhd was successful.
+# Compile of comparator.vhd was successful.
+# Compile of flipflop.vhd was successful.
+# Compile of digitFlashing_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.digitflashing_tb
+# End time: 23:21:56 on Apr 07,2025, Elapsed time: 0:04:43
+# Errors: 0, Warnings: 2
+# vsim -gui work.digitflashing_tb 
+# Start time: 23:21:56 on Apr 07,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.digitflashing_tb(behaviour)
+# Loading work.digitflashing(structure)
+# Loading work.modulocounter(structure)
+# Loading work.elemcounter(structure)
+# Loading work.flipflop(behavior)
+# Loading work.mux(stuctural)
+# Loading work.comparator(dataflow)
+add wave -position insertpoint sim:/digitflashing_tb/UUT/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of digitFlashing.vhd was successful.
+# Compile of moduloCounter.vhd was successful.
+# Compile of elementaryCounter.vhd was successful.
+# Compile of mux.vhd was successful.
+# Compile of comparator.vhd was successful.
+# Compile of flipflop.vhd was successful.
+vsim -gui work.digitflashing_tb
+# End time: 23:23:34 on Apr 07,2025, Elapsed time: 0:01:38
+# Errors: 0, Warnings: 1
+# vsim -gui work.digitflashing_tb 
+# Start time: 23:23:34 on Apr 07,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.digitflashing_tb(behaviour)
+# Loading work.digitflashing(structure)
+# Loading work.modulocounter(structure)
+# Loading work.elemcounter(structure)
+# Loading work.flipflop(behavior)
+# Loading work.mux(stuctural)
+# Loading work.comparator(dataflow)
+# Compile of digitFlashing_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+add wave -position insertpoint sim:/digitflashing_tb/UUT/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of digitFlashing.vhd was successful.
+# Compile of moduloCounter.vhd was successful.
+# Compile of elementaryCounter.vhd was successful.
+# Compile of mux.vhd was successful.
+# Compile of comparator.vhd was successful.
+# Compile of flipflop.vhd was successful.
+# Compile of digitFlashing_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.digitflashing_tb
+# End time: 23:24:55 on Apr 07,2025, Elapsed time: 0:01:21
+# Errors: 0, Warnings: 2
+# vsim -gui work.digitflashing_tb 
+# Start time: 23:24:55 on Apr 07,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.digitflashing_tb(behaviour)
+# Loading work.digitflashing(structure)
+# Loading work.modulocounter(structure)
+# Loading work.elemcounter(structure)
+# Loading work.flipflop(behavior)
+# Loading work.mux(stuctural)
+# Loading work.comparator(dataflow)
+add wave -position insertpoint sim:/digitflashing_tb/UUT/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/digitflashing_tb/UUT/MOD50M_26BIT_CNT/LD
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+quit -sim
+# End time: 23:28:02 on Apr 07,2025, Elapsed time: 0:03:07
+# Errors: 0, Warnings: 1

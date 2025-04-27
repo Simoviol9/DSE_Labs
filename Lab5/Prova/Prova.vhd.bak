@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity ALM_Saturation is
+    generic (
+        NUM_REGS : integer := 5000 -- Number of registers or logic to increase ALM usage
+    );
+    port (
+        clk   : in  std_logic;
+        rst   : in  std_logic;
+        data_in  : in  std_logic_vector(7 downto 0);
+        data_out : out std_logic_vector(7 downto 0)
+    );
+end ALM_Saturation;
+
+architecture Behavioral of ALM_Saturation is
+    type reg_array is array (NUM_REGS - 1 downto 0) of std_logic_vector(7 downto 0);
+    signal regs : reg_array := (others => (others => '0'));
+begin
+    process(clk, rst)
+    begin
+        if rst = '1' then
+            regs <= (others => (others => '0'));
+        elsif rising_edge(clk) then
+            regs(0) <= data_in;
+            for i in 1 to NUM_REGS - 1 loop
+                regs(i) <= regs(i - 1);
+            end loop;
+            data_out <= regs(NUM_REGS - 1);
+        end if;
+    end process;
+end Behavioral;

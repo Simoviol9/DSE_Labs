@@ -1,0 +1,86 @@
+C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux
+-- Compiling architecture dataflow of mux
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/fullAdder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/fullAdder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fullAdder
+-- Compiling architecture structural of fullAdder
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/flipflop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/flipflop.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity flipflop
+-- Compiling architecture Behavior of flipflop
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/regn.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/regn.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity regn
+-- Compiling architecture Behavior of regn
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/rippleCarryAdder4bit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/rippleCarryAdder4bit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity rippleCarryAdder4bit
+-- Compiling architecture Behavior of rippleCarryAdder4bit
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/signedAdder16bit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/signedAdder16bit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity signedAdder16bit
+-- Compiling architecture structural of signedAdder16bit
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/carryBypassAdder_16bit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/carryBypassAdder_16bit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity carryBypassAdder_16bit
+-- Compiling architecture structure of carryBypassAdder_16bit
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/ovfdetector.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/ovfdetector.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ovfdetector
+-- Compiling architecture dataflow of ovfdetector
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/carryPropagation.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/carryPropagation.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity carryPropagation
+-- Compiling architecture dataflow of carryPropagation
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/signedAdder16bit_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.3/Lab3.3.2/Simulation/signedAdder16bit_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity signedAdder16bit_tb
+-- Compiling architecture Behavior of signedAdder16bit_tb
+
+} {} {}}

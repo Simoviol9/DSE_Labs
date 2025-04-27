@@ -1,0 +1,93 @@
+# Compile of part2_tb.vhd was successful.
+# Compile of Lab2_2_time.vho was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -sdftyp {/decoder7=C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Timing simulation/Simulation/decoder7_vhd.sdo} work.part2_tb
+# vsim -gui -sdftyp "/decoder7=C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Timing simulation/Simulation/decoder7_vhd.sdo" work.part2_tb 
+# Start time: 18:32:16 on Mar 22,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part2_tb(behavior)
+# SDF 2020.1 Compiler 2020.02 Feb 28 2020
+# 
+# usage: sdfcom [ options ] source-file output-file
+# 
+# Options:
+# 
+#   -32                 Run in 32-bit mode
+# 
+#   -64                 Run in 64-bit mode
+# 
+#   -mindelays          Use minimum timing from min:typ:max expressions
+# 
+#   -typdelays          Use typical timing from min:typ:max expressions (default)
+# 
+#   -maxdelays          Use maximum timing from min:typ:max expressions
+# 
+#   -delayscale <val>   Scale delays by the specified value
+# 
+#   -nocompress         Don't compress the resulting output file
+# 
+#   -suppress <msg(s)>  Suppress comma-separed list of error/warning messages
+# 
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneiv.cycloneiv_atom_pack(body)
+# Loading cycloneiv.cycloneiv_components
+# Loading work.part2(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneiv.cycloneiv_io_obuf(arch)
+# Loading cycloneiv.cycloneiv_io_ibuf(arch)
+# Loading cycloneiv.cycloneiv_lcell_comb(vital_lcell_comb)
+# Error loading design
+# End time: 18:32:16 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 3
+vsim -gui -sdftyp {/decoder7=C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo} work.part2_tb
+# vsim -gui -sdftyp "/decoder7=C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo" work.part2_tb 
+# Start time: 18:32:55 on Mar 22,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part2_tb(behavior)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneiv.cycloneiv_atom_pack(body)
+# Loading cycloneiv.cycloneiv_components
+# Loading work.part2(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneiv.cycloneiv_io_obuf(arch)
+# Loading cycloneiv.cycloneiv_io_ibuf(arch)
+# Loading cycloneiv.cycloneiv_lcell_comb(vital_lcell_comb)
+# Loading instances from C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo
+# ** Error (suppressible): (vsim-SDF-3250) C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/Lab2_2_time_vhd.sdo(0): Failed to find INSTANCE '/decoder7'.
+# ** Error (suppressible): (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+# ** Error (suppressible): (vsim-SDF-3250) C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo(0): Failed to find INSTANCE '/decoder7'.
+# Error loading design
+# End time: 18:32:55 on Mar 22,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 1
+vsim -gui -sdftyp {/DUT=C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo} work.part2_tb
+# vsim -gui -sdftyp "/DUT=C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo" work.part2_tb 
+# Start time: 18:35:16 on Mar 22,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part2_tb(behavior)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneiv.cycloneiv_atom_pack(body)
+# Loading cycloneiv.cycloneiv_components
+# Loading work.part2(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneiv.cycloneiv_io_obuf(arch)
+# Loading cycloneiv.cycloneiv_io_ibuf(arch)
+# Loading cycloneiv.cycloneiv_lcell_comb(vital_lcell_comb)
+# Loading instances from C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo
+# Loading timing data from C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Timing simulation/Lab2_2_time_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /part2_tb File: C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.2/Simulation/part2_tb.vhd
+quit -sim
+# End time: 18:35:31 on Mar 22,2025, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 1

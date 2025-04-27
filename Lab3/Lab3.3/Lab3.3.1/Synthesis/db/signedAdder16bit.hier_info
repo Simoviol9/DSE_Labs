@@ -1,0 +1,618 @@
+|signedAdder16bit
+IN1[0] => regn:REG0.R[0]
+IN1[1] => regn:REG0.R[1]
+IN1[2] => regn:REG0.R[2]
+IN1[3] => regn:REG0.R[3]
+IN1[4] => regn:REG0.R[4]
+IN1[5] => regn:REG0.R[5]
+IN1[6] => regn:REG0.R[6]
+IN1[7] => regn:REG0.R[7]
+IN1[8] => regn:REG0.R[8]
+IN1[9] => regn:REG0.R[9]
+IN1[10] => regn:REG0.R[10]
+IN1[11] => regn:REG0.R[11]
+IN1[12] => regn:REG0.R[12]
+IN1[13] => regn:REG0.R[13]
+IN1[14] => regn:REG0.R[14]
+IN1[15] => regn:REG0.R[15]
+IN2[0] => regn:REG1.R[0]
+IN2[1] => regn:REG1.R[1]
+IN2[2] => regn:REG1.R[2]
+IN2[3] => regn:REG1.R[3]
+IN2[4] => regn:REG1.R[4]
+IN2[5] => regn:REG1.R[5]
+IN2[6] => regn:REG1.R[6]
+IN2[7] => regn:REG1.R[7]
+IN2[8] => regn:REG1.R[8]
+IN2[9] => regn:REG1.R[9]
+IN2[10] => regn:REG1.R[10]
+IN2[11] => regn:REG1.R[11]
+IN2[12] => regn:REG1.R[12]
+IN2[13] => regn:REG1.R[13]
+IN2[14] => regn:REG1.R[14]
+IN2[15] => regn:REG1.R[15]
+IN3 => rippleCarryAdder16bit:RCA0.CIN
+CLK => regn:REG0.Clock
+CLK => regn:REG1.Clock
+CLK => regn:REG2.Clock
+CLK => flipflop:DFF0.Clock
+RESN => regn:REG0.Resetn
+RESN => regn:REG1.Resetn
+RESN => regn:REG2.Resetn
+RESN => flipflop:DFF0.Resetn
+OUT1[0] << regn:REG2.Q[0]
+OUT1[1] << regn:REG2.Q[1]
+OUT1[2] << regn:REG2.Q[2]
+OUT1[3] << regn:REG2.Q[3]
+OUT1[4] << regn:REG2.Q[4]
+OUT1[5] << regn:REG2.Q[5]
+OUT1[6] << regn:REG2.Q[6]
+OUT1[7] << regn:REG2.Q[7]
+OUT1[8] << regn:REG2.Q[8]
+OUT1[9] << regn:REG2.Q[9]
+OUT1[10] << regn:REG2.Q[10]
+OUT1[11] << regn:REG2.Q[11]
+OUT1[12] << regn:REG2.Q[12]
+OUT1[13] << regn:REG2.Q[13]
+OUT1[14] << regn:REG2.Q[14]
+OUT1[15] << regn:REG2.Q[15]
+OUT2 << flipflop:DFF0.Q
+
+
+|signedAdder16bit|regn:REG0
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+R[13] => Q[13]~reg0.DATAIN
+R[14] => Q[14]~reg0.DATAIN
+R[15] => Q[15]~reg0.DATAIN
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Clock => Q[8]~reg0.CLK
+Clock => Q[9]~reg0.CLK
+Clock => Q[10]~reg0.CLK
+Clock => Q[11]~reg0.CLK
+Clock => Q[12]~reg0.CLK
+Clock => Q[13]~reg0.CLK
+Clock => Q[14]~reg0.CLK
+Clock => Q[15]~reg0.CLK
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Resetn => Q[4]~reg0.ACLR
+Resetn => Q[5]~reg0.ACLR
+Resetn => Q[6]~reg0.ACLR
+Resetn => Q[7]~reg0.ACLR
+Resetn => Q[8]~reg0.ACLR
+Resetn => Q[9]~reg0.ACLR
+Resetn => Q[10]~reg0.ACLR
+Resetn => Q[11]~reg0.ACLR
+Resetn => Q[12]~reg0.ACLR
+Resetn => Q[13]~reg0.ACLR
+Resetn => Q[14]~reg0.ACLR
+Resetn => Q[15]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|regn:REG1
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+R[13] => Q[13]~reg0.DATAIN
+R[14] => Q[14]~reg0.DATAIN
+R[15] => Q[15]~reg0.DATAIN
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Clock => Q[8]~reg0.CLK
+Clock => Q[9]~reg0.CLK
+Clock => Q[10]~reg0.CLK
+Clock => Q[11]~reg0.CLK
+Clock => Q[12]~reg0.CLK
+Clock => Q[13]~reg0.CLK
+Clock => Q[14]~reg0.CLK
+Clock => Q[15]~reg0.CLK
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Resetn => Q[4]~reg0.ACLR
+Resetn => Q[5]~reg0.ACLR
+Resetn => Q[6]~reg0.ACLR
+Resetn => Q[7]~reg0.ACLR
+Resetn => Q[8]~reg0.ACLR
+Resetn => Q[9]~reg0.ACLR
+Resetn => Q[10]~reg0.ACLR
+Resetn => Q[11]~reg0.ACLR
+Resetn => Q[12]~reg0.ACLR
+Resetn => Q[13]~reg0.ACLR
+Resetn => Q[14]~reg0.ACLR
+Resetn => Q[15]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|regn:REG2
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+R[13] => Q[13]~reg0.DATAIN
+R[14] => Q[14]~reg0.DATAIN
+R[15] => Q[15]~reg0.DATAIN
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Clock => Q[8]~reg0.CLK
+Clock => Q[9]~reg0.CLK
+Clock => Q[10]~reg0.CLK
+Clock => Q[11]~reg0.CLK
+Clock => Q[12]~reg0.CLK
+Clock => Q[13]~reg0.CLK
+Clock => Q[14]~reg0.CLK
+Clock => Q[15]~reg0.CLK
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Resetn => Q[4]~reg0.ACLR
+Resetn => Q[5]~reg0.ACLR
+Resetn => Q[6]~reg0.ACLR
+Resetn => Q[7]~reg0.ACLR
+Resetn => Q[8]~reg0.ACLR
+Resetn => Q[9]~reg0.ACLR
+Resetn => Q[10]~reg0.ACLR
+Resetn => Q[11]~reg0.ACLR
+Resetn => Q[12]~reg0.ACLR
+Resetn => Q[13]~reg0.ACLR
+Resetn => Q[14]~reg0.ACLR
+Resetn => Q[15]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0
+A1[0] => fullAdder:gen_block:0:FA.A
+A1[1] => fullAdder:gen_block:1:FA.A
+A1[2] => fullAdder:gen_block:2:FA.A
+A1[3] => fullAdder:gen_block:3:FA.A
+A1[4] => fullAdder:gen_block:4:FA.A
+A1[5] => fullAdder:gen_block:5:FA.A
+A1[6] => fullAdder:gen_block:6:FA.A
+A1[7] => fullAdder:gen_block:7:FA.A
+A1[8] => fullAdder:gen_block:8:FA.A
+A1[9] => fullAdder:gen_block:9:FA.A
+A1[10] => fullAdder:gen_block:10:FA.A
+A1[11] => fullAdder:gen_block:11:FA.A
+A1[12] => fullAdder:gen_block:12:FA.A
+A1[13] => fullAdder:gen_block:13:FA.A
+A1[14] => fullAdder:gen_block:14:FA.A
+A1[15] => fullAdder:gen_block:15:FA.A
+A2[0] => fullAdder:gen_block:0:FA.B
+A2[1] => fullAdder:gen_block:1:FA.B
+A2[2] => fullAdder:gen_block:2:FA.B
+A2[3] => fullAdder:gen_block:3:FA.B
+A2[4] => fullAdder:gen_block:4:FA.B
+A2[5] => fullAdder:gen_block:5:FA.B
+A2[6] => fullAdder:gen_block:6:FA.B
+A2[7] => fullAdder:gen_block:7:FA.B
+A2[8] => fullAdder:gen_block:8:FA.B
+A2[9] => fullAdder:gen_block:9:FA.B
+A2[10] => fullAdder:gen_block:10:FA.B
+A2[11] => fullAdder:gen_block:11:FA.B
+A2[12] => fullAdder:gen_block:12:FA.B
+A2[13] => fullAdder:gen_block:13:FA.B
+A2[14] => fullAdder:gen_block:14:FA.B
+A2[15] => fullAdder:gen_block:15:FA.B
+CIN => fullAdder:gen_block:0:FA.CI
+B1[0] <= fullAdder:gen_block:0:FA.S
+B1[1] <= fullAdder:gen_block:1:FA.S
+B1[2] <= fullAdder:gen_block:2:FA.S
+B1[3] <= fullAdder:gen_block:3:FA.S
+B1[4] <= fullAdder:gen_block:4:FA.S
+B1[5] <= fullAdder:gen_block:5:FA.S
+B1[6] <= fullAdder:gen_block:6:FA.S
+B1[7] <= fullAdder:gen_block:7:FA.S
+B1[8] <= fullAdder:gen_block:8:FA.S
+B1[9] <= fullAdder:gen_block:9:FA.S
+B1[10] <= fullAdder:gen_block:10:FA.S
+B1[11] <= fullAdder:gen_block:11:FA.S
+B1[12] <= fullAdder:gen_block:12:FA.S
+B1[13] <= fullAdder:gen_block:13:FA.S
+B1[14] <= fullAdder:gen_block:14:FA.S
+B1[15] <= fullAdder:gen_block:15:FA.S
+COUT <= fullAdder:gen_block:15:FA.Cout
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:0:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:0:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:1:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:1:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:2:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:2:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:3:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:3:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:4:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:4:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:5:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:5:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:6:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:6:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:7:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:7:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:8:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:8:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:9:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:9:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:10:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:10:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:11:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:11:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:12:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:12:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:13:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:13:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:14:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:14:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:15:FA
+A => SEL.IN0
+B => SEL.IN1
+B => mux:MUX0.IN0
+CI => S.IN1
+CI => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|signedAdder16bit|rippleCarryAdder16bit:RCA0|fullAdder:\gen_block:15:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|flipflop:DFF0
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signedAdder16bit|ovfdetector:OVFD
+A => OVF.IN0
+A => OVF.IN0
+B => OVF.IN1
+S => OVF.IN1
+OVF <= OVF.DB_MAX_OUTPUT_PORT_TYPE
+
+

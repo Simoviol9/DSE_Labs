@@ -1,0 +1,859 @@
+Analysis & Synthesis report for device_HELLO_FSM
+Sun Apr 13 18:57:11 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |device_HELLO_FSM|HELLO_FSM:U1|FSM:FSM0|CS
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG
+ 12. Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG
+ 13. Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:1:REG
+ 14. Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:2:REG
+ 15. Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:3:REG
+ 16. Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:4:REG
+ 17. Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:5:REG
+ 18. Parameter Settings for User Entity Instance: HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER
+ 19. Parameter Settings for User Entity Instance: HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|comparator:CMP
+ 20. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:25:CNT"
+ 21. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:24:CNT"
+ 22. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:23:CNT"
+ 23. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:22:CNT"
+ 24. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:21:CNT"
+ 25. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:20:CNT"
+ 26. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:19:CNT"
+ 27. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:18:CNT"
+ 28. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:17:CNT"
+ 29. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:16:CNT"
+ 30. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:15:CNT"
+ 31. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:14:CNT"
+ 32. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:13:CNT"
+ 33. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:12:CNT"
+ 34. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:11:CNT"
+ 35. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:10:CNT"
+ 36. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:9:CNT"
+ 37. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:8:CNT"
+ 38. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:7:CNT"
+ 39. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:6:CNT"
+ 40. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:5:CNT"
+ 41. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:4:CNT"
+ 42. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:3:CNT"
+ 43. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:2:CNT"
+ 44. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:1:CNT"
+ 45. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:CNT"
+ 46. Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER"
+ 47. Post-Synthesis Netlist Statistics for Top Partition
+ 48. Elapsed Time Per Partition
+ 49. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Apr 13 18:57:10 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; device_HELLO_FSM                               ;
+; Top-level Entity Name           ; device_HELLO_FSM                               ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 64                                             ;
+; Total pins                      ; 47                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; device_HELLO_FSM   ; device_HELLO_FSM   ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 10          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 10          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-10        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; HELLO_FSM.vhd                    ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/HELLO_FSM.vhd         ;         ;
+; shiftRegister.vhd                ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/shiftRegister.vhd     ;         ;
+; regn.vhd                         ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/regn.vhd              ;         ;
+; pulse1Hz.vhd                     ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/pulse1Hz.vhd          ;         ;
+; mux7bit.vhd                      ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/mux7bit.vhd           ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/mux.vhd               ;         ;
+; moduloCounter.vhd                ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/moduloCounter.vhd     ;         ;
+; FSM.vhd                          ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/FSM.vhd               ;         ;
+; flipflop.vhd                     ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/flipflop.vhd          ;         ;
+; elementaryCounter.vhd            ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/elementaryCounter.vhd ;         ;
+; comparator.vhd                   ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/comparator.vhd        ;         ;
+; device_HELLO_FSM.vhd             ; yes             ; User VHDL File  ; C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/device_HELLO_FSM.vhd  ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 39             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 50             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 16             ;
+;     -- 5 input functions                    ; 6              ;
+;     -- 4 input functions                    ; 14             ;
+;     -- <=3 input functions                  ; 14             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 64             ;
+;                                             ;                ;
+; I/O pins                                    ; 47             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 64             ;
+; Total fan-out                               ; 535            ;
+; Average fan-out                             ; 2.57           ;
++---------------------------------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name      ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |device_HELLO_FSM                              ; 50 (0)              ; 64 (0)                    ; 0                 ; 0          ; 47   ; 0            ; |device_HELLO_FSM                                                                                                            ; device_HELLO_FSM ; work         ;
+;    |HELLO_FSM:U1|                              ; 50 (0)              ; 64 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1                                                                                               ; HELLO_FSM        ; work         ;
+;       |FSM:FSM0|                               ; 2 (2)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|FSM:FSM0                                                                                      ; FSM              ; work         ;
+;       |mux7bit:MUX|                            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|mux7bit:MUX                                                                                   ; mux7bit          ; work         ;
+;       |pulse1Hz:PULSE_GEN|                     ; 43 (0)              ; 26 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN                                                                            ; pulse1Hz         ; work         ;
+;          |moduloCounter:MOD50M_COUNTER|        ; 43 (0)              ; 26 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER                                               ; moduloCounter    ; work         ;
+;             |comparator:CMP|                   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|comparator:CMP                                ; comparator       ; work         ;
+;             |elemCounter:CNT|                  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:CNT                               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:CNT|flipflop:DFF                  ; flipflop         ; work         ;
+;             |elemCounter:\cnt_generate:10:CNT| ; 2 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:10:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:10:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX0|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:10:CNT|mux:MUX0     ; mux              ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:10:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:11:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:11:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:11:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:11:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:12:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:12:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:12:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:12:CNT|mux:MUX0     ; mux              ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:12:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:13:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:13:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:13:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:13:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:14:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:14:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:14:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:14:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:15:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:15:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:15:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:15:CNT|mux:MUX0     ; mux              ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:15:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:16:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:16:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:16:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:16:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:17:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:17:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:17:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:17:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:18:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:18:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:18:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:18:CNT|mux:MUX0     ; mux              ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:18:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:19:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:19:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:19:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:19:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:1:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:1:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:1:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:1:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:20:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:20:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:20:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:20:CNT|mux:MUX0     ; mux              ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:20:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:21:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:21:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:21:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:21:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:22:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:22:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:22:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:22:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:23:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:23:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:23:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:23:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:24:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:24:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:24:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:24:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:25:CNT| ; 2 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:25:CNT              ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:25:CNT|flipflop:DFF ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:25:CNT|mux:MUX1     ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:2:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:2:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:2:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:2:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:3:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:3:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:3:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:3:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:4:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:4:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:4:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:4:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:5:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:5:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:5:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:5:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:6:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:6:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:6:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:6:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:7:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:7:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:7:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:7:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:8:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:8:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:8:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:8:CNT|mux:MUX1      ; mux              ; work         ;
+;             |elemCounter:\cnt_generate:9:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:9:CNT               ; elemCounter      ; work         ;
+;                |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:9:CNT|flipflop:DFF  ; flipflop         ; work         ;
+;                |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:9:CNT|mux:MUX1      ; mux              ; work         ;
+;       |shiftRegn:REG|                          ; 0 (0)               ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|shiftRegn:REG                                                                                 ; shiftRegn        ; work         ;
+;          |regn:\regn_generate:0:REG|           ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG                                                       ; regn             ; work         ;
+;          |regn:\regn_generate:1:REG|           ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:1:REG                                                       ; regn             ; work         ;
+;          |regn:\regn_generate:2:REG|           ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:2:REG                                                       ; regn             ; work         ;
+;          |regn:\regn_generate:3:REG|           ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:3:REG                                                       ; regn             ; work         ;
+;          |regn:\regn_generate:4:REG|           ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:4:REG                                                       ; regn             ; work         ;
+;          |regn:\regn_generate:5:REG|           ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |device_HELLO_FSM|HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:5:REG                                                       ; regn             ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |device_HELLO_FSM|HELLO_FSM:U1|FSM:FSM0|CS                                                                       ;
++--------------------+--------------------+---------------+-----------+------------+------------+-----------+-----------+----------+
+; Name               ; CS.LOOP_CHARACTERS ; CS.LOAD_blank ; CS.LOAD_O ; CS.LOAD_L2 ; CS.LOAD_L1 ; CS.LOAD_E ; CS.LOAD_H ; CS.START ;
++--------------------+--------------------+---------------+-----------+------------+------------+-----------+-----------+----------+
+; CS.START           ; 0                  ; 0             ; 0         ; 0          ; 0          ; 0         ; 0         ; 0        ;
+; CS.LOAD_H          ; 0                  ; 0             ; 0         ; 0          ; 0          ; 0         ; 1         ; 1        ;
+; CS.LOAD_E          ; 0                  ; 0             ; 0         ; 0          ; 0          ; 1         ; 0         ; 1        ;
+; CS.LOAD_L1         ; 0                  ; 0             ; 0         ; 0          ; 1          ; 0         ; 0         ; 1        ;
+; CS.LOAD_L2         ; 0                  ; 0             ; 0         ; 1          ; 0          ; 0         ; 0         ; 1        ;
+; CS.LOAD_O          ; 0                  ; 0             ; 1         ; 0          ; 0          ; 0         ; 0         ; 1        ;
+; CS.LOAD_blank      ; 0                  ; 1             ; 0         ; 0          ; 0          ; 0         ; 0         ; 1        ;
+; CS.LOOP_CHARACTERS ; 1                  ; 0             ; 0         ; 0          ; 0          ; 0         ; 0         ; 1        ;
++--------------------+--------------------+---------------+-----------+------------+------------+-----------+-----------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                ;
++-----------------------------------------------------------+-----------------------------------------------------------------------+
+; Register name                                             ; Reason for Removal                                                    ;
++-----------------------------------------------------------+-----------------------------------------------------------------------+
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG|Q[5] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG|Q[4] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG|Q[2] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG|Q[1] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:1:REG|Q[5] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:1:REG|Q[4] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:1:REG|Q[2] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:1:REG|Q[1] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:2:REG|Q[5] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:2:REG|Q[4] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:2:REG|Q[2] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:2:REG|Q[1] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:3:REG|Q[5] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:3:REG|Q[4] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:3:REG|Q[2] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:3:REG|Q[1] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:4:REG|Q[5] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:4:REG|Q[4] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:5:REG|Q[5] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:5:REG|Q[4] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:4:REG|Q[2] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:4:REG|Q[1] ;
+; HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:5:REG|Q[2] ; Merged with HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:5:REG|Q[1] ;
+; Total Number of Removed Registers = 12                    ;                                                                       ;
++-----------------------------------------------------------+-----------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 64    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 37    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; n              ; 6     ; Signed Integer                                 ;
+; n_bit          ; 7     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; n_bit          ; 7     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:1:REG ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; n_bit          ; 7     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:2:REG ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; n_bit          ; 7     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:3:REG ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; n_bit          ; 7     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:4:REG ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; n_bit          ; 7     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:5:REG ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; n_bit          ; 7     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER ;
++----------------+----------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                          ;
++----------------+----------+-------------------------------------------------------------------------------+
+; n_bits         ; 26       ; Signed Integer                                                                ;
+; modulo         ; 50000000 ; Signed Integer                                                                ;
++----------------+----------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|comparator:CMP ;
++----------------+----------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                         ;
++----------------+----------+----------------------------------------------------------------------------------------------+
+; n_bits         ; 26       ; Signed Integer                                                                               ;
+; int            ; 49999999 ; Signed Integer                                                                               ;
++----------------+----------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:25:CNT" ;
++--------+--------+----------+----------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                      ;
++--------+--------+----------+----------------------------------------------------------------------------------------------+
+; next_a ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.          ;
+; p      ; Input  ; Info     ; Stuck at GND                                                                                 ;
++--------+--------+----------+----------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:24:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:23:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:22:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:21:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:20:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:19:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:18:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:17:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:16:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:15:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:14:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:13:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:12:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:11:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:10:CNT" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:9:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:8:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:7:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:6:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:5:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:4:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:3:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:2:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:\cnt_generate:1:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                        ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:CNT" ;
++------+-------+----------+--------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                        ;
++------+-------+----------+--------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                   ;
++------+-------+----------+--------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER"                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; en    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; count ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 64                          ;
+;     CLR               ; 27                          ;
+;     ENA CLR           ; 37                          ;
+; arriav_lcell_comb     ; 50                          ;
+;     normal            ; 50                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 16                          ;
+; boundary_port         ; 47                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.91                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Sun Apr 13 18:56:49 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off device_HELLO_FSM -c device_HELLO_FSM
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file hello_fsm.vhd
+    Info (12022): Found design unit 1: HELLO_FSM-structure File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/HELLO_FSM.vhd Line: 17
+    Info (12023): Found entity 1: HELLO_FSM File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/HELLO_FSM.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file shiftregister.vhd
+    Info (12022): Found design unit 1: shiftRegn-structure File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/shiftRegister.vhd Line: 25
+    Info (12023): Found entity 1: shiftRegn File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/shiftRegister.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file regn.vhd
+    Info (12022): Found design unit 1: regn-Behavior File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/regn.vhd Line: 20
+    Info (12023): Found entity 1: regn File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/regn.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file pulse1hz.vhd
+    Info (12022): Found design unit 1: pulse1Hz-structural File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/pulse1Hz.vhd Line: 17
+    Info (12023): Found entity 1: pulse1Hz File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/pulse1Hz.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file mux7bit.vhd
+    Info (12022): Found design unit 1: mux7bit-stuctural File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/mux7bit.vhd Line: 17
+    Info (12023): Found entity 1: mux7bit File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/mux7bit.vhd Line: 10
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/mux.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: mux-stuctural File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/mux.vhd Line: 16
+    Info (12023): Found entity 1: mux File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/mux.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file modulocounter.vhd
+    Info (12022): Found design unit 1: moduloCounter-structure File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/moduloCounter.vhd Line: 25
+    Info (12023): Found entity 1: moduloCounter File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/moduloCounter.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file fsm.vhd
+    Info (12022): Found design unit 1: FSM-behaviour File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/FSM.vhd Line: 18
+    Info (12023): Found entity 1: FSM File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/FSM.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipflop-Behavior File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/flipflop.vhd Line: 16
+    Info (12023): Found entity 1: flipflop File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/flipflop.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file elementarycounter.vhd
+    Info (12022): Found design unit 1: elemCounter-structure File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/elementaryCounter.vhd Line: 19
+    Info (12023): Found entity 1: elemCounter File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/elementaryCounter.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file comparator.vhd
+    Info (12022): Found design unit 1: comparator-dataflow File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/comparator.vhd Line: 25
+    Info (12023): Found entity 1: comparator File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/comparator.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file device_hello_fsm.vhd
+    Info (12022): Found design unit 1: device_HELLO_FSM-structure File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/device_HELLO_FSM.vhd Line: 18
+    Info (12023): Found entity 1: device_HELLO_FSM File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/device_HELLO_FSM.vhd Line: 10
+Info (12127): Elaborating entity "device_HELLO_FSM" for the top level hierarchy
+Info (12128): Elaborating entity "HELLO_FSM" for hierarchy "HELLO_FSM:U1" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/device_HELLO_FSM.vhd Line: 27
+Info (12128): Elaborating entity "FSM" for hierarchy "HELLO_FSM:U1|FSM:FSM0" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/HELLO_FSM.vhd Line: 60
+Info (12128): Elaborating entity "shiftRegn" for hierarchy "HELLO_FSM:U1|shiftRegn:REG" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/HELLO_FSM.vhd Line: 70
+Info (12128): Elaborating entity "regn" for hierarchy "HELLO_FSM:U1|shiftRegn:REG|regn:\regn_generate:0:REG" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/shiftRegister.vhd Line: 46
+Info (12128): Elaborating entity "mux7bit" for hierarchy "HELLO_FSM:U1|mux7bit:MUX" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/HELLO_FSM.vhd Line: 95
+Info (12128): Elaborating entity "pulse1Hz" for hierarchy "HELLO_FSM:U1|pulse1Hz:PULSE_GEN" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/HELLO_FSM.vhd Line: 103
+Info (12128): Elaborating entity "moduloCounter" for hierarchy "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/pulse1Hz.vhd Line: 32
+Info (12128): Elaborating entity "elemCounter" for hierarchy "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:CNT" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/moduloCounter.vhd Line: 55
+Info (12128): Elaborating entity "flipflop" for hierarchy "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:CNT|flipflop:DFF" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/elementaryCounter.vhd Line: 38
+Info (12128): Elaborating entity "mux" for hierarchy "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|elemCounter:CNT|mux:MUX0" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/elementaryCounter.vhd Line: 46
+Info (12128): Elaborating entity "comparator" for hierarchy "HELLO_FSM:U1|pulse1Hz:PULSE_GEN|moduloCounter:MOD50M_COUNTER|comparator:CMP" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/moduloCounter.vhd Line: 82
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/device_HELLO_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/device_HELLO_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Synthesis/device_HELLO_FSM.vhd Line: 13
+Info (21057): Implemented 128 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 81 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4947 megabytes
+    Info: Processing ended: Sun Apr 13 18:57:11 2025
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:33
+
+

@@ -1,0 +1,38 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+-- Testbench for the 7 segment decoder
+ENTITY decoder7_testbench IS
+END decoder7_testbench;
+
+ARCHITECTURE Behavior OF decoder7_testbench IS
+
+	COMPONENT decoder7
+		PORT (
+			SW : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+			HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	SIGNAL SEL : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	SIGNAL DIG : STD_LOGIC_VECTOR(6 DOWNTO 0);
+
+BEGIN
+	PROCESS
+	BEGIN
+		SEL <= "000";
+		WAIT FOR 20 ns;
+		SEL <= "001";
+		WAIT FOR 20 ns;
+		SEL <= "010";
+		WAIT FOR 20 ns;
+		SEL <= "011";
+		WAIT FOR 20 ns;
+		SEL <= "100";
+		WAIT;
+	END PROCESS;
+
+	DUT : decoder7
+	PORT MAP(SW => SEL, HEX0 => DIG);
+
+END Behavior;

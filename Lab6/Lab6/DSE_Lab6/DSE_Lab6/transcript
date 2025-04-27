@@ -1,0 +1,17 @@
+# Compile of conv_signed13to8bit.vhd was successful.
+# Compile of conv_signed13to8bit_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.conv_signed13to8bit_tb
+# vsim -gui work.conv_signed13to8bit_tb 
+# Start time: 22:54:47 on Apr 16,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.conv_signed13to8bit_tb(testbench)
+# Loading work.conv_signed13to8bit(behavioral)
+add wave -position insertpoint sim:/conv_signed13to8bit_tb/*
+run
+# End time: 23:15:25 on Apr 16,2025, Elapsed time: 0:20:38
+# Errors: 0, Warnings: 6
+# Closing project C:/Users/viola/Downloads/DSE_Lab6/DSE_Lab6/DSE_Lab6.mpf

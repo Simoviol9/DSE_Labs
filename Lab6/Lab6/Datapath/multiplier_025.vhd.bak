@@ -1,0 +1,23 @@
+------------------------------------
+-- Group 8 - Laboratory 6
+-- Simple digital filter
+-- VHDL code of multiplier by 0.25
+------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity multiplier_025 is
+	port (
+		IN1          : in  signed(7 downto 0);           -- Shift register input
+		Q1           : out STD_LOGIC_VECTOR(12 downto 0) -- Register output
+	);
+end multiplier_025;
+
+architecture structure of multiplier_025 is
+	signal IN1_RESIZED: std_logic_vector(12 downto 0);
+begin
+	IN1_resized <= (IN1(7)&IN1(7)&IN1(7)&STD_LOGIC_VECTOR(IN1)&"00");
+	Q1 <= (IN1_RESIZED(12)&IN1_RESIZED(12)&IN1_RESIZED(12 downto 2));
+end structure;

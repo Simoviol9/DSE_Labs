@@ -1,0 +1,38 @@
+------------------------------------
+-- Group 8 - Laboratory 3
+-- Exercise 3 - 4-bit ripple carry adder
+-- VHDL code of ripple carry adder
+------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity rippleCarryAdder is
+	port (
+		A1, A2 : in  SIGNED(3 downto 0);
+		CIN    : in  STD_LOGIC;
+		B1     : out SIGNED(3 downto 0);
+		OVF    : out STD_LOGIC
+	);
+end rippleCarryAdder;
+
+architecture Behavior of rippleCarryAdder is
+
+	component fullAdder is
+		port (
+			A, B, CI : in  STD_LOGIC;
+			S, Cout   : out STD_LOGIC);
+	end component;
+
+	signal C1, C2, C3 : STD_LOGIC;
+begin
+	FA0 : fullAdder
+	port map(A1(0), A2(0), CIN, B1(0), C1);
+	FA1 : fullAdder
+	port map(A1(1), A2(1), C1, B1(1), C2);
+	FA2 : fullAdder
+	port map(A1(2), A2(2), C2, B1(2), C3);
+	FA3 : fullAdder
+	port map(A1(3), A2(3), C3, B1(3), OVF);
+end Behavior;

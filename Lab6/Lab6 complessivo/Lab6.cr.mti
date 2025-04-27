@@ -1,0 +1,261 @@
+{C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/fullAdder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/fullAdder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fullAdder
+-- Compiling architecture stuctural of fullAdder
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/register8bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/register8bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register8bit
+-- Compiling architecture Behavioral of Register8bit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/MUX2x1_10bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/MUX2x1_10bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity MUX2x1_11bit
+-- Compiling architecture Behavioral of MUX2x1_11bit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/flipflop.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/flipflop.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity flipflop
+-- Compiling architecture Behavior of flipflop
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multipiler_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multipiler_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mult2_tb
+-- Compiling architecture structure of mult2_tb
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/DP1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/DP1.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity DP1
+-- Compiling architecture structural of DP1
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_025.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_025.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity multiplier_025
+-- Compiling architecture structure of multiplier_025
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/IntervalDetector.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/IntervalDetector.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IntervalDetector
+-- Compiling architecture Behavioral of IntervalDetector
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/moduloCounter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/moduloCounter.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity moduloCounter
+-- Compiling architecture structure of moduloCounter
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/comparator.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/comparator.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity comparator
+-- Compiling architecture dataflow of comparator
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/RCA_13bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/RCA_13bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RCA_13bit
+-- Compiling architecture structural of RCA_13bit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/CU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/CU.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity controlUnit
+-- Compiling architecture Behavior of controlUnit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/DP1_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/DP1_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity DP1_tb
+-- Compiling architecture structural of DP1_tb
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/shiftRegister.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/shiftRegister.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity shiftRegn
+-- Compiling architecture structure of shiftRegn
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_05.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_05.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity multiplier_05
+-- Compiling architecture structure of multiplier_05
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/MUX3x1_8bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/MUX3x1_8bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity MUX3x1_8bit
+-- Compiling architecture Behavioral of MUX3x1_8bit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/regn.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/regn.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity regn
+-- Compiling architecture Behavior of regn
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/RCA_10bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/RCA_10bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RCA_11bit
+-- Compiling architecture structural of RCA_11bit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/main.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/main.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity main
+-- Compiling architecture structure of main
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/conv_signed13to8bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/conv_signed13to8bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity conv_signed13to8bit
+-- Compiling architecture behavioral of conv_signed13to8bit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/elementaryCounter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/elementaryCounter.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity elemCounter
+-- Compiling architecture structure of elemCounter
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/Datapath.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/Datapath.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity datapath
+-- Compiling architecture structure of datapath
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/delay.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/delay.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity delay
+-- Compiling architecture structure of delay
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_2.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity multiplier_2
+-- Compiling architecture structure of multiplier_2
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/conv_signed13to8bit_struct.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/conv_signed13to8bit_struct.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity conv_signed13to8bit_struct
+-- Compiling architecture Structural of conv_signed13to8bit_struct
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/memory.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity memory
+-- Compiling architecture bahaviour of memory
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/main_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/main_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity main_tb
+-- Compiling architecture structure of main_tb
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/mux10bit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/mux10bit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux10bit
+-- Compiling architecture stuctural of mux10bit
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_4.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/multiplier_4.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity multiplier_4
+-- Compiling architecture structure of multiplier_4
+
+} {} {}} {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/mux.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6 complessivo/mux.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux
+-- Compiling architecture stuctural of mux
+
+} {} {}}

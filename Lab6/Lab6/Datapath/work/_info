@@ -1,0 +1,764 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation
+Edp1
+Z0 w1744833150
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 311
+Z4 dC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6
+Z5 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1.vhd
+Z6 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1.vhd
+l0
+L5 1
+VX8HPSS5GaGc^aKPo6U1PL2
+!s100 U4<gXYzn9WFE]D<X9HL@@2
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1744836252
+!i10b 1
+Z9 !s108 1744836252.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1.vhd|
+Z11 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Astructural
+R1
+R2
+R3
+DEx4 work 3 dp1 0 22 X8HPSS5GaGc^aKPo6U1PL2
+!i122 311
+l79
+L13 220
+V[MZlZ?RdfET2kMAC_NUzn1
+!s100 0IRh47V<T1c2nN@;_`bWH2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edp1_tb
+Z14 w1744835825
+R1
+R2
+R3
+!i122 321
+R4
+Z15 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1_tb.vhd
+Z16 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1_tb.vhd
+l0
+L5 1
+VI=bP3gk9UOPa^IY7RJzUD3
+!s100 FzXf7aE`PelI6mAE0MT>:2
+R7
+32
+Z17 !s110 1744836254
+!i10b 1
+Z18 !s108 1744836253.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1_tb.vhd|
+Z20 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/DP1_tb.vhd|
+!i113 1
+R12
+R13
+Astructural
+R1
+R2
+R3
+DEx4 work 6 dp1_tb 0 22 I=bP3gk9UOPa^IY7RJzUD3
+!i122 321
+l26
+L8 48
+VA]FleI7X>:h9F5H<jHkVn3
+!s100 j<hi]GVa2m=>4dbRKHnK[1
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Efulladder
+Z21 w1744823275
+R2
+R3
+!i122 320
+R4
+Z22 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/fullAdder.vhd
+Z23 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/fullAdder.vhd
+l0
+Z24 L10 1
+V74Sgzf7XW<LWkZHQDceVI3
+!s100 EXdQ<gYFJbXoASzC]6g6a0
+R7
+32
+Z25 !s110 1744836253
+!i10b 1
+R18
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/fullAdder.vhd|
+Z27 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/fullAdder.vhd|
+!i113 1
+R12
+R13
+Astuctural
+R2
+R3
+DEx4 work 9 fulladder 0 22 74Sgzf7XW<LWkZHQDceVI3
+!i122 320
+l26
+L17 19
+VBkDEP5JLK8]X2z8daYAOK2
+!s100 IF?H?5;ZH=mSWMZ??QOPj0
+R7
+32
+R25
+!i10b 1
+R18
+R26
+R27
+!i113 1
+R12
+R13
+Ememory
+Z28 w1744797757
+R1
+R2
+R3
+!i122 312
+R4
+Z29 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/memory.vhd
+Z30 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/memory.vhd
+l0
+Z31 L11 1
+Vo9ekTKJTEZazB@^hb2_3m1
+!s100 S?SAGJ:lZYIA=Ib8GN4kl2
+R7
+32
+R8
+!i10b 1
+R9
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/memory.vhd|
+Z33 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/memory.vhd|
+!i113 1
+R12
+R13
+Abahaviour
+R1
+R2
+R3
+DEx4 work 6 memory 0 22 o9ekTKJTEZazB@^hb2_3m1
+!i122 312
+l26
+L19 25
+Vk?@MH=Wl9O6MEe^_z<c4n0
+!s100 U<<LQVo4;cWB1zKQL5WL[3
+R7
+32
+R8
+!i10b 1
+R9
+R32
+R33
+!i113 1
+R12
+R13
+Emult2_tb
+Z34 w1744836206
+R1
+R2
+R3
+!i122 315
+R4
+Z35 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipiler_tb.vhd
+Z36 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipiler_tb.vhd
+l0
+R31
+V?n4hPkg`8zmJN_5e5b==E0
+!s100 Jh7lL=L`9[daSVFz9<E5A2
+R7
+32
+R25
+!i10b 1
+R9
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipiler_tb.vhd|
+Z38 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipiler_tb.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 8 mult2_tb 0 22 ?n4hPkg`8zmJN_5e5b==E0
+!i122 315
+l27
+L14 36
+VW>9k9>7iDmT?L;lR5AI`G1
+!s100 zbLeozhE^f@9lIl@_5B5S2
+R7
+32
+R25
+!i10b 1
+R9
+R37
+R38
+!i113 1
+R12
+R13
+Emult4
+Z39 w1744805423
+R1
+R2
+R3
+!i122 28
+R4
+Z40 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipliers.vhd
+Z41 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipliers.vhd
+l0
+R31
+VFU<SZeH1AFWjUN;Wi3c?R2
+!s100 BUUg[WJmKI=4H1K_gAU<c3
+R7
+32
+Z42 !s110 1744806040
+!i10b 1
+Z43 !s108 1744806040.000000
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipliers.vhd|
+Z45 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multipliers.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 5 mult4 0 22 FU<SZeH1AFWjUN;Wi3c?R2
+!i122 28
+l20
+Z46 L18 6
+VOm3;0WQIeOK9nz3MjC4Zj0
+!s100 HBal9:N@?D]4V48Gn0:@Q0
+R7
+32
+R42
+!i10b 1
+R43
+R44
+R45
+!i113 1
+R12
+R13
+Emult42_tb
+w1744806279
+R1
+R2
+R3
+!i122 303
+R4
+Z47 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplierBIS.vhd
+Z48 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplierBIS.vhd
+l0
+R31
+VcVi96fSC9b>k[;;>W3dfz0
+!s100 RI4_:QLOaIPi`AE=WZ]m]3
+R7
+32
+!s110 1744835829
+!i10b 1
+!s108 1744835829.000000
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplierBIS.vhd|
+Z50 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplierBIS.vhd|
+!i113 1
+R12
+R13
+Emult4_tb
+w1744804985
+R1
+R2
+R3
+!i122 58
+R4
+R47
+R48
+l0
+R31
+VYLb`U@E[Za<:DULDAI4a81
+!s100 BCB]eHZZak=fQ>2KQ]f@e0
+R7
+32
+!s110 1744806194
+!i10b 1
+!s108 1744806194.000000
+R49
+R50
+!i113 1
+R12
+R13
+Astructure
+w1744806191
+R1
+R2
+R3
+DEx4 work 8 mult4_tb 0 22 MVJDzAFk2V]IMh@D?IiaY0
+!i122 50
+l25
+L14 31
+VOOlo6i>^TN^HQ>IEXD2Q`1
+!s100 lKC7HCI::ZDemYebfPG6T0
+R7
+32
+!s110 1744806150
+!i10b 1
+!s108 1744806150.000000
+R37
+R38
+!i113 1
+R12
+R13
+R36
+R35
+Emultiplier_025
+Z51 w1744830977
+R1
+R2
+R3
+!i122 318
+R4
+Z52 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_025.vhd
+Z53 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_025.vhd
+l0
+R31
+VFT;nR;doV2FFf=@oU2G9C2
+!s100 :kMeSPDIKn?@a]Vf?8]Qe1
+R7
+32
+R25
+!i10b 1
+R18
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_025.vhd|
+Z55 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_025.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 14 multiplier_025 0 22 FT;nR;doV2FFf=@oU2G9C2
+!i122 318
+l20
+R46
+V;ZbiVz[7IaHN2@_Ul51>N1
+!s100 JKd<QMfQ8E[?@9U4k?:M^0
+R7
+32
+R25
+!i10b 1
+R18
+R54
+R55
+!i113 1
+R12
+R13
+Emultiplier_05
+Z56 w1744830965
+R1
+R2
+R3
+!i122 317
+R4
+Z57 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_05.vhd
+Z58 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_05.vhd
+l0
+R31
+V8gR]N3AMEdPV0A<WR0?hZ2
+!s100 5T;NC=E=e;24[5M:jz?fe1
+R7
+32
+R25
+!i10b 1
+R18
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_05.vhd|
+Z60 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_05.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 13 multiplier_05 0 22 8gR]N3AMEdPV0A<WR0?hZ2
+!i122 317
+l20
+R46
+V]A>9CcI:BKB;KVbKil<ld1
+!s100 @fO:SX_g@@TJVL6o>:?OX2
+R7
+32
+R25
+!i10b 1
+R18
+R59
+R60
+!i113 1
+R12
+R13
+Emultiplier_2
+Z61 w1744831015
+R1
+R2
+R3
+!i122 316
+R4
+Z62 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_2.vhd
+Z63 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_2.vhd
+l0
+R31
+V7bSP2TniGFaJcfnicL[ZS3
+!s100 1]WR[3<oYBM25HFF_Sd`z1
+R7
+32
+R25
+!i10b 1
+R18
+Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_2.vhd|
+Z65 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_2.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 12 multiplier_2 0 22 7bSP2TniGFaJcfnicL[ZS3
+!i122 316
+l20
+R46
+V9jjnI^;k>hoGV<[L_Ogl70
+!s100 RP0`<RF_0DD0CI<43GWhF1
+R7
+32
+R25
+!i10b 1
+R18
+R64
+R65
+!i113 1
+R12
+R13
+Emultiplier_4
+Z66 w1744832823
+R1
+R2
+R3
+!i122 322
+R4
+Z67 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_4.vhd
+Z68 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_4.vhd
+l0
+R31
+Vko<<Xh8Hkn81;1L4GL0[m1
+!s100 ?cFki<Vk8?W_eODfJckI=0
+R7
+32
+R17
+!i10b 1
+Z69 !s108 1744836254.000000
+Z70 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_4.vhd|
+Z71 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/multiplier_4.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 12 multiplier_4 0 22 ko<<Xh8Hkn81;1L4GL0[m1
+!i122 322
+l20
+R46
+V:n:I0aG<MADfIiLZ3zkO_2
+!s100 IV4h@=Q@bO`Ozj0I>k?7M3
+R7
+32
+R17
+!i10b 1
+R69
+R70
+R71
+!i113 1
+R12
+R13
+Emultplier_2
+Z72 w1744806067
+R1
+R2
+R3
+!i122 45
+R4
+R62
+R63
+l0
+R31
+VIWcACVm<`o]d17Ek0N^_20
+!s100 ^NM7EJz;h25I0CGQNGC]L0
+R7
+32
+Z73 !s110 1744806092
+!i10b 1
+Z74 !s108 1744806092.000000
+R64
+R65
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 11 multplier_2 0 22 IWcACVm<`o]d17Ek0N^_20
+!i122 45
+l20
+R46
+Vod[KKz3ZF9mMlGNz^?<oR3
+!s100 =A0YfJ2?o8;?bVnF4HJIB3
+R7
+32
+R73
+!i10b 1
+R74
+R64
+R65
+!i113 1
+R12
+R13
+Emultplier_4
+Z75 w1744831003
+R1
+R2
+R3
+!i122 230
+R4
+R40
+R41
+l0
+R31
+VClREc31cKn^:cg:62EIAc0
+!s100 kcndih3;1RNX^Kg1L]V[@0
+R7
+32
+Z76 !s110 1744832418
+!i10b 1
+Z77 !s108 1744832417.000000
+R44
+R45
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 11 multplier_4 0 22 ClREc31cKn^:cg:62EIAc0
+!i122 230
+l20
+R46
+VM>l?^_KjQ]gQ9VHHzOdBT1
+!s100 <;RFHB>R_lgFllb`;0a0o1
+R7
+32
+R76
+!i10b 1
+R77
+R44
+R45
+!i113 1
+R12
+R13
+Emux
+Z78 w1743112838
+R2
+R3
+!i122 319
+R4
+Z79 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/mux.vhd
+Z80 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/mux.vhd
+l0
+R24
+VzkiIJMk^m7n?K]UMn8kSC3
+!s100 93AQo`kIMdT;OojiQ2XiD1
+R7
+32
+R25
+!i10b 1
+R18
+Z81 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/mux.vhd|
+Z82 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/mux.vhd|
+!i113 1
+R12
+R13
+Adataflow
+R2
+R3
+DEx4 work 3 mux 0 22 zkiIJMk^m7n?K]UMn8kSC3
+!i122 319
+l17
+L16 5
+VDz17lFJ]fYC@U7X7DQQCl1
+!s100 d8`1;TjD>j@1f?c;lnhDe0
+R7
+32
+R25
+!i10b 1
+R18
+R81
+R82
+!i113 1
+R12
+R13
+Erca_13bit
+Z83 w1744831262
+R1
+R2
+R3
+!i122 323
+R4
+Z84 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/RCA_13bit.vhd
+Z85 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/RCA_13bit.vhd
+l0
+R31
+VQ?6ni6=KAGROhbG:Tjhk80
+!s100 L@E`DQE_MkjE4ab1oD_MC2
+R7
+32
+R17
+!i10b 1
+R69
+Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/RCA_13bit.vhd|
+!s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/RCA_13bit.vhd|
+!i113 1
+R12
+R13
+Astructural
+R1
+R2
+R3
+Z87 DEx4 work 9 rca_13bit 0 22 Q?6ni6=KAGROhbG:Tjhk80
+!i122 323
+l29
+Z88 L20 27
+Z89 VBWjU]MUWQhG7g3cY5K;]l0
+Z90 !s100 l`YZ2g9agg?3?aNM?]?i62
+R7
+32
+R17
+!i10b 1
+R69
+R86
+Z91 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/RCA_13bit.vhd|
+!i113 1
+R12
+R13
+Eregn
+Z92 w1744830630
+R1
+R2
+R3
+!i122 313
+R4
+Z93 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/regn.vhd
+Z94 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/regn.vhd
+l0
+R31
+VzN1]4lG]VUI99oKP:?oY;0
+!s100 Kg?0C6<?iKzZ45Mnc1J2n0
+R7
+32
+R8
+!i10b 1
+R9
+Z95 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/regn.vhd|
+Z96 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/regn.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R1
+R2
+R3
+DEx4 work 4 regn 0 22 zN1]4lG]VUI99oKP:?oY;0
+!i122 313
+l21
+L20 13
+V`WHXT36^D4GndQG3dbhm=3
+!s100 cFlN8]XT:L_@;>JAoC]8k1
+R7
+32
+R8
+!i10b 1
+R9
+R95
+R96
+!i113 1
+R12
+R13
+Eshiftregn
+Z97 w1744830818
+R1
+R2
+R3
+!i122 314
+R4
+Z98 8C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/shiftRegister.vhd
+Z99 FC:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/shiftRegister.vhd
+l0
+R31
+V:ZkU:<]BS6S9lb=>C=oVK3
+!s100 VJ=WCW^JS227Fiem3iVN`2
+R7
+32
+R8
+!i10b 1
+R9
+Z100 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/shiftRegister.vhd|
+Z101 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab6/shiftRegister.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+R3
+DEx4 work 9 shiftregn 0 22 :ZkU:<]BS6S9lb=>C=oVK3
+!i122 314
+l42
+L24 41
+VTZB`me;hCPUa]oWkhdEJ:3
+!s100 9=2gz0o;U5S<=eJ8=aXg^3
+R7
+32
+R8
+!i10b 1
+R9
+R100
+R101
+!i113 1
+R12
+R13

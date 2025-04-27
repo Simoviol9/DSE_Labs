@@ -1,0 +1,47 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity THOUSAND_SUBTRACTOR is
+    Port (
+        value_in     : in  std_logic_vector(11 downto 0); -- Original value (0 to 4095)
+        thousands    : in  std_logic_vector(3 downto 0);  -- Thousands digit from comparator (0 to 4)
+        hundreds_out : out std_logic_vector(3 downto 0)   -- Output: hundreds digit (0 to 9 in binary)
+    );
+end THOUSAND_SUBTRACTOR;
+
+architecture behavioral of THOUSAND_SUBTRACTOR is
+begin
+    process(value_in, thousands)
+        variable val_int         : integer;
+        variable remainder       : integer;
+        variable hundreds_digit  : integer;
+    begin
+        -- Convert the 12-bit input to an integer
+        val_int := to_integer(unsigned(value_in));
+        
+        -- Subtract the thousands value multiplied by 1000
+        -- Note: Since the thousands value is between 0 and 4, we use a case statement.
+        case thousands is
+            when "0000" =>
+                remainder := val_int;         -- 0 thousands, subtract 0
+            when "0001" =>
+                remainder := val_int - 1000;    -- 1 thousand
+            when "0010" =>
+                remainder := val_int - 2000;    -- 2 thousands
+            when "0011" =>
+                remainder := val_int - 3000;    -- 3 thousands
+            when "0100" =>
+                remainder := val_int - 4000;    -- 4 thousands
+            when others =>
+                remainder := 0;  -- Error or out-of-range condition
+        end case;
+        
+        -- Calculate the hundreds digit from the remainder
+        -- (Integer division by 100 gives the hundreds digit)
+        hundreds_digit := remainder / 100;
+        
+        -- Convert the hundreds digit to a 4-bit std_logic_vector and assign to output
+        hundreds_out <= std_logic_vector(to_unsigned(hundreds_digit, 4));
+    end process;
+end behavioral;

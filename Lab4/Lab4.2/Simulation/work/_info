@@ -1,0 +1,318 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.1/Simulation
+Eb16counter
+Z0 w1742806542
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation
+Z5 8C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter.vhd
+Z6 FC:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter.vhd
+l0
+L5
+V7jgYM5^b7>@J6a?8C=65k3
+!s100 M<`8GeamB@_g53N36X[z30
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1742806543
+!i10b 1
+Z9 !s108 1742806543.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter.vhd|
+Z11 !s107 C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Astructure
+R1
+R2
+R3
+DEx4 work 10 b16counter 0 22 7jgYM5^b7>@J6a?8C=65k3
+l36
+L14
+V3[S6BfJGH>Ek8a4az8Oh^1
+!s100 X7CNaAj1ndzO4ed2hQ7>@1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eb16counter_tb
+Z14 w1742809215
+R1
+R2
+R3
+R4
+Z15 8C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter_tb.vhd
+Z16 FC:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter_tb.vhd
+l0
+L11
+VB48;McY?]_i98G?ICgUme3
+!s100 JdT4Y>KUOFJLTE_PX7>0<0
+R7
+32
+Z17 !s110 1742809216
+!i10b 1
+Z18 !s108 1742809216.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter_tb.vhd|
+Z20 !s107 C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\struct_16bitSynchCounter_tb.vhd|
+!i113 1
+R12
+R13
+Abehaviout
+R1
+R2
+R3
+DEx4 work 13 b16counter_tb 0 22 B48;McY?]_i98G?ICgUme3
+l27
+L14
+VKF=2SB^`Y>9VILl4iFbV]3
+!s100 IoRX=Oez;lQgG?4m1g^kK1
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Atest
+R1
+R2
+R3
+DEx4 work 13 b16counter_tb 0 22 =oLNYQPL;H;^6]nIhTi3H3
+l24
+L8
+VeW^Z]CIzP4dH1c=VTMl<02
+!s100 9`h@hB4^EbHdEiFT6NgL;0
+R7
+32
+!s110 1742808286
+!i10b 1
+!s108 1742808286.000000
+R19
+R20
+!i113 1
+R12
+R13
+Z21 w1742801580
+Ecounter16bit
+Z22 w1742808644
+R2
+Z23 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+Z24 dC:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation
+Z25 8C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc.vhd
+Z26 FC:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc.vhd
+l0
+Z27 L10 1
+V8R9idZg4LCdoYm=JkCiFV0
+!s100 CM6mAoI]ZaVo?8AgBB<A<1
+Z28 OV;C;2020.1;71
+32
+Z29 !s110 1743337973
+!i10b 1
+Z30 !s108 1743337973.000000
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc.vhd|
+Z32 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc.vhd|
+!i113 1
+R12
+R13
+Astructure
+R2
+R23
+DEx4 work 12 counter16bit 0 22 8R9idZg4LCdoYm=JkCiFV0
+!i122 0
+l30
+L17 42
+V@`_D=[>Fo=@G9>G_^i5Zf2
+!s100 M6MT`<<>48kf3nkMc3;;V3
+R28
+32
+R29
+!i10b 1
+R30
+R31
+R32
+!i113 1
+R12
+R13
+Ecounter16bit_tb
+Z33 w1742809352
+Z34 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R23
+!i122 1
+R24
+Z35 8C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc_tb.vhd
+Z36 FC:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc_tb.vhd
+l0
+L11 1
+V=_f=mddWe<LMlo8;0k;Pi3
+!s100 2n=4em>@kTQk8_CNV=[_;0
+R28
+32
+R29
+!i10b 1
+R30
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc_tb.vhd|
+Z38 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/counter16bit_struc_tb.vhd|
+!i113 1
+R12
+R13
+Abehaviout
+R34
+R2
+R23
+DEx4 work 15 counter16bit_tb 0 22 =_f=mddWe<LMlo8;0k;Pi3
+!i122 1
+l27
+L14 185
+VG0gPc`<EDSF4V^?EMDoEa0
+!s100 ;@m3Pa1GFK8lZf5563j>W1
+R28
+32
+R29
+!i10b 1
+R30
+R37
+R38
+!i113 1
+R12
+R13
+Eseven_seg_dec
+R21
+R2
+R3
+R4
+Z39 8C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\decoder_7segment.vhd
+Z40 FC:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\decoder_7segment.vhd
+l0
+L4
+VLc?0D1BG<=o5LZ8`Z9@bO2
+!s100 =BLm6QA][3=Cfk<SgbP`<3
+R7
+32
+Z41 !s110 1742809353
+!i10b 1
+Z42 !s108 1742809353.000000
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\decoder_7segment.vhd|
+Z44 !s107 C:\Users\S310779\Desktop\DSE\Laboratory\Lab4\Lab4.2\Simulation\decoder_7segment.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+DEx4 work 13 seven_seg_dec 0 22 Lc?0D1BG<=o5LZ8`Z9@bO2
+l12
+L10
+VQ<eSR?`UImOoAWD5<D`Vz0
+!s100 ;cfA9EEGY6^P>UokOA<bY3
+R7
+32
+R41
+!i10b 1
+R42
+R43
+R44
+!i113 1
+R12
+R13
+Et_flipflop
+Z45 w1742808576
+R2
+R23
+!i122 2
+R24
+Z46 8C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/T_FlipFlop.vhd
+Z47 FC:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/T_FlipFlop.vhd
+l0
+R27
+VZOWA2Mc2<4?inV`[EhO0K1
+!s100 2KLKU1bj]Q4F7FRGZK=ab0
+R28
+32
+R29
+!i10b 1
+R30
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/T_FlipFlop.vhd|
+!s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/T_FlipFlop.vhd|
+!i113 1
+R12
+R13
+Abehaviour
+R2
+R23
+Z49 DEx4 work 10 t_flipflop 0 22 ZOWA2Mc2<4?inV`[EhO0K1
+!i122 2
+l23
+L19 16
+Z50 VY2h[6IHY3l[5SIed;FdOm1
+Z51 !s100 QHPFJDfk@hoDl7Ei26Ch;3
+R28
+32
+R29
+!i10b 1
+R30
+R48
+Z52 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/T_FlipFlop.vhd|
+!i113 1
+R12
+R13
+Etoggleff
+Z53 w1742805601
+R1
+R2
+R3
+R4
+Z54 8C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/toggleff.vhd
+Z55 FC:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/toggleff.vhd
+l0
+L5
+VgPMAl`lhnME:n1JI1R16H2
+!s100 YY2Y?^<e`9Ohj4BDjmP>:1
+R7
+32
+Z56 !s110 1742808287
+!i10b 1
+Z57 !s108 1742808287.000000
+Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/toggleff.vhd|
+Z59 !s107 C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.2/Simulation/toggleff.vhd|
+!i113 1
+R12
+R13
+Abehaviour
+R1
+R2
+R3
+DEx4 work 8 toggleff 0 22 gPMAl`lhnME:n1JI1R16H2
+l17
+L13
+VZlQWQi4IOAQc3aob027@T3
+!s100 _=8A:2gUL_kWFGo0heWfl0
+R7
+32
+R56
+!i10b 1
+R57
+R58
+R59
+!i113 1
+R12
+R13

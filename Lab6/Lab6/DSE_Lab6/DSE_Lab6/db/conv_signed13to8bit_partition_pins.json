@@ -1,0 +1,93 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Y8s[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Y8s[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Y8s[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Y8s[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Y8s[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Y8s[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Y8s[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Y8s[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_enable",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Y13s[8]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

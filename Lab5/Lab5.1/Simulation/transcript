@@ -1,0 +1,35 @@
+# Compile of flipflop.vhd was successful.
+# Compile of FSM.vhd was successful.
+# Compile of FSM_tb.vhd failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+# Compile of flipflop.vhd was successful.
+# Compile of FSM.vhd was successful.
+# Compile of FSM_tb.vhd failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+# Compile of flipflop.vhd was successful.
+# Compile of FSM.vhd was successful.
+# Compile of FSM_tb.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.sequencedetector_tb
+# vsim -gui work.sequencedetector_tb 
+# Start time: 22:53:49 on Apr 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.sequencedetector_tb(testbench)
+# Loading work.sequencedetector(structure)
+# Loading work.flipflop(behavior)
+add wave -position insertpoint sim:/sequencedetector_tb/uut/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 23:00:35 on Apr 14,2025, Elapsed time: 0:06:46
+# Errors: 0, Warnings: 8

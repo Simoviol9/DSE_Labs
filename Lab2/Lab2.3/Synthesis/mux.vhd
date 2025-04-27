@@ -1,0 +1,15 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY mux IS
+	PORT (
+		A1, A2 : IN STD_LOGIC;
+		SEL : IN STD_LOGIC;
+		OUTPUT : OUT STD_LOGIC
+	);
+END mux;
+
+ARCHITECTURE Structural OF mux IS
+BEGIN
+	OUTPUT <= (A1 AND NOT(SEL)) OR (A2 AND SEL);
+END Structural;

@@ -1,0 +1,109 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tb_one_hot_fsm is
+end tb_one_hot_fsm;
+
+architecture Behavioral of tb_one_hot_fsm is
+
+    -- Component of the FSM to be tested
+    component one_hot_fsm is
+        Port (
+            LEDR : out std_logic_VECTOR (9 downto 0);
+            SW   : in  std_logic_vector(9 downto 0);
+            KEY  : in  std_logic_vector(3 downto 0)
+        );
+    end component;
+
+    -- Testbench signals to connect to the FSM
+    signal tb_LEDR : std_logic_VECTOR(9 downto 0);
+    signal tb_SW   : std_logic_vector(9 downto 0);
+    signal tb_KEY  : std_logic_vector(3 downto 0);
+
+    constant clk_period : time := 10 ns; -- Defines the clock period
+
+begin
+    -- Instantiate the FSM
+    uut: one_hot_fsm Port Map (
+        LEDR => tb_LEDR,
+        SW   => tb_SW,
+        KEY  => tb_KEY
+    );
+
+    -- Clock generation for KEY(0)
+    clock_process: process
+    begin
+        tb_KEY(0) <= '0';
+        wait for clk_period/2;
+        tb_KEY(0) <= '1';
+        wait for clk_period/2; --the other part of the time 
+    end process;
+
+    -- Tie off unused signals (KEY(3 downto 1) and SW(9 downto 2))
+    tb_KEY(3 downto 1) <= (others => '0');
+    tb_SW(9 downto 2)  <= (others => '0');
+
+    -- Stimulus process to provide test input sequences
+    process
+    begin
+        -- Initially assert reset: set SW(0) to '0' (active reset)
+        tb_SW(0) <= '0';
+        tb_SW(1) <= '0';  -- W is irrelevant while reset is active
+        wait for 20 ns;   -- Wait for a few clock cycles
+
+        -- De-assert reset: set SW(0) to '1' and we will be in the condition A
+        tb_SW(0) <= '1';
+        wait for clk_period;  -- Wait one clock cycle
+
+        ------------------------------------------------------------------------------
+        -- Sequence 1: Apply W = '0' for 4+ cycles to verify recognition of four consecutive 0's
+        ------------------------------------------------------------------------------
+        tb_SW(1) <= '1';
+        wait for clk_period;  -- Cycle 1: Transition A -> F
+        wait for clk_period;  -- Cycle 2: Transition F -> G
+        wait for clk_period;  -- Cycle 3: Transition G -> H
+        wait for clk_period;  -- Cycle 4: Transition I -> I (expected LEDR(0) = '1')
+        wait for clk_period;  -- One extra cycle to check stability
+
+        ------------------------------------------------------------------------------
+        -- Sequence 2: Brief reset and apply W = '1' for 4+ cycles to verify recognition of four consecutive 1's
+        ------------------------------------------------------------------------------
+        -- Return the FSM to a known state by briefly asserting reset
+        tb_SW(0) <= '0';
+        wait for clk_period;
+        tb_SW(0) <= '1';
+        wait for clk_period;
+
+        tb_SW(1) <= '0';
+        wait for clk_period;  -- Cycle 1: Transition A -> B
+        wait for clk_period;  -- Cycle 2: Transition B -> C
+        wait for clk_period;  -- Cycle 3: Transition C -> D
+        wait for clk_period;  -- Cycle 4: Transition D -> E (expected LEDR(0) = '1')
+        wait for clk_period;
+
+        ------------------------------------------------------------------------------
+        -- Sequence 3: Overlapping test – Apply W = '1' for 5 consecutive cycles
+        -- Expected: LEDR(0) should be '1' during cycles 4 and 5
+        ------------------------------------------------------------------------------
+        tb_SW(0) <= '0';  -- Briefly assert reset to return to a known state
+        wait for clk_period;
+        tb_SW(0) <= '1';
+        wait for clk_period;
+
+        tb_SW(1) <= '0';
+        wait for clk_period;  -- Cycle 1: Transition A -> B
+        wait for clk_period;  -- Cycle 2: Transition B -> C
+        wait for clk_period;  -- Cycle 3: Transition C -> D
+        wait for clk_period;  -- Cycle 4: Transition D -> E (expected LEDR(0) = '1')
+        wait for clk_period;  -- Cycle 5: Remain in D (LEDR(0) still '1')
+		  tb_SW(1) <= '1'; --Transition E -> F
+        wait for clk_period;
+
+        ------------------------------------------------------------------------------
+        -- End of simulation
+        ------------------------------------------------------------------------------
+        wait for 20 ns;
+       
+    end process;
+
+end Behavioral;

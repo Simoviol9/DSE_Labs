@@ -1,0 +1,105 @@
+---------------------------------
+--		Group n. 08 - Laboratory n. 06
+--		Title: A simple digital filter
+--		VHDL model of "conv_signed13to8bit_tb"
+---------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+ENTITY conv_signed13to8bit_tb IS
+END conv_signed13to8bit_tb;
+
+ARCHITECTURE testbench OF conv_signed13to8bit_tb IS
+
+	COMPONENT conv_signed13to8bit IS
+    Port (
+        Y13s : in  STD_LOGIC_VECTOR(12 downto 0); -- 13 bit signed input
+        Y8s  : out STD_LOGIC_VECTOR(7 downto 0)   -- 8 bit signed output
+    );
+	END COMPONENT;
+
+	SIGNAL clk_enable : STD_LOGIC := '0';
+	SIGNAL clk : STD_LOGIC;
+	SIGNAL Y13s_tb :  STD_LOGIC_VECTOR(12 downto 0);
+
+BEGIN
+	PROCESS
+	BEGIN
+
+		-- initial enable_clk = '0'
+		-- testing of the initial 3 rising edge of the clock
+		clk_enable <= '0';
+		Y13s_tb <= "00000100";
+		clk <= '0';
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+	
+		clk <= '0';
+		WAIT FOR 1 ns;
+		clk <= '1';
+		clk_enable <= '1';
+		WAIT FOR 1 ns;
+		
+		-- initial 3 rising edge are done
+		-- start of convertion
+		
+		clk <= '0';
+		Y13s_tb <= "0000000100100";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		Y13s_tb <= "0000000100101";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		Y13s_tb <= "0000000100110";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		Y13s_tb <= "0000000100111";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		Y13s_tb <= "0010100100000";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		Y13s_tb <= "0000011011101";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		Y13s_tb <= "0000010000000";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		clk <= '0';
+		Y13s_tb <= "0000001111111";
+		WAIT FOR 1 ns;
+		clk <= '1';
+		WAIT FOR 1 ns;
+		
+		WAIT;
+	END PROCESS;
+ 
+END testbench;

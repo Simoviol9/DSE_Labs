@@ -1,0 +1,100 @@
+C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/shiftRegister.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/shiftRegister.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity shiftRegn
+-- Compiling architecture structure of shiftRegn
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/pulse1Hz.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/pulse1Hz.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity pulse1Hz
+-- Compiling architecture structural of pulse1Hz
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/regn.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/regn.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity regn
+-- Compiling architecture Behavior of regn
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/FSM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/FSM.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FSM
+-- Compiling architecture behaviour of FSM
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/elementaryCounter.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/elementaryCounter.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity elemCounter
+-- Compiling architecture structure of elemCounter
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/HELLO_FSM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/HELLO_FSM.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity HELLO_FSM
+-- Compiling architecture structure of HELLO_FSM
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux
+-- Compiling architecture stuctural of mux
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/flipflop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/flipflop.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity flipflop
+-- Compiling architecture Behavior of flipflop
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/HELLO_FSM_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/HELLO_FSM_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity HELLO_FSM_tb
+-- Compiling architecture behaviour of HELLO_FSM_tb
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/comparator.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/comparator.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity comparator
+-- Compiling architecture dataflow of comparator
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/moduloCounter.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/moduloCounter.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity moduloCounter
+-- Compiling architecture structure of moduloCounter
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/mux7bit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.4/Simulation/mux7bit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux7bit
+-- Compiling architecture stuctural of mux7bit
+
+} {} {}}

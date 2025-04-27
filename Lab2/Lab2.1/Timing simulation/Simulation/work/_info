@@ -1,0 +1,150 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Edecoder7
+Z0 w1742663991
+Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
+Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z6 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
+!i122 29
+Z7 dC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Timing simulation/Simulation
+Z8 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Timing simulation/Simulation/decoder7.vho
+Z9 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Timing simulation/Simulation/decoder7.vho
+l0
+L78 1
+VzMBFXXFU:o`9bX?ooOfGU1
+!s100 H`iCN^hT_B=L:51j>7];U0
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1742664048
+!i10b 1
+Z12 !s108 1742664048.000000
+Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Timing simulation/Simulation/decoder7.vho|
+Z14 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Timing simulation/Simulation/decoder7.vho|
+!i113 1
+Z15 o-work work -2002 -explicit
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 decoder7 0 22 zMBFXXFU:o`9bX?ooOfGU1
+!i122 29
+l132
+L98 240
+V?f`C_I_9JacmV2@jE^cnS0
+!s100 j5o9hXVN>i??OFHnRHk5l3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Edecoder7_testbench
+Z17 w1741903650
+R4
+R5
+!i122 30
+R7
+Z18 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd
+Z19 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd
+l0
+L11 1
+V<k3Znn@IIlgWY?B]9AV[L3
+!s100 TZFVMR0U@HozdP<zb?J7X1
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd|
+Z21 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R4
+R5
+Z22 DEx4 work 18 decoder7_testbench 0 22 <k3Znn@IIlgWY?B]9AV[L3
+!i122 30
+l26
+Z23 L14 32
+Z24 V@;dL275;:0zBMe15Xc?lN2
+Z25 !s100 K7mde<Ha^5I7flM39mR@E2
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16
+Ehard_block
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+!i122 29
+R7
+R8
+R9
+l0
+L35 1
+Vlmii]zleeR6Qln=@YIVJi2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 10 hard_block 0 22 lmii]zleeR6Qln=@YIVJi2
+!i122 29
+l65
+L51 20
+V=_0GiacKDWo;CBD3Z7?5c1
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16

@@ -1,0 +1,33 @@
+# Compile of FSM.vhd was successful.
+# Compile of FSM.vhd was successful.
+# Compile of FSM.vhd failed with 1 errors.
+# Compile of FSM_tb.vhd was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of FSM.vhd was successful.
+# Compile of FSM_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.sequencedetector_tb
+# vsim -gui work.sequencedetector_tb 
+# Start time: 21:21:26 on Apr 01,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.sequencedetector_tb(structure)
+# Loading work.sequencedetector(behavior)
+add wave -position insertpoint  \
+sim:/sequencedetector_tb/UUT/Z \
+sim:/sequencedetector_tb/UUT/Y_Q \
+sim:/sequencedetector_tb/UUT/Y_D \
+sim:/sequencedetector_tb/UUT/W \
+sim:/sequencedetector_tb/UUT/RESN \
+sim:/sequencedetector_tb/UUT/CLK
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 21:22:31 on Apr 01,2025, Elapsed time: 0:01:05
+# Errors: 0, Warnings: 6

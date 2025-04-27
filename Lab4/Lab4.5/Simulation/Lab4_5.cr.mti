@@ -1,0 +1,110 @@
+C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/flipflop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/flipflop.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity flipflop
+-- Compiling architecture Behavior of flipflop
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/gated_SRlatch.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/gated_SRlatch.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity gated_SRlatch
+-- Compiling architecture Structural of gated_SRlatch
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/counter16bit_struc.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/counter16bit_struc.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity counter16bit
+-- Compiling architecture structure of counter16bit
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/elementaryCounter.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/elementaryCounter.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity elemCounter
+-- Compiling architecture structure of elemCounter
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/reactionTimer.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/reactionTimer.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity reactionTimer
+-- Compiling architecture structure of reactionTimer
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/T_FlipFlop.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/T_FlipFlop.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity T_FlipFlop
+-- Compiling architecture behaviour of T_FlipFlop
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/comparator.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/comparator.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity comparator
+-- Compiling architecture dataflow of comparator
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/BinToBcd_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/BinToBcd_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity BCD_converter_tb
+-- Compiling architecture behavior of BCD_converter_tb
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux
+-- Compiling architecture stuctural of mux
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/reactionTimer_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/reactionTimer_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity reactionTimer_tb
+-- Compiling architecture structure of reactionTimer_tb
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/BinToBcd.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/BinToBcd.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity BCD_converter
+-- Compiling architecture behavior of BCD_converter
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/moduloCounter.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/moduloCounter.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity moduloCounter
+-- Compiling architecture structure of moduloCounter
+
+} {} {}} C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/comparator_typeB.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.5/Simulation/comparator_typeB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity comparator_typeB
+-- Compiling architecture dataflow of comparator_typeB
+
+} {} {}}

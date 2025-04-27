@@ -1,0 +1,3247 @@
+|digitalFilter
+START => controlUnit:CU.START
+CLK => datapath:DP.CLK
+CLK => controlUnit:CU.CLK
+CLK => memory:MEMA.CLK
+CLK => memory:MEMB.CLK
+RES => datapath:DP.RES
+RES => controlUnit:CU.RESN
+DATA_IN[0] => memory:MEMA.DATA_IN[0]
+DATA_IN[1] => memory:MEMA.DATA_IN[1]
+DATA_IN[2] => memory:MEMA.DATA_IN[2]
+DATA_IN[3] => memory:MEMA.DATA_IN[3]
+DATA_IN[4] => memory:MEMA.DATA_IN[4]
+DATA_IN[5] => memory:MEMA.DATA_IN[5]
+DATA_IN[6] => memory:MEMA.DATA_IN[6]
+DATA_IN[7] => memory:MEMA.DATA_IN[7]
+DONE << controlUnit:CU.DONE
+
+
+|digitalFilter|datapath:DP
+CNT0_ENABLE => moduloCounter:CNT0.EN
+SHIFTREG_EN => delayUnit:DEL.RES
+SHIFTREG_EN => processingUnit:U1.RES
+END_CNT <= comparator:CMP.OUT1
+DATA_IN[0] => processingUnit:U1.IN1[0]
+DATA_IN[1] => processingUnit:U1.IN1[1]
+DATA_IN[2] => processingUnit:U1.IN1[2]
+DATA_IN[3] => processingUnit:U1.IN1[3]
+DATA_IN[4] => processingUnit:U1.IN1[4]
+DATA_IN[5] => processingUnit:U1.IN1[5]
+DATA_IN[6] => processingUnit:U1.IN1[6]
+DATA_IN[7] => processingUnit:U1.IN1[7]
+DATA_OUT[0] <= converterUnit:U2.outputREG[0]
+DATA_OUT[1] <= converterUnit:U2.outputREG[1]
+DATA_OUT[2] <= converterUnit:U2.outputREG[2]
+DATA_OUT[3] <= converterUnit:U2.outputREG[3]
+DATA_OUT[4] <= converterUnit:U2.outputREG[4]
+DATA_OUT[5] <= converterUnit:U2.outputREG[5]
+DATA_OUT[6] <= converterUnit:U2.outputREG[6]
+DATA_OUT[7] <= converterUnit:U2.outputREG[7]
+CLK => moduloCounter:CNT0.CLK
+CLK => delayUnit:DEL.CLK
+CLK => processingUnit:U1.CLK
+CLK => converterUnit:U2.CLK
+RES => moduloCounter:CNT0.CLR
+ADDA_SEL => mux10bit:MUX0.SEL
+ADDB_SEL => mux10bit:MUX1.SEL
+MEMA_ADD[0] <= mux10bit:MUX0.OUT1[0]
+MEMA_ADD[1] <= mux10bit:MUX0.OUT1[1]
+MEMA_ADD[2] <= mux10bit:MUX0.OUT1[2]
+MEMA_ADD[3] <= mux10bit:MUX0.OUT1[3]
+MEMA_ADD[4] <= mux10bit:MUX0.OUT1[4]
+MEMA_ADD[5] <= mux10bit:MUX0.OUT1[5]
+MEMA_ADD[6] <= mux10bit:MUX0.OUT1[6]
+MEMA_ADD[7] <= mux10bit:MUX0.OUT1[7]
+MEMA_ADD[8] <= mux10bit:MUX0.OUT1[8]
+MEMA_ADD[9] <= mux10bit:MUX0.OUT1[9]
+MEMB_ADD[0] <= mux10bit:MUX1.OUT1[0]
+MEMB_ADD[1] <= mux10bit:MUX1.OUT1[1]
+MEMB_ADD[2] <= mux10bit:MUX1.OUT1[2]
+MEMB_ADD[3] <= mux10bit:MUX1.OUT1[3]
+MEMB_ADD[4] <= mux10bit:MUX1.OUT1[4]
+MEMB_ADD[5] <= mux10bit:MUX1.OUT1[5]
+MEMB_ADD[6] <= mux10bit:MUX1.OUT1[6]
+MEMB_ADD[7] <= mux10bit:MUX1.OUT1[7]
+MEMB_ADD[8] <= mux10bit:MUX1.OUT1[8]
+MEMB_ADD[9] <= mux10bit:MUX1.OUT1[9]
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0
+EN => LD.IN1
+EN => elemCounter:CNT.prev_Q
+EN => elemCounter:CNT.prev_A
+CLK => elemCounter:CNT.CLK
+CLK => elemCounter:cnt_generate:1:CNT.CLK
+CLK => elemCounter:cnt_generate:2:CNT.CLK
+CLK => elemCounter:cnt_generate:3:CNT.CLK
+CLK => elemCounter:cnt_generate:4:CNT.CLK
+CLK => elemCounter:cnt_generate:5:CNT.CLK
+CLK => elemCounter:cnt_generate:6:CNT.CLK
+CLK => elemCounter:cnt_generate:7:CNT.CLK
+CLK => elemCounter:cnt_generate:8:CNT.CLK
+CLK => elemCounter:cnt_generate:9:CNT.CLK
+CLR => elemCounter:CNT.CLR
+CLR => elemCounter:cnt_generate:1:CNT.CLR
+CLR => elemCounter:cnt_generate:2:CNT.CLR
+CLR => elemCounter:cnt_generate:3:CNT.CLR
+CLR => elemCounter:cnt_generate:4:CNT.CLR
+CLR => elemCounter:cnt_generate:5:CNT.CLR
+CLR => elemCounter:cnt_generate:6:CNT.CLR
+CLR => elemCounter:cnt_generate:7:CNT.CLR
+CLR => elemCounter:cnt_generate:8:CNT.CLR
+CLR => elemCounter:cnt_generate:9:CNT.CLR
+COUNT[0] <= elemCounter:CNT.next_Q
+COUNT[1] <= elemCounter:cnt_generate:1:CNT.next_Q
+COUNT[2] <= elemCounter:cnt_generate:2:CNT.next_Q
+COUNT[3] <= elemCounter:cnt_generate:3:CNT.next_Q
+COUNT[4] <= elemCounter:cnt_generate:4:CNT.next_Q
+COUNT[5] <= elemCounter:cnt_generate:5:CNT.next_Q
+COUNT[6] <= elemCounter:cnt_generate:6:CNT.next_Q
+COUNT[7] <= elemCounter:cnt_generate:7:CNT.next_Q
+COUNT[8] <= elemCounter:cnt_generate:8:CNT.next_Q
+COUNT[9] <= elemCounter:cnt_generate:9:CNT.next_Q
+MOD_REACHED <= LD.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:1:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:1:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:1:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:1:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:2:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:2:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:2:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:2:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:3:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:3:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:3:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:3:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:4:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:4:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:4:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:4:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:5:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:5:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:5:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:5:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:6:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:6:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:6:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:6:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:7:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:7:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:7:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:7:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:8:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:8:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:8:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:8:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:9:CNT
+prev_Q => SEL0.IN0
+prev_A => SEL0.IN1
+next_Q <= flipflop:DFF.Q
+next_A <= SEL0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => flipflop:DFF.Clock
+CLR => flipflop:DFF.Resetn
+LD => mux:MUX1.SEL
+P => mux:MUX1.IN1
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:9:CNT|flipflop:DFF
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:9:CNT|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|elemCounter:\cnt_generate:9:CNT|mux:MUX1
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|moduloCounter:CNT0|comparator:CMP
+IN1[0] => Equal0.IN0
+IN1[1] => Equal0.IN9
+IN1[2] => Equal0.IN8
+IN1[3] => Equal0.IN7
+IN1[4] => Equal0.IN6
+IN1[5] => Equal0.IN5
+IN1[6] => Equal0.IN4
+IN1[7] => Equal0.IN3
+IN1[8] => Equal0.IN2
+IN1[9] => Equal0.IN1
+OUT1 <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|delayUnit:DEL
+R[0] => regn:regn_generate:0:REG.R[0]
+R[1] => regn:regn_generate:0:REG.R[1]
+R[2] => regn:regn_generate:0:REG.R[2]
+R[3] => regn:regn_generate:0:REG.R[3]
+R[4] => regn:regn_generate:0:REG.R[4]
+R[5] => regn:regn_generate:0:REG.R[5]
+R[6] => regn:regn_generate:0:REG.R[6]
+R[7] => regn:regn_generate:0:REG.R[7]
+R[8] => regn:regn_generate:0:REG.R[8]
+R[9] => regn:regn_generate:0:REG.R[9]
+CLK => regn:regn_generate:0:REG.CLK
+CLK => regn:regn_generate:1:REG.CLK
+CLK => regn:regn_generate:2:REG.CLK
+CLK => regn:regn_generate:3:REG.CLK
+CLK => regn:regn_generate:4:REG.CLK
+RES => regn:regn_generate:0:REG.RES
+RES => regn:regn_generate:1:REG.RES
+RES => regn:regn_generate:2:REG.RES
+RES => regn:regn_generate:3:REG.RES
+RES => regn:regn_generate:4:REG.RES
+OUT1[0] <= regn:regn_generate:4:REG.Q[0]
+OUT1[1] <= regn:regn_generate:4:REG.Q[1]
+OUT1[2] <= regn:regn_generate:4:REG.Q[2]
+OUT1[3] <= regn:regn_generate:4:REG.Q[3]
+OUT1[4] <= regn:regn_generate:4:REG.Q[4]
+OUT1[5] <= regn:regn_generate:4:REG.Q[5]
+OUT1[6] <= regn:regn_generate:4:REG.Q[6]
+OUT1[7] <= regn:regn_generate:4:REG.Q[7]
+OUT1[8] <= regn:regn_generate:4:REG.Q[8]
+OUT1[9] <= regn:regn_generate:4:REG.Q[9]
+
+
+|digitalFilter|datapath:DP|delayUnit:DEL|regn:\regn_generate:0:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|delayUnit:DEL|regn:\regn_generate:1:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|delayUnit:DEL|regn:\regn_generate:2:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|delayUnit:DEL|regn:\regn_generate:3:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|delayUnit:DEL|regn:\regn_generate:4:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1
+IN1[0] => shiftRegn:REG0.R[0]
+IN1[1] => shiftRegn:REG0.R[1]
+IN1[2] => shiftRegn:REG0.R[2]
+IN1[3] => shiftRegn:REG0.R[3]
+IN1[4] => shiftRegn:REG0.R[4]
+IN1[5] => shiftRegn:REG0.R[5]
+IN1[6] => shiftRegn:REG0.R[6]
+IN1[7] => shiftRegn:REG0.R[7]
+CLK => shiftRegn:REG0.CLK
+CLK => regn:REG1_0.CLK
+CLK => regn:REG1_1.CLK
+CLK => regn:REG1_2.CLK
+CLK => regn:REG1_3.CLK
+CLK => regn:REG2_0.CLK
+CLK => regn:REG2_1.CLK
+CLK => regn:REG3_0.CLK
+RES => shiftRegn:REG0.RES
+RES => regn:REG1_0.RES
+RES => regn:REG1_1.RES
+RES => regn:REG1_2.RES
+RES => regn:REG1_3.RES
+RES => regn:REG2_0.RES
+RES => regn:REG2_1.RES
+RES => regn:REG3_0.RES
+OUT1[0] <= regn:REG3_0.Q[0]
+OUT1[1] <= regn:REG3_0.Q[1]
+OUT1[2] <= regn:REG3_0.Q[2]
+OUT1[3] <= regn:REG3_0.Q[3]
+OUT1[4] <= regn:REG3_0.Q[4]
+OUT1[5] <= regn:REG3_0.Q[5]
+OUT1[6] <= regn:REG3_0.Q[6]
+OUT1[7] <= regn:REG3_0.Q[7]
+OUT1[8] <= regn:REG3_0.Q[8]
+OUT1[9] <= regn:REG3_0.Q[9]
+OUT1[10] <= regn:REG3_0.Q[10]
+OUT1[11] <= regn:REG3_0.Q[11]
+OUT1[12] <= regn:REG3_0.Q[12]
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|shiftRegn:REG0
+R[0] => regn:regn_generate:0:REG.R[0]
+R[1] => regn:regn_generate:0:REG.R[1]
+R[2] => regn:regn_generate:0:REG.R[2]
+R[3] => regn:regn_generate:0:REG.R[3]
+R[4] => regn:regn_generate:0:REG.R[4]
+R[5] => regn:regn_generate:0:REG.R[5]
+R[6] => regn:regn_generate:0:REG.R[6]
+R[7] => regn:regn_generate:0:REG.R[7]
+CLK => regn:regn_generate:0:REG.CLK
+CLK => regn:regn_generate:1:REG.CLK
+CLK => regn:regn_generate:2:REG.CLK
+CLK => regn:regn_generate:3:REG.CLK
+RES => regn:regn_generate:0:REG.RES
+RES => regn:regn_generate:1:REG.RES
+RES => regn:regn_generate:2:REG.RES
+RES => regn:regn_generate:3:REG.RES
+LD => regn:regn_generate:0:REG.LD
+LD => regn:regn_generate:1:REG.LD
+LD => regn:regn_generate:2:REG.LD
+LD => regn:regn_generate:3:REG.LD
+Q0[0] <= regn:regn_generate:0:REG.Q[0]
+Q0[1] <= regn:regn_generate:0:REG.Q[1]
+Q0[2] <= regn:regn_generate:0:REG.Q[2]
+Q0[3] <= regn:regn_generate:0:REG.Q[3]
+Q0[4] <= regn:regn_generate:0:REG.Q[4]
+Q0[5] <= regn:regn_generate:0:REG.Q[5]
+Q0[6] <= regn:regn_generate:0:REG.Q[6]
+Q0[7] <= regn:regn_generate:0:REG.Q[7]
+Q1[0] <= regn:regn_generate:1:REG.Q[0]
+Q1[1] <= regn:regn_generate:1:REG.Q[1]
+Q1[2] <= regn:regn_generate:1:REG.Q[2]
+Q1[3] <= regn:regn_generate:1:REG.Q[3]
+Q1[4] <= regn:regn_generate:1:REG.Q[4]
+Q1[5] <= regn:regn_generate:1:REG.Q[5]
+Q1[6] <= regn:regn_generate:1:REG.Q[6]
+Q1[7] <= regn:regn_generate:1:REG.Q[7]
+Q2[0] <= regn:regn_generate:2:REG.Q[0]
+Q2[1] <= regn:regn_generate:2:REG.Q[1]
+Q2[2] <= regn:regn_generate:2:REG.Q[2]
+Q2[3] <= regn:regn_generate:2:REG.Q[3]
+Q2[4] <= regn:regn_generate:2:REG.Q[4]
+Q2[5] <= regn:regn_generate:2:REG.Q[5]
+Q2[6] <= regn:regn_generate:2:REG.Q[6]
+Q2[7] <= regn:regn_generate:2:REG.Q[7]
+Q3[0] <= regn:regn_generate:3:REG.Q[0]
+Q3[1] <= regn:regn_generate:3:REG.Q[1]
+Q3[2] <= regn:regn_generate:3:REG.Q[2]
+Q3[3] <= regn:regn_generate:3:REG.Q[3]
+Q3[4] <= regn:regn_generate:3:REG.Q[4]
+Q3[5] <= regn:regn_generate:3:REG.Q[5]
+Q3[6] <= regn:regn_generate:3:REG.Q[6]
+Q3[7] <= regn:regn_generate:3:REG.Q[7]
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|shiftRegn:REG0|regn:\regn_generate:0:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|shiftRegn:REG0|regn:\regn_generate:1:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|shiftRegn:REG0|regn:\regn_generate:2:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|shiftRegn:REG0|regn:\regn_generate:3:REG
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|multiplier_05:MUL_05
+IN1[0] => Q1[1].DATAIN
+IN1[1] => Q1[2].DATAIN
+IN1[2] => Q1[3].DATAIN
+IN1[3] => Q1[4].DATAIN
+IN1[4] => Q1[5].DATAIN
+IN1[5] => Q1[6].DATAIN
+IN1[6] => Q1[7].DATAIN
+IN1[7] => Q1[8].DATAIN
+IN1[7] => Q1[12].DATAIN
+IN1[7] => Q1[11].DATAIN
+IN1[7] => Q1[10].DATAIN
+IN1[7] => Q1[9].DATAIN
+Q1[0] <= <GND>
+Q1[1] <= IN1[0].DB_MAX_OUTPUT_PORT_TYPE
+Q1[2] <= IN1[1].DB_MAX_OUTPUT_PORT_TYPE
+Q1[3] <= IN1[2].DB_MAX_OUTPUT_PORT_TYPE
+Q1[4] <= IN1[3].DB_MAX_OUTPUT_PORT_TYPE
+Q1[5] <= IN1[4].DB_MAX_OUTPUT_PORT_TYPE
+Q1[6] <= IN1[5].DB_MAX_OUTPUT_PORT_TYPE
+Q1[7] <= IN1[6].DB_MAX_OUTPUT_PORT_TYPE
+Q1[8] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[9] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[10] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[11] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[12] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|multiplier_2:MUL_2
+IN1[0] => Q1[3].DATAIN
+IN1[1] => Q1[4].DATAIN
+IN1[2] => Q1[5].DATAIN
+IN1[3] => Q1[6].DATAIN
+IN1[4] => Q1[7].DATAIN
+IN1[5] => Q1[8].DATAIN
+IN1[6] => Q1[9].DATAIN
+IN1[7] => Q1[10].DATAIN
+IN1[7] => Q1[12].DATAIN
+IN1[7] => Q1[11].DATAIN
+Q1[0] <= <GND>
+Q1[1] <= <GND>
+Q1[2] <= <GND>
+Q1[3] <= IN1[0].DB_MAX_OUTPUT_PORT_TYPE
+Q1[4] <= IN1[1].DB_MAX_OUTPUT_PORT_TYPE
+Q1[5] <= IN1[2].DB_MAX_OUTPUT_PORT_TYPE
+Q1[6] <= IN1[3].DB_MAX_OUTPUT_PORT_TYPE
+Q1[7] <= IN1[4].DB_MAX_OUTPUT_PORT_TYPE
+Q1[8] <= IN1[5].DB_MAX_OUTPUT_PORT_TYPE
+Q1[9] <= IN1[6].DB_MAX_OUTPUT_PORT_TYPE
+Q1[10] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[11] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[12] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|multiplier_4:MUL_4
+IN1[0] => Q1[4].DATAIN
+IN1[1] => Q1[5].DATAIN
+IN1[2] => Q1[6].DATAIN
+IN1[3] => Q1[7].DATAIN
+IN1[4] => Q1[8].DATAIN
+IN1[5] => Q1[9].DATAIN
+IN1[6] => Q1[10].DATAIN
+IN1[7] => Q1[11].DATAIN
+IN1[7] => Q1[12].DATAIN
+Q1[0] <= <GND>
+Q1[1] <= <GND>
+Q1[2] <= <GND>
+Q1[3] <= <GND>
+Q1[4] <= IN1[0].DB_MAX_OUTPUT_PORT_TYPE
+Q1[5] <= IN1[1].DB_MAX_OUTPUT_PORT_TYPE
+Q1[6] <= IN1[2].DB_MAX_OUTPUT_PORT_TYPE
+Q1[7] <= IN1[3].DB_MAX_OUTPUT_PORT_TYPE
+Q1[8] <= IN1[4].DB_MAX_OUTPUT_PORT_TYPE
+Q1[9] <= IN1[5].DB_MAX_OUTPUT_PORT_TYPE
+Q1[10] <= IN1[6].DB_MAX_OUTPUT_PORT_TYPE
+Q1[11] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[12] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|multiplier_025:MUL_025
+IN1[0] => Q1[0].DATAIN
+IN1[1] => Q1[1].DATAIN
+IN1[2] => Q1[2].DATAIN
+IN1[3] => Q1[3].DATAIN
+IN1[4] => Q1[4].DATAIN
+IN1[5] => Q1[5].DATAIN
+IN1[6] => Q1[6].DATAIN
+IN1[7] => Q1[7].DATAIN
+IN1[7] => Q1[12].DATAIN
+IN1[7] => Q1[11].DATAIN
+IN1[7] => Q1[10].DATAIN
+IN1[7] => Q1[9].DATAIN
+IN1[7] => Q1[8].DATAIN
+Q1[0] <= IN1[0].DB_MAX_OUTPUT_PORT_TYPE
+Q1[1] <= IN1[1].DB_MAX_OUTPUT_PORT_TYPE
+Q1[2] <= IN1[2].DB_MAX_OUTPUT_PORT_TYPE
+Q1[3] <= IN1[3].DB_MAX_OUTPUT_PORT_TYPE
+Q1[4] <= IN1[4].DB_MAX_OUTPUT_PORT_TYPE
+Q1[5] <= IN1[5].DB_MAX_OUTPUT_PORT_TYPE
+Q1[6] <= IN1[6].DB_MAX_OUTPUT_PORT_TYPE
+Q1[7] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[8] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[9] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[10] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[11] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+Q1[12] <= IN1[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|regn:REG1_0
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+CLK => Q[12]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+RES => Q[10]~reg0.ACLR
+RES => Q[11]~reg0.ACLR
+RES => Q[12]~reg0.ACLR
+LD => Q[12]~reg0.ENA
+LD => Q[11]~reg0.ENA
+LD => Q[10]~reg0.ENA
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|regn:REG1_1
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+CLK => Q[12]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+RES => Q[10]~reg0.ACLR
+RES => Q[11]~reg0.ACLR
+RES => Q[12]~reg0.ACLR
+LD => Q[12]~reg0.ENA
+LD => Q[11]~reg0.ENA
+LD => Q[10]~reg0.ENA
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|regn:REG1_2
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+CLK => Q[12]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+RES => Q[10]~reg0.ACLR
+RES => Q[11]~reg0.ACLR
+RES => Q[12]~reg0.ACLR
+LD => Q[12]~reg0.ENA
+LD => Q[11]~reg0.ENA
+LD => Q[10]~reg0.ENA
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|regn:REG1_3
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+CLK => Q[12]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+RES => Q[10]~reg0.ACLR
+RES => Q[11]~reg0.ACLR
+RES => Q[12]~reg0.ACLR
+LD => Q[12]~reg0.ENA
+LD => Q[11]~reg0.ENA
+LD => Q[10]~reg0.ENA
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0
+A1[0] => fullAdder:gen_block:0:FA.A
+A1[1] => fullAdder:gen_block:1:FA.A
+A1[2] => fullAdder:gen_block:2:FA.A
+A1[3] => fullAdder:gen_block:3:FA.A
+A1[4] => fullAdder:gen_block:4:FA.A
+A1[5] => fullAdder:gen_block:5:FA.A
+A1[6] => fullAdder:gen_block:6:FA.A
+A1[7] => fullAdder:gen_block:7:FA.A
+A1[8] => fullAdder:gen_block:8:FA.A
+A1[9] => fullAdder:gen_block:9:FA.A
+A1[10] => fullAdder:gen_block:10:FA.A
+A1[11] => fullAdder:gen_block:11:FA.A
+A1[12] => fullAdder:gen_block:12:FA.A
+A2[0] => fullAdder:gen_block:0:FA.B
+A2[1] => fullAdder:gen_block:1:FA.B
+A2[2] => fullAdder:gen_block:2:FA.B
+A2[3] => fullAdder:gen_block:3:FA.B
+A2[4] => fullAdder:gen_block:4:FA.B
+A2[5] => fullAdder:gen_block:5:FA.B
+A2[6] => fullAdder:gen_block:6:FA.B
+A2[7] => fullAdder:gen_block:7:FA.B
+A2[8] => fullAdder:gen_block:8:FA.B
+A2[9] => fullAdder:gen_block:9:FA.B
+A2[10] => fullAdder:gen_block:10:FA.B
+A2[11] => fullAdder:gen_block:11:FA.B
+A2[12] => fullAdder:gen_block:12:FA.B
+P => fullAdder:gen_block:0:FA.P
+P => fullAdder:gen_block:0:FA.CIN
+P => fullAdder:gen_block:1:FA.P
+P => fullAdder:gen_block:2:FA.P
+P => fullAdder:gen_block:3:FA.P
+P => fullAdder:gen_block:4:FA.P
+P => fullAdder:gen_block:5:FA.P
+P => fullAdder:gen_block:6:FA.P
+P => fullAdder:gen_block:7:FA.P
+P => fullAdder:gen_block:8:FA.P
+P => fullAdder:gen_block:9:FA.P
+P => fullAdder:gen_block:10:FA.P
+P => fullAdder:gen_block:11:FA.P
+P => fullAdder:gen_block:12:FA.P
+B1[0] <= fullAdder:gen_block:0:FA.S
+B1[1] <= fullAdder:gen_block:1:FA.S
+B1[2] <= fullAdder:gen_block:2:FA.S
+B1[3] <= fullAdder:gen_block:3:FA.S
+B1[4] <= fullAdder:gen_block:4:FA.S
+B1[5] <= fullAdder:gen_block:5:FA.S
+B1[6] <= fullAdder:gen_block:6:FA.S
+B1[7] <= fullAdder:gen_block:7:FA.S
+B1[8] <= fullAdder:gen_block:8:FA.S
+B1[9] <= fullAdder:gen_block:9:FA.S
+B1[10] <= fullAdder:gen_block:10:FA.S
+B1[11] <= fullAdder:gen_block:11:FA.S
+B1[12] <= fullAdder:gen_block:12:FA.S
+COUT <= fullAdder:gen_block:12:FA.COUT
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:0:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:0:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:1:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:1:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:2:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:2:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:3:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:3:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:4:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:4:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:5:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:5:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:6:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:6:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:7:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:7:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:8:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:8:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:9:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:9:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:10:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:10:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:11:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:11:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:12:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD0|fullAdder:\gen_block:12:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1
+A1[0] => fullAdder:gen_block:0:FA.A
+A1[1] => fullAdder:gen_block:1:FA.A
+A1[2] => fullAdder:gen_block:2:FA.A
+A1[3] => fullAdder:gen_block:3:FA.A
+A1[4] => fullAdder:gen_block:4:FA.A
+A1[5] => fullAdder:gen_block:5:FA.A
+A1[6] => fullAdder:gen_block:6:FA.A
+A1[7] => fullAdder:gen_block:7:FA.A
+A1[8] => fullAdder:gen_block:8:FA.A
+A1[9] => fullAdder:gen_block:9:FA.A
+A1[10] => fullAdder:gen_block:10:FA.A
+A1[11] => fullAdder:gen_block:11:FA.A
+A1[12] => fullAdder:gen_block:12:FA.A
+A2[0] => fullAdder:gen_block:0:FA.B
+A2[1] => fullAdder:gen_block:1:FA.B
+A2[2] => fullAdder:gen_block:2:FA.B
+A2[3] => fullAdder:gen_block:3:FA.B
+A2[4] => fullAdder:gen_block:4:FA.B
+A2[5] => fullAdder:gen_block:5:FA.B
+A2[6] => fullAdder:gen_block:6:FA.B
+A2[7] => fullAdder:gen_block:7:FA.B
+A2[8] => fullAdder:gen_block:8:FA.B
+A2[9] => fullAdder:gen_block:9:FA.B
+A2[10] => fullAdder:gen_block:10:FA.B
+A2[11] => fullAdder:gen_block:11:FA.B
+A2[12] => fullAdder:gen_block:12:FA.B
+P => fullAdder:gen_block:0:FA.P
+P => fullAdder:gen_block:0:FA.CIN
+P => fullAdder:gen_block:1:FA.P
+P => fullAdder:gen_block:2:FA.P
+P => fullAdder:gen_block:3:FA.P
+P => fullAdder:gen_block:4:FA.P
+P => fullAdder:gen_block:5:FA.P
+P => fullAdder:gen_block:6:FA.P
+P => fullAdder:gen_block:7:FA.P
+P => fullAdder:gen_block:8:FA.P
+P => fullAdder:gen_block:9:FA.P
+P => fullAdder:gen_block:10:FA.P
+P => fullAdder:gen_block:11:FA.P
+P => fullAdder:gen_block:12:FA.P
+B1[0] <= fullAdder:gen_block:0:FA.S
+B1[1] <= fullAdder:gen_block:1:FA.S
+B1[2] <= fullAdder:gen_block:2:FA.S
+B1[3] <= fullAdder:gen_block:3:FA.S
+B1[4] <= fullAdder:gen_block:4:FA.S
+B1[5] <= fullAdder:gen_block:5:FA.S
+B1[6] <= fullAdder:gen_block:6:FA.S
+B1[7] <= fullAdder:gen_block:7:FA.S
+B1[8] <= fullAdder:gen_block:8:FA.S
+B1[9] <= fullAdder:gen_block:9:FA.S
+B1[10] <= fullAdder:gen_block:10:FA.S
+B1[11] <= fullAdder:gen_block:11:FA.S
+B1[12] <= fullAdder:gen_block:12:FA.S
+COUT <= fullAdder:gen_block:12:FA.COUT
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:0:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:0:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:1:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:1:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:2:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:2:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:3:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:3:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:4:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:4:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:5:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:5:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:6:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:6:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:7:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:7:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:8:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:8:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:9:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:9:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:10:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:10:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:11:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:11:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:12:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD1|fullAdder:\gen_block:12:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|regn:REG2_0
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+CLK => Q[12]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+RES => Q[10]~reg0.ACLR
+RES => Q[11]~reg0.ACLR
+RES => Q[12]~reg0.ACLR
+LD => Q[12]~reg0.ENA
+LD => Q[11]~reg0.ENA
+LD => Q[10]~reg0.ENA
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|regn:REG2_1
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+CLK => Q[12]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+RES => Q[10]~reg0.ACLR
+RES => Q[11]~reg0.ACLR
+RES => Q[12]~reg0.ACLR
+LD => Q[12]~reg0.ENA
+LD => Q[11]~reg0.ENA
+LD => Q[10]~reg0.ENA
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2
+A1[0] => fullAdder:gen_block:0:FA.A
+A1[1] => fullAdder:gen_block:1:FA.A
+A1[2] => fullAdder:gen_block:2:FA.A
+A1[3] => fullAdder:gen_block:3:FA.A
+A1[4] => fullAdder:gen_block:4:FA.A
+A1[5] => fullAdder:gen_block:5:FA.A
+A1[6] => fullAdder:gen_block:6:FA.A
+A1[7] => fullAdder:gen_block:7:FA.A
+A1[8] => fullAdder:gen_block:8:FA.A
+A1[9] => fullAdder:gen_block:9:FA.A
+A1[10] => fullAdder:gen_block:10:FA.A
+A1[11] => fullAdder:gen_block:11:FA.A
+A1[12] => fullAdder:gen_block:12:FA.A
+A2[0] => fullAdder:gen_block:0:FA.B
+A2[1] => fullAdder:gen_block:1:FA.B
+A2[2] => fullAdder:gen_block:2:FA.B
+A2[3] => fullAdder:gen_block:3:FA.B
+A2[4] => fullAdder:gen_block:4:FA.B
+A2[5] => fullAdder:gen_block:5:FA.B
+A2[6] => fullAdder:gen_block:6:FA.B
+A2[7] => fullAdder:gen_block:7:FA.B
+A2[8] => fullAdder:gen_block:8:FA.B
+A2[9] => fullAdder:gen_block:9:FA.B
+A2[10] => fullAdder:gen_block:10:FA.B
+A2[11] => fullAdder:gen_block:11:FA.B
+A2[12] => fullAdder:gen_block:12:FA.B
+P => fullAdder:gen_block:0:FA.P
+P => fullAdder:gen_block:0:FA.CIN
+P => fullAdder:gen_block:1:FA.P
+P => fullAdder:gen_block:2:FA.P
+P => fullAdder:gen_block:3:FA.P
+P => fullAdder:gen_block:4:FA.P
+P => fullAdder:gen_block:5:FA.P
+P => fullAdder:gen_block:6:FA.P
+P => fullAdder:gen_block:7:FA.P
+P => fullAdder:gen_block:8:FA.P
+P => fullAdder:gen_block:9:FA.P
+P => fullAdder:gen_block:10:FA.P
+P => fullAdder:gen_block:11:FA.P
+P => fullAdder:gen_block:12:FA.P
+B1[0] <= fullAdder:gen_block:0:FA.S
+B1[1] <= fullAdder:gen_block:1:FA.S
+B1[2] <= fullAdder:gen_block:2:FA.S
+B1[3] <= fullAdder:gen_block:3:FA.S
+B1[4] <= fullAdder:gen_block:4:FA.S
+B1[5] <= fullAdder:gen_block:5:FA.S
+B1[6] <= fullAdder:gen_block:6:FA.S
+B1[7] <= fullAdder:gen_block:7:FA.S
+B1[8] <= fullAdder:gen_block:8:FA.S
+B1[9] <= fullAdder:gen_block:9:FA.S
+B1[10] <= fullAdder:gen_block:10:FA.S
+B1[11] <= fullAdder:gen_block:11:FA.S
+B1[12] <= fullAdder:gen_block:12:FA.S
+COUT <= fullAdder:gen_block:12:FA.COUT
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:0:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:0:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:1:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:1:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:2:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:2:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:3:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:3:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:4:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:4:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:5:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:5:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:6:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:6:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:7:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:7:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:8:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:8:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:9:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:9:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:10:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:10:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:11:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:11:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:12:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|RCA_13bit:ADD2|fullAdder:\gen_block:12:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|processingUnit:U1|regn:REG3_0
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+R[9] => Q[9]~reg0.DATAIN
+R[10] => Q[10]~reg0.DATAIN
+R[11] => Q[11]~reg0.DATAIN
+R[12] => Q[12]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+CLK => Q[12]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+RES => Q[8]~reg0.ACLR
+RES => Q[9]~reg0.ACLR
+RES => Q[10]~reg0.ACLR
+RES => Q[11]~reg0.ACLR
+RES => Q[12]~reg0.ACLR
+LD => Q[12]~reg0.ENA
+LD => Q[11]~reg0.ENA
+LD => Q[10]~reg0.ENA
+LD => Q[9]~reg0.ENA
+LD => Q[8]~reg0.ENA
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2
+CLK => regn:U5.CLK
+RES => regn:U5.RES
+INPUTA[0] => ~NO_FANOUT~
+INPUTA[1] => mux2x1_11bit:U2.SEL
+INPUTA[2] => RCA_11bit:U1.A1[0]
+INPUTA[2] => mux2x1_11bit:U2.IN0[0]
+INPUTA[3] => RCA_11bit:U1.A1[1]
+INPUTA[3] => mux2x1_11bit:U2.IN0[1]
+INPUTA[4] => RCA_11bit:U1.A1[2]
+INPUTA[4] => mux2x1_11bit:U2.IN0[2]
+INPUTA[5] => RCA_11bit:U1.A1[3]
+INPUTA[5] => mux2x1_11bit:U2.IN0[3]
+INPUTA[6] => RCA_11bit:U1.A1[4]
+INPUTA[6] => mux2x1_11bit:U2.IN0[4]
+INPUTA[7] => RCA_11bit:U1.A1[5]
+INPUTA[7] => mux2x1_11bit:U2.IN0[5]
+INPUTA[8] => RCA_11bit:U1.A1[6]
+INPUTA[8] => mux2x1_11bit:U2.IN0[6]
+INPUTA[9] => RCA_11bit:U1.A1[7]
+INPUTA[9] => mux2x1_11bit:U2.IN0[7]
+INPUTA[10] => RCA_11bit:U1.A1[8]
+INPUTA[10] => mux2x1_11bit:U2.IN0[8]
+INPUTA[11] => RCA_11bit:U1.A1[9]
+INPUTA[11] => mux2x1_11bit:U2.IN0[9]
+INPUTA[12] => RCA_11bit:U1.A1[10]
+INPUTA[12] => mux2x1_11bit:U2.IN0[10]
+OUTPUTREG[0] <= regn:U5.Q[0]
+OUTPUTREG[1] <= regn:U5.Q[1]
+OUTPUTREG[2] <= regn:U5.Q[2]
+OUTPUTREG[3] <= regn:U5.Q[3]
+OUTPUTREG[4] <= regn:U5.Q[4]
+OUTPUTREG[5] <= regn:U5.Q[5]
+OUTPUTREG[6] <= regn:U5.Q[6]
+OUTPUTREG[7] <= regn:U5.Q[7]
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1
+A1[0] => fullAdder:gen_block:0:FA.A
+A1[1] => fullAdder:gen_block:1:FA.A
+A1[2] => fullAdder:gen_block:2:FA.A
+A1[3] => fullAdder:gen_block:3:FA.A
+A1[4] => fullAdder:gen_block:4:FA.A
+A1[5] => fullAdder:gen_block:5:FA.A
+A1[6] => fullAdder:gen_block:6:FA.A
+A1[7] => fullAdder:gen_block:7:FA.A
+A1[8] => fullAdder:gen_block:8:FA.A
+A1[9] => fullAdder:gen_block:9:FA.A
+A1[10] => fullAdder:gen_block:10:FA.A
+A2[0] => fullAdder:gen_block:0:FA.B
+A2[1] => fullAdder:gen_block:1:FA.B
+A2[2] => fullAdder:gen_block:2:FA.B
+A2[3] => fullAdder:gen_block:3:FA.B
+A2[4] => fullAdder:gen_block:4:FA.B
+A2[5] => fullAdder:gen_block:5:FA.B
+A2[6] => fullAdder:gen_block:6:FA.B
+A2[7] => fullAdder:gen_block:7:FA.B
+A2[8] => fullAdder:gen_block:8:FA.B
+A2[9] => fullAdder:gen_block:9:FA.B
+A2[10] => fullAdder:gen_block:10:FA.B
+P => fullAdder:gen_block:0:FA.P
+P => fullAdder:gen_block:0:FA.CIN
+P => fullAdder:gen_block:1:FA.P
+P => fullAdder:gen_block:2:FA.P
+P => fullAdder:gen_block:3:FA.P
+P => fullAdder:gen_block:4:FA.P
+P => fullAdder:gen_block:5:FA.P
+P => fullAdder:gen_block:6:FA.P
+P => fullAdder:gen_block:7:FA.P
+P => fullAdder:gen_block:8:FA.P
+P => fullAdder:gen_block:9:FA.P
+P => fullAdder:gen_block:10:FA.P
+B1[0] <= fullAdder:gen_block:0:FA.S
+B1[1] <= fullAdder:gen_block:1:FA.S
+B1[2] <= fullAdder:gen_block:2:FA.S
+B1[3] <= fullAdder:gen_block:3:FA.S
+B1[4] <= fullAdder:gen_block:4:FA.S
+B1[5] <= fullAdder:gen_block:5:FA.S
+B1[6] <= fullAdder:gen_block:6:FA.S
+B1[7] <= fullAdder:gen_block:7:FA.S
+B1[8] <= fullAdder:gen_block:8:FA.S
+B1[9] <= fullAdder:gen_block:9:FA.S
+B1[10] <= fullAdder:gen_block:10:FA.S
+COUT <= fullAdder:gen_block:10:FA.COUT
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:0:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:0:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:1:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:1:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:2:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:2:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:3:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:3:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:4:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:4:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:5:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:5:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:6:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:6:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:7:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:7:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:8:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:8:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:9:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:9:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:10:FA
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= mux:MUX0.OUT1
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|RCA_11bit:U1|fullAdder:\gen_block:10:FA|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|mux2x1_11bit:U2
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+SEL => OUT_MUX.OUTPUTSELECT
+IN0[0] => OUT_MUX.DATAA
+IN0[1] => OUT_MUX.DATAA
+IN0[2] => OUT_MUX.DATAA
+IN0[3] => OUT_MUX.DATAA
+IN0[4] => OUT_MUX.DATAA
+IN0[5] => OUT_MUX.DATAA
+IN0[6] => OUT_MUX.DATAA
+IN0[7] => OUT_MUX.DATAA
+IN0[8] => OUT_MUX.DATAA
+IN0[9] => OUT_MUX.DATAA
+IN0[10] => OUT_MUX.DATAA
+IN1[0] => OUT_MUX.DATAB
+IN1[1] => OUT_MUX.DATAB
+IN1[2] => OUT_MUX.DATAB
+IN1[3] => OUT_MUX.DATAB
+IN1[4] => OUT_MUX.DATAB
+IN1[5] => OUT_MUX.DATAB
+IN1[6] => OUT_MUX.DATAB
+IN1[7] => OUT_MUX.DATAB
+IN1[8] => OUT_MUX.DATAB
+IN1[9] => OUT_MUX.DATAB
+IN1[10] => OUT_MUX.DATAB
+OUT_MUX[0] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[1] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[2] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[3] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[4] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[5] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[6] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[7] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[8] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[9] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[10] <= OUT_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|IntervalDetector:U3
+data_in[0] => LessThan0.IN22
+data_in[0] => LessThan1.IN22
+data_in[1] => LessThan0.IN21
+data_in[1] => LessThan1.IN21
+data_in[2] => LessThan0.IN20
+data_in[2] => LessThan1.IN20
+data_in[3] => LessThan0.IN19
+data_in[3] => LessThan1.IN19
+data_in[4] => LessThan0.IN18
+data_in[4] => LessThan1.IN18
+data_in[5] => LessThan0.IN17
+data_in[5] => LessThan1.IN17
+data_in[6] => LessThan0.IN16
+data_in[6] => LessThan1.IN16
+data_in[7] => LessThan0.IN15
+data_in[7] => LessThan1.IN15
+data_in[8] => LessThan0.IN14
+data_in[8] => LessThan1.IN14
+data_in[9] => LessThan0.IN13
+data_in[9] => LessThan1.IN13
+data_in[10] => LessThan0.IN12
+data_in[10] => LessThan1.IN12
+Z[0] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|mux3x1_8bit:U4
+SEL[0] => Mux0.IN1
+SEL[0] => Mux1.IN1
+SEL[0] => Mux2.IN1
+SEL[0] => Mux3.IN1
+SEL[0] => Mux4.IN1
+SEL[0] => Mux5.IN1
+SEL[0] => Mux6.IN1
+SEL[0] => Mux7.IN1
+SEL[1] => Mux0.IN0
+SEL[1] => Mux1.IN0
+SEL[1] => Mux2.IN0
+SEL[1] => Mux3.IN0
+SEL[1] => Mux4.IN0
+SEL[1] => Mux5.IN0
+SEL[1] => Mux6.IN0
+SEL[1] => Mux7.IN0
+IN0[0] => Mux7.IN2
+IN0[1] => Mux6.IN2
+IN0[2] => Mux5.IN2
+IN0[3] => Mux4.IN2
+IN0[4] => Mux3.IN2
+IN0[5] => Mux2.IN2
+IN0[6] => Mux1.IN2
+IN0[7] => Mux0.IN2
+IN1[0] => Mux7.IN3
+IN1[1] => Mux6.IN3
+IN1[2] => Mux5.IN3
+IN1[3] => Mux4.IN3
+IN1[4] => Mux3.IN3
+IN1[5] => Mux2.IN3
+IN1[6] => Mux1.IN3
+IN1[7] => Mux0.IN3
+IN2[0] => Mux7.IN4
+IN2[0] => Mux7.IN5
+IN2[1] => Mux6.IN4
+IN2[1] => Mux6.IN5
+IN2[2] => Mux5.IN4
+IN2[2] => Mux5.IN5
+IN2[3] => Mux4.IN4
+IN2[3] => Mux4.IN5
+IN2[4] => Mux3.IN4
+IN2[4] => Mux3.IN5
+IN2[5] => Mux2.IN4
+IN2[5] => Mux2.IN5
+IN2[6] => Mux1.IN4
+IN2[6] => Mux1.IN5
+IN2[7] => Mux0.IN4
+IN2[7] => Mux0.IN5
+OUT_MUX[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+OUT_MUX[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|converterUnit:U2|regn:U5
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+RES => Q[0]~reg0.ACLR
+RES => Q[1]~reg0.ACLR
+RES => Q[2]~reg0.ACLR
+RES => Q[3]~reg0.ACLR
+RES => Q[4]~reg0.ACLR
+RES => Q[5]~reg0.ACLR
+RES => Q[6]~reg0.ACLR
+RES => Q[7]~reg0.ACLR
+LD => Q[7]~reg0.ENA
+LD => Q[6]~reg0.ENA
+LD => Q[5]~reg0.ENA
+LD => Q[4]~reg0.ENA
+LD => Q[3]~reg0.ENA
+LD => Q[2]~reg0.ENA
+LD => Q[1]~reg0.ENA
+LD => Q[0]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|mux10bit:MUX0
+IN0[0] => OUT1.IN0
+IN0[1] => OUT1.IN0
+IN0[2] => OUT1.IN0
+IN0[3] => OUT1.IN0
+IN0[4] => OUT1.IN0
+IN0[5] => OUT1.IN0
+IN0[6] => OUT1.IN0
+IN0[7] => OUT1.IN0
+IN0[8] => OUT1.IN0
+IN0[9] => OUT1.IN0
+IN1[0] => OUT1.IN0
+IN1[1] => OUT1.IN0
+IN1[2] => OUT1.IN0
+IN1[3] => OUT1.IN0
+IN1[4] => OUT1.IN0
+IN1[5] => OUT1.IN0
+IN1[6] => OUT1.IN0
+IN1[7] => OUT1.IN0
+IN1[8] => OUT1.IN0
+IN1[9] => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[7] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[8] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[9] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|mux10bit:MUX1
+IN0[0] => OUT1.IN0
+IN0[1] => OUT1.IN0
+IN0[2] => OUT1.IN0
+IN0[3] => OUT1.IN0
+IN0[4] => OUT1.IN0
+IN0[5] => OUT1.IN0
+IN0[6] => OUT1.IN0
+IN0[7] => OUT1.IN0
+IN0[8] => OUT1.IN0
+IN0[9] => OUT1.IN0
+IN1[0] => OUT1.IN0
+IN1[1] => OUT1.IN0
+IN1[2] => OUT1.IN0
+IN1[3] => OUT1.IN0
+IN1[4] => OUT1.IN0
+IN1[5] => OUT1.IN0
+IN1[6] => OUT1.IN0
+IN1[7] => OUT1.IN0
+IN1[8] => OUT1.IN0
+IN1[9] => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[7] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[8] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[9] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|datapath:DP|comparator:CMP
+IN1[0] => Equal0.IN9
+IN1[1] => Equal0.IN8
+IN1[2] => Equal0.IN7
+IN1[3] => Equal0.IN6
+IN1[4] => Equal0.IN5
+IN1[5] => Equal0.IN4
+IN1[6] => Equal0.IN3
+IN1[7] => Equal0.IN2
+IN1[8] => Equal0.IN1
+IN1[9] => Equal0.IN0
+OUT1 <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|controlUnit:CU
+CLK => FSM_CS~1.DATAIN
+RESN => FSM_CS~3.DATAIN
+START => Selector1.IN4
+START => Selector0.IN2
+START => Selector3.IN1
+CNT1 => Selector2.IN3
+CNT1 => Selector3.IN3
+CNT1 => Selector1.IN1
+CNT1 => Selector2.IN1
+MEMA_CS <= MEMA_CS.DB_MAX_OUTPUT_PORT_TYPE
+MEMA_RD <= MEMA_RD.DB_MAX_OUTPUT_PORT_TYPE
+MEMA_WR <= MEMA_WR.DB_MAX_OUTPUT_PORT_TYPE
+MEMB_CS <= MEMB_CS.DB_MAX_OUTPUT_PORT_TYPE
+MEMB_RD <= <GND>
+MEMB_WR <= MEMB_WR.DB_MAX_OUTPUT_PORT_TYPE
+EN_CNT <= EN_CNT.DB_MAX_OUTPUT_PORT_TYPE
+RES_REG0 <= RES_REG0.DB_MAX_OUTPUT_PORT_TYPE
+ADDA_SEL <= <GND>
+ADDB_SEL <= ADDB_SEL.DB_MAX_OUTPUT_PORT_TYPE
+DONE <= DONE.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|memory:MEMA
+CLK => mem~18.CLK
+CLK => mem~0.CLK
+CLK => mem~1.CLK
+CLK => mem~2.CLK
+CLK => mem~3.CLK
+CLK => mem~4.CLK
+CLK => mem~5.CLK
+CLK => mem~6.CLK
+CLK => mem~7.CLK
+CLK => mem~8.CLK
+CLK => mem~9.CLK
+CLK => mem~10.CLK
+CLK => mem~11.CLK
+CLK => mem~12.CLK
+CLK => mem~13.CLK
+CLK => mem~14.CLK
+CLK => mem~15.CLK
+CLK => mem~16.CLK
+CLK => mem~17.CLK
+CLK => mem.CLK0
+CS => process_0.IN0
+CS => DATA_OUT.IN0
+WR => process_0.IN1
+RD => DATA_OUT.IN1
+ADDRESS[0] => mem~9.DATAIN
+ADDRESS[0] => mem.WADDR
+ADDRESS[0] => mem.RADDR
+ADDRESS[1] => mem~8.DATAIN
+ADDRESS[1] => mem.WADDR1
+ADDRESS[1] => mem.RADDR1
+ADDRESS[2] => mem~7.DATAIN
+ADDRESS[2] => mem.WADDR2
+ADDRESS[2] => mem.RADDR2
+ADDRESS[3] => mem~6.DATAIN
+ADDRESS[3] => mem.WADDR3
+ADDRESS[3] => mem.RADDR3
+ADDRESS[4] => mem~5.DATAIN
+ADDRESS[4] => mem.WADDR4
+ADDRESS[4] => mem.RADDR4
+ADDRESS[5] => mem~4.DATAIN
+ADDRESS[5] => mem.WADDR5
+ADDRESS[5] => mem.RADDR5
+ADDRESS[6] => mem~3.DATAIN
+ADDRESS[6] => mem.WADDR6
+ADDRESS[6] => mem.RADDR6
+ADDRESS[7] => mem~2.DATAIN
+ADDRESS[7] => mem.WADDR7
+ADDRESS[7] => mem.RADDR7
+ADDRESS[8] => mem~1.DATAIN
+ADDRESS[8] => mem.WADDR8
+ADDRESS[8] => mem.RADDR8
+ADDRESS[9] => mem~0.DATAIN
+ADDRESS[9] => mem.WADDR9
+ADDRESS[9] => mem.RADDR9
+DATA_IN[0] => mem~17.DATAIN
+DATA_IN[0] => mem.DATAIN
+DATA_IN[1] => mem~16.DATAIN
+DATA_IN[1] => mem.DATAIN1
+DATA_IN[2] => mem~15.DATAIN
+DATA_IN[2] => mem.DATAIN2
+DATA_IN[3] => mem~14.DATAIN
+DATA_IN[3] => mem.DATAIN3
+DATA_IN[4] => mem~13.DATAIN
+DATA_IN[4] => mem.DATAIN4
+DATA_IN[5] => mem~12.DATAIN
+DATA_IN[5] => mem.DATAIN5
+DATA_IN[6] => mem~11.DATAIN
+DATA_IN[6] => mem.DATAIN6
+DATA_IN[7] => mem~10.DATAIN
+DATA_IN[7] => mem.DATAIN7
+DATA_OUT[0] <= DATA_OUT[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[1] <= DATA_OUT[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[2] <= DATA_OUT[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[3] <= DATA_OUT[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[4] <= DATA_OUT[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[5] <= DATA_OUT[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[6] <= DATA_OUT[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[7] <= DATA_OUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digitalFilter|memory:MEMB
+CLK => mem~18.CLK
+CLK => mem~0.CLK
+CLK => mem~1.CLK
+CLK => mem~2.CLK
+CLK => mem~3.CLK
+CLK => mem~4.CLK
+CLK => mem~5.CLK
+CLK => mem~6.CLK
+CLK => mem~7.CLK
+CLK => mem~8.CLK
+CLK => mem~9.CLK
+CLK => mem~10.CLK
+CLK => mem~11.CLK
+CLK => mem~12.CLK
+CLK => mem~13.CLK
+CLK => mem~14.CLK
+CLK => mem~15.CLK
+CLK => mem~16.CLK
+CLK => mem~17.CLK
+CLK => mem.CLK0
+CS => process_0.IN0
+CS => DATA_OUT.IN0
+WR => process_0.IN1
+RD => DATA_OUT.IN1
+ADDRESS[0] => mem~9.DATAIN
+ADDRESS[0] => mem.WADDR
+ADDRESS[0] => mem.RADDR
+ADDRESS[1] => mem~8.DATAIN
+ADDRESS[1] => mem.WADDR1
+ADDRESS[1] => mem.RADDR1
+ADDRESS[2] => mem~7.DATAIN
+ADDRESS[2] => mem.WADDR2
+ADDRESS[2] => mem.RADDR2
+ADDRESS[3] => mem~6.DATAIN
+ADDRESS[3] => mem.WADDR3
+ADDRESS[3] => mem.RADDR3
+ADDRESS[4] => mem~5.DATAIN
+ADDRESS[4] => mem.WADDR4
+ADDRESS[4] => mem.RADDR4
+ADDRESS[5] => mem~4.DATAIN
+ADDRESS[5] => mem.WADDR5
+ADDRESS[5] => mem.RADDR5
+ADDRESS[6] => mem~3.DATAIN
+ADDRESS[6] => mem.WADDR6
+ADDRESS[6] => mem.RADDR6
+ADDRESS[7] => mem~2.DATAIN
+ADDRESS[7] => mem.WADDR7
+ADDRESS[7] => mem.RADDR7
+ADDRESS[8] => mem~1.DATAIN
+ADDRESS[8] => mem.WADDR8
+ADDRESS[8] => mem.RADDR8
+ADDRESS[9] => mem~0.DATAIN
+ADDRESS[9] => mem.WADDR9
+ADDRESS[9] => mem.RADDR9
+DATA_IN[0] => mem~17.DATAIN
+DATA_IN[0] => mem.DATAIN
+DATA_IN[1] => mem~16.DATAIN
+DATA_IN[1] => mem.DATAIN1
+DATA_IN[2] => mem~15.DATAIN
+DATA_IN[2] => mem.DATAIN2
+DATA_IN[3] => mem~14.DATAIN
+DATA_IN[3] => mem.DATAIN3
+DATA_IN[4] => mem~13.DATAIN
+DATA_IN[4] => mem.DATAIN4
+DATA_IN[5] => mem~12.DATAIN
+DATA_IN[5] => mem.DATAIN5
+DATA_IN[6] => mem~11.DATAIN
+DATA_IN[6] => mem.DATAIN6
+DATA_IN[7] => mem~10.DATAIN
+DATA_IN[7] => mem.DATAIN7
+DATA_OUT[0] <= DATA_OUT[0].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[1] <= DATA_OUT[1].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[2] <= DATA_OUT[2].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[3] <= DATA_OUT[3].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[4] <= DATA_OUT[4].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[5] <= DATA_OUT[5].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[6] <= DATA_OUT[6].DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[7] <= DATA_OUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

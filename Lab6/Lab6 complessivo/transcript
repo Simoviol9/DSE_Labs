@@ -1,0 +1,31 @@
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
+# Loading project digitalFilter
+# Compile of digitalFilter.vhd failed with 1 errors.
+# Compile of digitalFilter_tb.vhd failed with 1 errors.
+# Compile of memory.vhd failed with 1 errors.
+# Compile of controlUnit.vhd failed with 1 errors.
+# Compile of Datapath.vhd failed with 1 errors.
+# Compile of processingUnit.vhd failed with 1 errors.
+# 6 compiles, 6 failed with 6 errors.
+# Compile of digitalFilter.vhd failed with 1 errors.
+# Compile of digitalFilter_tb.vhd failed with 1 errors.
+# Compile of memory.vhd failed with 1 errors.
+# Compile of controlUnit.vhd failed with 1 errors.
+# Compile of Datapath.vhd failed with 1 errors.
+# Compile of processingUnit.vhd failed with 1 errors.
+# 6 compiles, 6 failed with 6 errors.
+vlib work
+vmap work ./work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work ./work 
+# Modifying C:/Users/viola/Desktop/DSE/Laboratory/Lab6/Lab 6 V2/digitalFilter.mpf
+
+# Compile of digitalFilter.vhd was successful.
+# Compile of digitalFilter_tb.vhd was successful.
+# Compile of memory.vhd was successful.
+# Compile of controlUnit.vhd was successful.
+# Compile of Datapath.vhd was successful.
+# Compile of processingUnit.vhd failed with 1 errors.
+# 6 compiles, 1 failed with 1 error.
+# Compile of processingUnit.vhd was successful.
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini

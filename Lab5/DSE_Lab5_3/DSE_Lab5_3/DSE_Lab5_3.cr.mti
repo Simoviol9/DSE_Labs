@@ -1,0 +1,17 @@
+{C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/labs_23_24_gr27/Laboratorio DSE/Lab05/GROUP27_LAB05_CODE/two_process/two-process_FSM.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\danie\OneDrive\Desktop\Documenti Daniele\Daniele Scuola\Politecnico di Torino\DSE\labs_23_24_gr27\Laboratorio DSE\Lab05\GROUP27_LAB05_CODE\two_process\two-process_FSM.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity two_process_FSM
+-- Compiling architecture behaviour of two_PROCESS_FSM
+
+} {} {}} {C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/labs_23_24_gr27/Laboratorio DSE/Lab05/GROUP27_LAB05_CODE/two_process/two_process_FSM_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/danie/OneDrive/Desktop/Documenti Daniele/Daniele Scuola/Politecnico di Torino/DSE/labs_23_24_gr27/Laboratorio DSE/Lab05/GROUP27_LAB05_CODE/two_process/two_process_FSM_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity two_process_FSM_tb
+-- Compiling architecture mytest of two_process_FSM_tb
+
+} {} {}}

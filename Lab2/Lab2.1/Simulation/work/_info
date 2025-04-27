@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Edecoder7
+Z0 w1741905346
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 14
+Z3 dC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation
+Z4 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7.vhd
+Z5 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7.vhd
+l0
+L17 1
+V`>XNnhE=oDbXeLEaM9NgE3
+!s100 LXQE73?50?lecjcej4hhH3
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1742663481
+!i10b 1
+Z8 !s108 1742663481.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7.vhd|
+Z10 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavior
+R1
+R2
+DEx4 work 8 decoder7 0 22 `>XNnhE=oDbXeLEaM9NgE3
+!i122 14
+l25
+L24 10
+VmLN9`I8QMQkKBJ0U4P;Ia1
+!s100 zMeo94R<PDR;SHXE;<0m23
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edecoder7_testbench
+Z13 w1741903650
+R1
+R2
+!i122 15
+R3
+Z14 8C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd
+Z15 FC:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd
+l0
+L11 1
+V<k3Znn@IIlgWY?B]9AV[L3
+!s100 TZFVMR0U@HozdP<zb?J7X1
+R6
+32
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd|
+Z17 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab2/Lab2.1/Simulation/decoder7_testbench.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+Z18 DEx4 work 18 decoder7_testbench 0 22 <k3Znn@IIlgWY?B]9AV[L3
+!i122 15
+l26
+Z19 L14 32
+Z20 V@;dL275;:0zBMe15Xc?lN2
+Z21 !s100 K7mde<Ha^5I7flM39mR@E2
+R6
+32
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Eseg_dec_testbench
+Z22 w1741213748
+R1
+R2
+!i122 1
+R3
+R14
+R15
+l0
+L5 1
+VhBa24D?CiM7XG0L7T:id<3
+!s100 ZKNQkgfzZFK9NQVmj2UDS1
+R6
+32
+Z23 !s110 1741610999
+!i10b 1
+Z24 !s108 1741610999.000000
+R16
+R17
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+DEx4 work 17 seg_dec_testbench 0 22 hBa24D?CiM7XG0L7T:id<3
+!i122 1
+l20
+L8 31
+VIc^MZ@mjQ7I^1P?G<`12d0
+!s100 0:kT?dijG^YBBP=z?_[=@1
+R6
+32
+R23
+!i10b 1
+R24
+R16
+R17
+!i113 1
+R11
+R12

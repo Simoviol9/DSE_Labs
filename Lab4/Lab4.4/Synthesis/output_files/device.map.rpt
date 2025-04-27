@@ -1,0 +1,813 @@
+Analysis & Synthesis report for device
+Tue Apr  1 17:15:26 2025
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT
+ 11. Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|comparator:CMP
+ 12. Parameter Settings for User Entity Instance: digitFlashing:U1|comparator:CMP
+ 13. Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT
+ 14. Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|comparator:CMP
+ 15. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:3:CNT"
+ 16. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:2:CNT"
+ 17. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:1:CNT"
+ 18. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:CNT"
+ 19. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:25:CNT"
+ 20. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:24:CNT"
+ 21. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:23:CNT"
+ 22. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:22:CNT"
+ 23. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:21:CNT"
+ 24. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:20:CNT"
+ 25. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:19:CNT"
+ 26. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:18:CNT"
+ 27. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:17:CNT"
+ 28. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:16:CNT"
+ 29. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:15:CNT"
+ 30. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:14:CNT"
+ 31. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:13:CNT"
+ 32. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:12:CNT"
+ 33. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:11:CNT"
+ 34. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:10:CNT"
+ 35. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:9:CNT"
+ 36. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:8:CNT"
+ 37. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:7:CNT"
+ 38. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:6:CNT"
+ 39. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:5:CNT"
+ 40. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:4:CNT"
+ 41. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:3:CNT"
+ 42. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:2:CNT"
+ 43. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:1:CNT"
+ 44. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:CNT"
+ 45. Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Apr  1 17:15:26 2025          ;
+; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                   ; device                                         ;
+; Top-level Entity Name           ; device_digitFlashing                           ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 30                                             ;
+; Total pins                      ; 12                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                               ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                                          ; Setting              ; Default Value      ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6         ;                    ;
+; Top-level entity name                                                           ; device_digitFlashing ; device             ;
+; Family name                                                                     ; Cyclone V            ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                  ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                   ; On                 ;
+; Enable compact report table                                                     ; Off                  ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                 ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                  ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                  ; Off                ;
+; Preserve fewer node names                                                       ; On                   ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable               ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                 ; Auto               ;
+; Safe State Machine                                                              ; Off                  ; Off                ;
+; Extract Verilog State Machines                                                  ; On                   ; On                 ;
+; Extract VHDL State Machines                                                     ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                   ; On                 ;
+; Parallel Synthesis                                                              ; On                   ; On                 ;
+; DSP Block Balancing                                                             ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                   ; On                 ;
+; Power-Up Don't Care                                                             ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                  ; Off                ;
+; Remove Duplicate Registers                                                      ; On                   ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                  ; Off                ;
+; Optimization Technique                                                          ; Balanced             ; Balanced           ;
+; Carry Chain Length                                                              ; 70                   ; 70                 ;
+; Auto Carry Chains                                                               ; On                   ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                  ; Off                ;
+; Auto ROM Replacement                                                            ; On                   ; On                 ;
+; Auto RAM Replacement                                                            ; On                   ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                   ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                   ; On                 ;
+; Strict RAM Replacement                                                          ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                  ; Off                ;
+; Auto Resource Sharing                                                           ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                   ; On                 ;
+; Report Parameter Settings                                                       ; On                   ; On                 ;
+; Report Source Assignments                                                       ; On                   ; On                 ;
+; Report Connectivity Checks                                                      ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                  ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                    ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                               ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                  ; 100                ;
+; Clock MUX Protection                                                            ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                  ; Off                ;
+; Block Design Naming                                                             ; Auto                 ; Auto               ;
+; SDC constraint protection                                                       ; Off                  ; Off                ;
+; Synthesis Effort                                                                ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                   ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                   ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                  ; Off                ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; hexDecoder.vhd                   ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/hexDecoder.vhd           ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/mux.vhd                  ;         ;
+; moduloCounter.vhd                ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/moduloCounter.vhd        ;         ;
+; flipflop.vhd                     ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/flipflop.vhd             ;         ;
+; elementaryCounter.vhd            ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/elementaryCounter.vhd    ;         ;
+; digitFlashing.vhd                ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/digitFlashing.vhd        ;         ;
+; comparator.vhd                   ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/comparator.vhd           ;         ;
+; device_digitFlashing.vhd         ; yes             ; User VHDL File  ; C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 35             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 55             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 14             ;
+;     -- 5 input functions                    ; 9              ;
+;     -- 4 input functions                    ; 20             ;
+;     -- <=3 input functions                  ; 12             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 30             ;
+;                                             ;                ;
+; I/O pins                                    ; 12             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 30             ;
+; Total fan-out                               ; 350            ;
+; Average fan-out                             ; 3.21           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                              ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Entity Name          ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |device_digitFlashing                       ; 55 (0)              ; 30 (0)                    ; 0                 ; 0          ; 12   ; 0            ; |device_digitFlashing                                                                                               ; device_digitFlashing ; work         ;
+;    |digitFlashing:U1|                       ; 48 (0)              ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1                                                                              ; digitFlashing        ; work         ;
+;       |comparator:CMP|                      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|comparator:CMP                                                               ; comparator           ; work         ;
+;       |moduloCounter:MOD10_4BIT_CNT|        ; 4 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT                                                 ; moduloCounter        ; work         ;
+;          |elemCounter:CNT|                  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:CNT                                 ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:CNT|flipflop:DFF                    ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:CNT|mux:MUX1                        ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:1:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:1:CNT                 ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:1:CNT|flipflop:DFF    ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:1:CNT|mux:MUX1        ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:2:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:2:CNT                 ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:2:CNT|flipflop:DFF    ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:2:CNT|mux:MUX1        ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:3:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:3:CNT                 ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:3:CNT|flipflop:DFF    ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:3:CNT|mux:MUX1        ; mux                  ; work         ;
+;       |moduloCounter:MOD50M_26BIT_CNT|      ; 36 (0)              ; 26 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT                                               ; moduloCounter        ; work         ;
+;          |elemCounter:CNT|                  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:CNT                               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:CNT|flipflop:DFF                  ; flipflop             ; work         ;
+;          |elemCounter:\cnt_generate:10:CNT| ; 2 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:10:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:10:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX0|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:10:CNT|mux:MUX0     ; mux                  ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:10:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:11:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:11:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:11:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:11:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:12:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:12:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:12:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:12:CNT|mux:MUX0     ; mux                  ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:12:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:13:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:13:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:13:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:13:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:14:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:14:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:14:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:14:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:15:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:15:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:15:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:15:CNT|mux:MUX0     ; mux                  ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:15:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:16:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:16:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:16:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:16:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:17:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:17:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:17:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:17:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:18:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:18:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:18:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:18:CNT|mux:MUX0     ; mux                  ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:18:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:19:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:19:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:19:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:19:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:1:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:1:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:1:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:1:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:20:CNT| ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:20:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:20:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX0|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:20:CNT|mux:MUX0     ; mux                  ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:20:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:21:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:21:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:21:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:21:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:22:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:22:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:22:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:22:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:23:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:23:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:23:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:23:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:24:CNT| ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:24:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:24:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:24:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:25:CNT| ; 2 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:25:CNT              ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:25:CNT|flipflop:DFF ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:25:CNT|mux:MUX1     ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:2:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:2:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:2:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:2:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:3:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:3:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:3:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:3:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:4:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:4:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:4:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:4:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:5:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:5:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:5:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:5:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:6:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:6:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:6:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:6:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:7:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:7:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:7:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:7:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:8:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:8:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:8:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:8:CNT|mux:MUX1      ; mux                  ; work         ;
+;          |elemCounter:\cnt_generate:9:CNT|  ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:9:CNT               ; elemCounter          ; work         ;
+;             |flipflop:DFF|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:9:CNT|flipflop:DFF  ; flipflop             ; work         ;
+;             |mux:MUX1|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:9:CNT|mux:MUX1      ; mux                  ; work         ;
+;    |hexDecoder:DEC|                         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |device_digitFlashing|hexDecoder:DEC                                                                                ; hexDecoder           ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |device_digitFlashing|hexDecoder:DEC|OUT1[5] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |device_digitFlashing|hexDecoder:DEC|OUT1[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT ;
++----------------+----------+------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                             ;
++----------------+----------+------------------------------------------------------------------+
+; n_bits         ; 26       ; Signed Integer                                                   ;
+; modulo         ; 50000000 ; Signed Integer                                                   ;
++----------------+----------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|comparator:CMP ;
++----------------+----------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                            ;
++----------------+----------+---------------------------------------------------------------------------------+
+; n_bits         ; 26       ; Signed Integer                                                                  ;
+; int            ; 49999999 ; Signed Integer                                                                  ;
++----------------+----------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: digitFlashing:U1|comparator:CMP ;
++----------------+----------+--------------------------------------------------+
+; Parameter Name ; Value    ; Type                                             ;
++----------------+----------+--------------------------------------------------+
+; n_bits         ; 26       ; Signed Integer                                   ;
+; int            ; 49999999 ; Signed Integer                                   ;
++----------------+----------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n_bits         ; 4     ; Signed Integer                                                    ;
+; modulo         ; 11    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|comparator:CMP ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; n_bits         ; 4     ; Signed Integer                                                                   ;
+; int            ; 10    ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:3:CNT"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; next_a ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p      ; Input  ; Info     ; Stuck at GND                                                                        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:2:CNT" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:\cnt_generate:1:CNT" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|elemCounter:CNT" ;
++------+-------+----------+-----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                         ;
++------+-------+----------+-----------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                    ;
++------+-------+----------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:25:CNT"     ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; next_a ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p      ; Input  ; Info     ; Stuck at GND                                                                        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:24:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:23:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:22:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:21:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:20:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:19:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:18:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:17:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:16:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:15:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:14:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:13:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:12:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:11:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:10:CNT" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:9:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:8:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:7:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:6:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:5:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:4:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:3:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:2:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:\cnt_generate:1:CNT" ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:CNT" ;
++------+-------+----------+-------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                           ;
++------+-------+----------+-------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at GND                                                      ;
++------+-------+----------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 30                          ;
+;     CLR               ; 30                          ;
+; arriav_lcell_comb     ; 58                          ;
+;     normal            ; 58                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 20                          ;
+;         5 data inputs ; 9                           ;
+;         6 data inputs ; 14                          ;
+; boundary_port         ; 12                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.68                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Tue Apr  1 17:15:14 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab4_4 -c device
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file hexdecoder.vhd
+    Info (12022): Found design unit 1: hexDecoder-Behavior File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/hexDecoder.vhd Line: 17
+    Info (12023): Found entity 1: hexDecoder File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/hexDecoder.vhd Line: 10
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/mux.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: mux-stuctural File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/mux.vhd Line: 16
+    Info (12023): Found entity 1: mux File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/mux.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file modulocounter.vhd
+    Info (12022): Found design unit 1: moduloCounter-structure File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/moduloCounter.vhd Line: 24
+    Info (12023): Found entity 1: moduloCounter File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/moduloCounter.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipflop-Behavior File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/flipflop.vhd Line: 16
+    Info (12023): Found entity 1: flipflop File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/flipflop.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file elementarycounter.vhd
+    Info (12022): Found design unit 1: elemCounter-structure File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/elementaryCounter.vhd Line: 19
+    Info (12023): Found entity 1: elemCounter File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/elementaryCounter.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file digitflashing.vhd
+    Info (12022): Found design unit 1: digitFlashing-structure File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/digitFlashing.vhd Line: 17
+    Info (12023): Found entity 1: digitFlashing File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/digitFlashing.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file comparator.vhd
+    Info (12022): Found design unit 1: comparator-dataflow File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/comparator.vhd Line: 25
+    Info (12023): Found entity 1: comparator File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/comparator.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file device_digitflashing.vhd
+    Info (12022): Found design unit 1: device_digitFlashing-structure File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd Line: 18
+    Info (12023): Found entity 1: device_digitFlashing File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd Line: 10
+Info (12127): Elaborating entity "device_digitFlashing" for the top level hierarchy
+Info (12128): Elaborating entity "digitFlashing" for hierarchy "digitFlashing:U1" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd Line: 38
+Info (12128): Elaborating entity "moduloCounter" for hierarchy "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/digitFlashing.vhd Line: 48
+Info (12128): Elaborating entity "elemCounter" for hierarchy "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:CNT" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/moduloCounter.vhd Line: 53
+Info (12128): Elaborating entity "flipflop" for hierarchy "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:CNT|flipflop:DFF" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/elementaryCounter.vhd Line: 38
+Info (12128): Elaborating entity "mux" for hierarchy "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|elemCounter:CNT|mux:MUX0" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/elementaryCounter.vhd Line: 46
+Info (12128): Elaborating entity "comparator" for hierarchy "digitFlashing:U1|moduloCounter:MOD50M_26BIT_CNT|comparator:CMP" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/moduloCounter.vhd Line: 80
+Info (12128): Elaborating entity "moduloCounter" for hierarchy "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/digitFlashing.vhd Line: 72
+Info (12128): Elaborating entity "comparator" for hierarchy "digitFlashing:U1|moduloCounter:MOD10_4BIT_CNT|comparator:CMP" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/moduloCounter.vhd Line: 80
+Info (12128): Elaborating entity "hexDecoder" for hierarchy "hexDecoder:DEC" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd Line: 45
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/S310779/Desktop/DSE/Laboratory/Lab4/Lab4.4/Synthesis/device_digitFlashing.vhd Line: 13
+Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21061): Implemented 55 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Tue Apr  1 17:15:26 2025
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:20
+
+

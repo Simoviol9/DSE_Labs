@@ -1,0 +1,86 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity BCD_converter is port (
+	number : in STD_LOGIC_VECTOR(13 downto 0);
+	display0, display1, display2, display3 : out STD_LOGIC_VECTOR(3 downto 0));
+end BCD_converter;
+
+architecture behavior of BCD_converter is component thousands_comparator is port (
+	s : in UNSIGNED(13 downto 0);
+	z : out STD_LOGIC_VECTOR(3 downto 0));
+end component;
+component thousands_subtractor is port (input : in STD_LOGIC_VECTOR(13 downto 0);
+	sel : in STD_LOGIC_VECTOR(3 downto 0);
+	output : out STD_LOGIC_VECTOR(9 downto 0));
+end component;
+
+component hundreds_comparator is
+	port (
+		s : in UNSIGNED(9 downto 0);
+		z : out STD_LOGIC_VECTOR(3 downto 0)
+	);
+end component;
+component hundreds_subtractor is
+	port (
+		input : in STD_LOGIC_VECTOR(9 downto 0);
+		sel : in STD_LOGIC_VECTOR(3 downto 0);
+		output : out STD_LOGIC_VECTOR(6 downto 0)
+	);
+end component;
+
+component tens_comparator is
+	port (
+		s : in UNSIGNED(6 downto 0);
+		z : out STD_LOGIC_VECTOR(3 downto 0)
+	);
+end component;
+component tens_subtractor is
+	port (
+		input : in STD_LOGIC_VECTOR(6 downto 0);
+		sel : in STD_LOGIC_VECTOR(3 downto 0);
+		output : out STD_LOGIC_VECTOR(3 downto 0)
+	);
+end component;
+
+signal sub_hundreds : STD_LOGIC_VECTOR(9 downto 0);
+signal sub_tens : STD_LOGIC_VECTOR(6 downto 0);
+signal thousands, hundreds, tens : STD_LOGIC_VECTOR (3 downto 0);
+begin
+
+thousands_comparator0 : thousands_comparator port map(
+	s => UNSIGNED(number),
+	z => thousands
+);
+
+thousands_subtractor0 : thousands_subtractor port map(
+	input => number,
+	sel => thousands,
+	output => sub_hundreds
+);
+
+hundreds_comparator0 : hundreds_comparator port map(
+	s => UNSIGNED(sub_hundreds),
+	z => hundreds
+);
+
+hundreds_subtractor0 : hundreds_subtractor port map(
+	input => sub_hundreds,
+	sel => hundreds,
+	output => sub_tens
+);
+
+tens_comparator0 : tens_comparator port map(
+	s => UNSIGNED(sub_tens),
+	z => tens
+);
+tens_subtractor0 : tens_subtractor port map(
+	input => sub_tens,
+	sel => tens,
+	output => display0
+);
+display3 <= thousands;
+display2 <= hundreds;
+display1 <= tens;
+end behavior;

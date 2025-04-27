@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/user/Desktop/ing_24_25/DSE/QUARTUS_MODELSIM
+Eone_hot_fsm
+Z0 w1744598796
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/simulation
+Z4 8C:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/one_hot_fsm.vhd
+Z5 FC:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/one_hot_fsm.vhd
+l0
+L10
+VzBeZK=PiIT6CII0B_TYbP1
+!s100 @VfE?=8:Z[7TmRGOidGzf2
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1744602039
+!i10b 1
+Z8 !s108 1744602039.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/one_hot_fsm.vhd|
+Z10 !s107 C:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/one_hot_fsm.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+Z13 DEx4 work 11 one_hot_fsm 0 22 zBeZK=PiIT6CII0B_TYbP1
+l31
+L18
+Z14 V_56iYNb0z45^iU`Q[NLnI3
+Z15 !s100 Rmc<aT>fME9MQ;V<3]TMF1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etb_one_hot_fsm
+Z16 w1744602010
+R1
+R2
+R3
+Z17 8C:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/TB_one_hot_fsm.vhd
+Z18 FC:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/TB_one_hot_fsm.vhd
+l0
+L4
+VbShRXkY3m=AADeQgT1<RJ1
+!s100 XBZJj6KJ5iIojOOOdZn[J0
+R6
+32
+R7
+!i10b 1
+R8
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/TB_one_hot_fsm.vhd|
+Z20 !s107 C:/Users/user/Desktop/ing_24_25/DSE/LABS/LAB_5/ES_1/TB_one_hot_fsm.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 14 tb_one_hot_fsm 0 22 bShRXkY3m=AADeQgT1<RJ1
+l25
+L7
+V45ke`@MYOoIFMQX;48Mh20
+!s100 fefR1MD0ha[h79ZQYCF>g1
+R6
+32
+R7
+!i10b 1
+R8
+R19
+R20
+!i113 1
+R11
+R12

@@ -1,0 +1,97 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+Ecounter16bit
+Z0 w1742835756
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 8
+Z4 dC:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation
+Z5 8C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc.vhd
+Z6 FC:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc.vhd
+l0
+Z7 L11 1
+V1BSPB_;@6TW:[X_VL0<`j2
+!s100 CLhneZ:^3fIlNAUiCLn:30
+Z8 OV;C;2020.1;71
+32
+Z9 !s110 1742835758
+!i10b 1
+Z10 !s108 1742835758.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc.vhd|
+Z12 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Abehaviour
+R1
+R2
+R3
+DEx4 work 12 counter16bit 0 22 1BSPB_;@6TW:[X_VL0<`j2
+!i122 8
+l21
+L18 17
+VEC=ifJFV@Ol_i[fVR38PX2
+!s100 ZoMVZBV`fL8UXPM0e5Blz2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ecounter16bit_tb
+Z15 w1742809352
+R1
+R2
+R3
+!i122 9
+R4
+Z16 8C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc_tb.vhd
+Z17 FC:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc_tb.vhd
+l0
+R7
+V=_f=mddWe<LMlo8;0k;Pi3
+!s100 2n=4em>@kTQk8_CNV=[_;0
+R8
+32
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc_tb.vhd|
+Z19 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab4/Lab4.3/Simulation/counter16bit_struc_tb.vhd|
+!i113 1
+R13
+R14
+Abehaviout
+R1
+R2
+R3
+Z20 DEx4 work 15 counter16bit_tb 0 22 =_f=mddWe<LMlo8;0k;Pi3
+!i122 9
+l27
+Z21 L14 185
+Z22 VG0gPc`<EDSF4V^?EMDoEa0
+Z23 !s100 ;@m3Pa1GFK8lZf5563j>W1
+R8
+32
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 1
+R13
+R14

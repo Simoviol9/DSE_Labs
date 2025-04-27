@@ -1,0 +1,63 @@
+------------------------------------
+-- Group 8 - Laboratory 4
+-- Exercise 4 - Digit flashing
+-- VHDL code of 26-bit counter
+--
+-- (Adapted code of 16-bit counter)
+------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity binaryCounter26bit is
+	generic (
+        N_bits : integer := 26	-- Define number of bits of the counter
+   	);
+	port (
+		EN, CLK, CLR : in  STD_LOGIC;					-- Input signals: Enable, Clock and Clear (CLR is active-low)
+		COUNT        : out STD_LOGIC_VECTOR((N_bits-1) downto 0)	-- Output signal
+	);
+end binaryCounter26bit;
+
+architecture structure of binaryCounter26bit is
+
+	component T_FlipFlop is
+		port (
+		CLK : in  STD_LOGIC;
+		CLR : in  STD_LOGIC; -- Active-low asynchronous clear input
+		T   : in  STD_LOGIC;
+		Q   : out STD_LOGIC
+	);
+	end component;
+
+	signal A, T, C : STD_LOGIC_VECTOR((N_bits-1) downto 0);
+	
+begin
+	T(0) <= EN;
+	A(0) <= EN;
+
+	TFF : T_FlipFlop
+		port map(
+			CLK => CLK,
+			CLR => CLR,
+			T   => EN,
+			Q   => C(0)
+		);
+	
+	ff_generate : for i in 1 to (N_bits-1) generate
+		A(i) <= T(i-1);
+		T(i) <= A(i) and C(i-1);
+
+		TFF : T_FlipFlop
+		port map(
+			CLK => CLK,
+			CLR => CLR,
+			T   => T(i),
+			Q   => C(i)
+		);
+
+	end generate ff_generate;
+
+	COUNT <= C;
+
+end structure;

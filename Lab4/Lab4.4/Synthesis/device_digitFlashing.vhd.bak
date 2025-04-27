@@ -1,0 +1,64 @@
+------------------------------------
+-- Group 8 - Laboratory 4
+-- Exercise 4 - Digit flashing
+-- VHDL code of device entity (top-entity)
+------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity device_digitFlashing is
+	port (
+		KEY: in STD_LOGIC_VECTOR(3 downto 0);
+		HEX0     : out STD_LOGIC_VECTOR(0 to 6)
+	);
+end device_digitFlashing;
+
+architecture structure of device_digitFlashing is
+
+	component digitFlashing is
+		port (
+			IN1, CLR : in  STD_LOGIC;                   -- Input signal: (will be conected to 50 MHz clock)
+			OUT1     : out STD_LOGIC_VECTOR(3 downto 0) -- Output signal: 4-bit binary value in range 0 to 9 (in decimal)
+	);
+	end component;
+
+	signal CLR        : STD_LOGIC_VECTOR(25 downto 0);
+	signal A: STD_LOGIC_VECTOR(0 to 6);
+
+begin
+	CLR <= not KEY(0);
+	
+	U1 : digitFlashing
+	port map(
+		IN1    => ,
+		CLR   => CLR,
+		OUT1 => A
+	);
+
+	DEC : comparator
+	generic
+	map(
+	N_bits => 26,
+	INT    => TRESHOLD
+	)
+	port map(
+		IN1  => A,
+		OUT1 => B
+	);
+
+	MOD10_4BIT_CNT : moduloCounter
+	generic
+	map(
+	N_bits => 4,
+	MODULO => 11
+	)
+	port map(
+		EN    => B,
+		CLK   => IN1,
+		CLR   => CLR,
+		COUNT => C
+	);
+
+	OUT1 <= C;
+end structure;

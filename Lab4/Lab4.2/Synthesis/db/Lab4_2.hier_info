@@ -1,0 +1,506 @@
+|device_counter16bit
+SW[0] => counter16bit:CNT16.CLR
+SW[1] => counter16bit:CNT16.EN
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+KEY[0] => counter16bit:CNT16.CLK
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+HEX0[6] <= hexDecoder:DEC0.OUT1[6]
+HEX0[5] <= hexDecoder:DEC0.OUT1[5]
+HEX0[4] <= hexDecoder:DEC0.OUT1[4]
+HEX0[3] <= hexDecoder:DEC0.OUT1[3]
+HEX0[2] <= hexDecoder:DEC0.OUT1[2]
+HEX0[1] <= hexDecoder:DEC0.OUT1[1]
+HEX0[0] <= hexDecoder:DEC0.OUT1[0]
+HEX1[6] <= hexDecoder:DEC1.OUT1[6]
+HEX1[5] <= hexDecoder:DEC1.OUT1[5]
+HEX1[4] <= hexDecoder:DEC1.OUT1[4]
+HEX1[3] <= hexDecoder:DEC1.OUT1[3]
+HEX1[2] <= hexDecoder:DEC1.OUT1[2]
+HEX1[1] <= hexDecoder:DEC1.OUT1[1]
+HEX1[0] <= hexDecoder:DEC1.OUT1[0]
+HEX2[6] <= hexDecoder:DEC2.OUT1[6]
+HEX2[5] <= hexDecoder:DEC2.OUT1[5]
+HEX2[4] <= hexDecoder:DEC2.OUT1[4]
+HEX2[3] <= hexDecoder:DEC2.OUT1[3]
+HEX2[2] <= hexDecoder:DEC2.OUT1[2]
+HEX2[1] <= hexDecoder:DEC2.OUT1[1]
+HEX2[0] <= hexDecoder:DEC2.OUT1[0]
+HEX3[6] <= hexDecoder:DEC3.OUT1[6]
+HEX3[5] <= hexDecoder:DEC3.OUT1[5]
+HEX3[4] <= hexDecoder:DEC3.OUT1[4]
+HEX3[3] <= hexDecoder:DEC3.OUT1[3]
+HEX3[2] <= hexDecoder:DEC3.OUT1[2]
+HEX3[1] <= hexDecoder:DEC3.OUT1[1]
+HEX3[0] <= hexDecoder:DEC3.OUT1[0]
+
+
+|device_counter16bit|counter16bit:CNT16
+EN => T[1].IN1
+EN => T_FlipFlop:TFF.T
+CLK => T_FlipFlop:TFF.CLK
+CLK => T_FlipFlop:ff_generate:1:TFF.CLK
+CLK => T_FlipFlop:ff_generate:2:TFF.CLK
+CLK => T_FlipFlop:ff_generate:3:TFF.CLK
+CLK => T_FlipFlop:ff_generate:4:TFF.CLK
+CLK => T_FlipFlop:ff_generate:5:TFF.CLK
+CLK => T_FlipFlop:ff_generate:6:TFF.CLK
+CLK => T_FlipFlop:ff_generate:7:TFF.CLK
+CLK => T_FlipFlop:ff_generate:8:TFF.CLK
+CLK => T_FlipFlop:ff_generate:9:TFF.CLK
+CLK => T_FlipFlop:ff_generate:10:TFF.CLK
+CLK => T_FlipFlop:ff_generate:11:TFF.CLK
+CLK => T_FlipFlop:ff_generate:12:TFF.CLK
+CLK => T_FlipFlop:ff_generate:13:TFF.CLK
+CLK => T_FlipFlop:ff_generate:14:TFF.CLK
+CLK => T_FlipFlop:ff_generate:15:TFF.CLK
+CLR => T_FlipFlop:TFF.CLR
+CLR => T_FlipFlop:ff_generate:1:TFF.CLR
+CLR => T_FlipFlop:ff_generate:2:TFF.CLR
+CLR => T_FlipFlop:ff_generate:3:TFF.CLR
+CLR => T_FlipFlop:ff_generate:4:TFF.CLR
+CLR => T_FlipFlop:ff_generate:5:TFF.CLR
+CLR => T_FlipFlop:ff_generate:6:TFF.CLR
+CLR => T_FlipFlop:ff_generate:7:TFF.CLR
+CLR => T_FlipFlop:ff_generate:8:TFF.CLR
+CLR => T_FlipFlop:ff_generate:9:TFF.CLR
+CLR => T_FlipFlop:ff_generate:10:TFF.CLR
+CLR => T_FlipFlop:ff_generate:11:TFF.CLR
+CLR => T_FlipFlop:ff_generate:12:TFF.CLR
+CLR => T_FlipFlop:ff_generate:13:TFF.CLR
+CLR => T_FlipFlop:ff_generate:14:TFF.CLR
+CLR => T_FlipFlop:ff_generate:15:TFF.CLR
+COUNT[0] <= T_FlipFlop:TFF.Q
+COUNT[1] <= T_FlipFlop:ff_generate:1:TFF.Q
+COUNT[2] <= T_FlipFlop:ff_generate:2:TFF.Q
+COUNT[3] <= T_FlipFlop:ff_generate:3:TFF.Q
+COUNT[4] <= T_FlipFlop:ff_generate:4:TFF.Q
+COUNT[5] <= T_FlipFlop:ff_generate:5:TFF.Q
+COUNT[6] <= T_FlipFlop:ff_generate:6:TFF.Q
+COUNT[7] <= T_FlipFlop:ff_generate:7:TFF.Q
+COUNT[8] <= T_FlipFlop:ff_generate:8:TFF.Q
+COUNT[9] <= T_FlipFlop:ff_generate:9:TFF.Q
+COUNT[10] <= T_FlipFlop:ff_generate:10:TFF.Q
+COUNT[11] <= T_FlipFlop:ff_generate:11:TFF.Q
+COUNT[12] <= T_FlipFlop:ff_generate:12:TFF.Q
+COUNT[13] <= T_FlipFlop:ff_generate:13:TFF.Q
+COUNT[14] <= T_FlipFlop:ff_generate:14:TFF.Q
+COUNT[15] <= T_FlipFlop:ff_generate:15:TFF.Q
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:1:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:2:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:3:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:4:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:5:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:6:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:7:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:8:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:9:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:10:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:11:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:12:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:13:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:14:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|counter16bit:CNT16|T_FlipFlop:\ff_generate:15:TFF
+CLK => t_tmp.CLK
+CLR => t_tmp.ACLR
+T => t_tmp.ENA
+Q <= t_tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|hexDecoder:DEC0
+IN1[0] => Equal0.IN3
+IN1[0] => Equal1.IN0
+IN1[0] => Equal2.IN3
+IN1[0] => Equal3.IN1
+IN1[0] => Equal4.IN3
+IN1[0] => Equal5.IN1
+IN1[0] => Equal6.IN3
+IN1[0] => Equal7.IN2
+IN1[0] => Equal8.IN3
+IN1[0] => Equal9.IN1
+IN1[0] => Equal10.IN3
+IN1[0] => Equal11.IN2
+IN1[0] => Equal12.IN3
+IN1[0] => Equal13.IN2
+IN1[0] => Equal14.IN3
+IN1[0] => Equal15.IN3
+IN1[1] => Equal0.IN2
+IN1[1] => Equal1.IN3
+IN1[1] => Equal2.IN0
+IN1[1] => Equal3.IN0
+IN1[1] => Equal4.IN2
+IN1[1] => Equal5.IN3
+IN1[1] => Equal6.IN1
+IN1[1] => Equal7.IN1
+IN1[1] => Equal8.IN2
+IN1[1] => Equal9.IN3
+IN1[1] => Equal10.IN1
+IN1[1] => Equal11.IN1
+IN1[1] => Equal12.IN2
+IN1[1] => Equal13.IN3
+IN1[1] => Equal14.IN2
+IN1[1] => Equal15.IN2
+IN1[2] => Equal0.IN1
+IN1[2] => Equal1.IN2
+IN1[2] => Equal2.IN2
+IN1[2] => Equal3.IN3
+IN1[2] => Equal4.IN0
+IN1[2] => Equal5.IN0
+IN1[2] => Equal6.IN0
+IN1[2] => Equal7.IN0
+IN1[2] => Equal8.IN1
+IN1[2] => Equal9.IN2
+IN1[2] => Equal10.IN2
+IN1[2] => Equal11.IN3
+IN1[2] => Equal12.IN1
+IN1[2] => Equal13.IN1
+IN1[2] => Equal14.IN1
+IN1[2] => Equal15.IN1
+IN1[3] => Equal0.IN0
+IN1[3] => Equal1.IN1
+IN1[3] => Equal2.IN1
+IN1[3] => Equal3.IN2
+IN1[3] => Equal4.IN1
+IN1[3] => Equal5.IN2
+IN1[3] => Equal6.IN2
+IN1[3] => Equal7.IN3
+IN1[3] => Equal8.IN0
+IN1[3] => Equal9.IN0
+IN1[3] => Equal10.IN0
+IN1[3] => Equal11.IN0
+IN1[3] => Equal12.IN0
+IN1[3] => Equal13.IN0
+IN1[3] => Equal14.IN0
+IN1[3] => Equal15.IN0
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|hexDecoder:DEC1
+IN1[0] => Equal0.IN3
+IN1[0] => Equal1.IN0
+IN1[0] => Equal2.IN3
+IN1[0] => Equal3.IN1
+IN1[0] => Equal4.IN3
+IN1[0] => Equal5.IN1
+IN1[0] => Equal6.IN3
+IN1[0] => Equal7.IN2
+IN1[0] => Equal8.IN3
+IN1[0] => Equal9.IN1
+IN1[0] => Equal10.IN3
+IN1[0] => Equal11.IN2
+IN1[0] => Equal12.IN3
+IN1[0] => Equal13.IN2
+IN1[0] => Equal14.IN3
+IN1[0] => Equal15.IN3
+IN1[1] => Equal0.IN2
+IN1[1] => Equal1.IN3
+IN1[1] => Equal2.IN0
+IN1[1] => Equal3.IN0
+IN1[1] => Equal4.IN2
+IN1[1] => Equal5.IN3
+IN1[1] => Equal6.IN1
+IN1[1] => Equal7.IN1
+IN1[1] => Equal8.IN2
+IN1[1] => Equal9.IN3
+IN1[1] => Equal10.IN1
+IN1[1] => Equal11.IN1
+IN1[1] => Equal12.IN2
+IN1[1] => Equal13.IN3
+IN1[1] => Equal14.IN2
+IN1[1] => Equal15.IN2
+IN1[2] => Equal0.IN1
+IN1[2] => Equal1.IN2
+IN1[2] => Equal2.IN2
+IN1[2] => Equal3.IN3
+IN1[2] => Equal4.IN0
+IN1[2] => Equal5.IN0
+IN1[2] => Equal6.IN0
+IN1[2] => Equal7.IN0
+IN1[2] => Equal8.IN1
+IN1[2] => Equal9.IN2
+IN1[2] => Equal10.IN2
+IN1[2] => Equal11.IN3
+IN1[2] => Equal12.IN1
+IN1[2] => Equal13.IN1
+IN1[2] => Equal14.IN1
+IN1[2] => Equal15.IN1
+IN1[3] => Equal0.IN0
+IN1[3] => Equal1.IN1
+IN1[3] => Equal2.IN1
+IN1[3] => Equal3.IN2
+IN1[3] => Equal4.IN1
+IN1[3] => Equal5.IN2
+IN1[3] => Equal6.IN2
+IN1[3] => Equal7.IN3
+IN1[3] => Equal8.IN0
+IN1[3] => Equal9.IN0
+IN1[3] => Equal10.IN0
+IN1[3] => Equal11.IN0
+IN1[3] => Equal12.IN0
+IN1[3] => Equal13.IN0
+IN1[3] => Equal14.IN0
+IN1[3] => Equal15.IN0
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|hexDecoder:DEC2
+IN1[0] => Equal0.IN3
+IN1[0] => Equal1.IN0
+IN1[0] => Equal2.IN3
+IN1[0] => Equal3.IN1
+IN1[0] => Equal4.IN3
+IN1[0] => Equal5.IN1
+IN1[0] => Equal6.IN3
+IN1[0] => Equal7.IN2
+IN1[0] => Equal8.IN3
+IN1[0] => Equal9.IN1
+IN1[0] => Equal10.IN3
+IN1[0] => Equal11.IN2
+IN1[0] => Equal12.IN3
+IN1[0] => Equal13.IN2
+IN1[0] => Equal14.IN3
+IN1[0] => Equal15.IN3
+IN1[1] => Equal0.IN2
+IN1[1] => Equal1.IN3
+IN1[1] => Equal2.IN0
+IN1[1] => Equal3.IN0
+IN1[1] => Equal4.IN2
+IN1[1] => Equal5.IN3
+IN1[1] => Equal6.IN1
+IN1[1] => Equal7.IN1
+IN1[1] => Equal8.IN2
+IN1[1] => Equal9.IN3
+IN1[1] => Equal10.IN1
+IN1[1] => Equal11.IN1
+IN1[1] => Equal12.IN2
+IN1[1] => Equal13.IN3
+IN1[1] => Equal14.IN2
+IN1[1] => Equal15.IN2
+IN1[2] => Equal0.IN1
+IN1[2] => Equal1.IN2
+IN1[2] => Equal2.IN2
+IN1[2] => Equal3.IN3
+IN1[2] => Equal4.IN0
+IN1[2] => Equal5.IN0
+IN1[2] => Equal6.IN0
+IN1[2] => Equal7.IN0
+IN1[2] => Equal8.IN1
+IN1[2] => Equal9.IN2
+IN1[2] => Equal10.IN2
+IN1[2] => Equal11.IN3
+IN1[2] => Equal12.IN1
+IN1[2] => Equal13.IN1
+IN1[2] => Equal14.IN1
+IN1[2] => Equal15.IN1
+IN1[3] => Equal0.IN0
+IN1[3] => Equal1.IN1
+IN1[3] => Equal2.IN1
+IN1[3] => Equal3.IN2
+IN1[3] => Equal4.IN1
+IN1[3] => Equal5.IN2
+IN1[3] => Equal6.IN2
+IN1[3] => Equal7.IN3
+IN1[3] => Equal8.IN0
+IN1[3] => Equal9.IN0
+IN1[3] => Equal10.IN0
+IN1[3] => Equal11.IN0
+IN1[3] => Equal12.IN0
+IN1[3] => Equal13.IN0
+IN1[3] => Equal14.IN0
+IN1[3] => Equal15.IN0
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_counter16bit|hexDecoder:DEC3
+IN1[0] => Equal0.IN3
+IN1[0] => Equal1.IN0
+IN1[0] => Equal2.IN3
+IN1[0] => Equal3.IN1
+IN1[0] => Equal4.IN3
+IN1[0] => Equal5.IN1
+IN1[0] => Equal6.IN3
+IN1[0] => Equal7.IN2
+IN1[0] => Equal8.IN3
+IN1[0] => Equal9.IN1
+IN1[0] => Equal10.IN3
+IN1[0] => Equal11.IN2
+IN1[0] => Equal12.IN3
+IN1[0] => Equal13.IN2
+IN1[0] => Equal14.IN3
+IN1[0] => Equal15.IN3
+IN1[1] => Equal0.IN2
+IN1[1] => Equal1.IN3
+IN1[1] => Equal2.IN0
+IN1[1] => Equal3.IN0
+IN1[1] => Equal4.IN2
+IN1[1] => Equal5.IN3
+IN1[1] => Equal6.IN1
+IN1[1] => Equal7.IN1
+IN1[1] => Equal8.IN2
+IN1[1] => Equal9.IN3
+IN1[1] => Equal10.IN1
+IN1[1] => Equal11.IN1
+IN1[1] => Equal12.IN2
+IN1[1] => Equal13.IN3
+IN1[1] => Equal14.IN2
+IN1[1] => Equal15.IN2
+IN1[2] => Equal0.IN1
+IN1[2] => Equal1.IN2
+IN1[2] => Equal2.IN2
+IN1[2] => Equal3.IN3
+IN1[2] => Equal4.IN0
+IN1[2] => Equal5.IN0
+IN1[2] => Equal6.IN0
+IN1[2] => Equal7.IN0
+IN1[2] => Equal8.IN1
+IN1[2] => Equal9.IN2
+IN1[2] => Equal10.IN2
+IN1[2] => Equal11.IN3
+IN1[2] => Equal12.IN1
+IN1[2] => Equal13.IN1
+IN1[2] => Equal14.IN1
+IN1[2] => Equal15.IN1
+IN1[3] => Equal0.IN0
+IN1[3] => Equal1.IN1
+IN1[3] => Equal2.IN1
+IN1[3] => Equal3.IN2
+IN1[3] => Equal4.IN1
+IN1[3] => Equal5.IN2
+IN1[3] => Equal6.IN2
+IN1[3] => Equal7.IN3
+IN1[3] => Equal8.IN0
+IN1[3] => Equal9.IN0
+IN1[3] => Equal10.IN0
+IN1[3] => Equal11.IN0
+IN1[3] => Equal12.IN0
+IN1[3] => Equal13.IN0
+IN1[3] => Equal14.IN0
+IN1[3] => Equal15.IN0
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+

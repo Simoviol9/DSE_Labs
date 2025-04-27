@@ -1,0 +1,154 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation
+Eflipflop
+Z1 w1743441528
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 48
+R0
+Z4 8C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd
+Z5 FC:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd
+l0
+Z6 L10 1
+VzZ>dW?QFXAFLl>@eiLioK1
+!s100 0WPQMd1K9ART;d3azcF=H2
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1744664018
+!i10b 1
+Z9 !s108 1744664018.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd|
+Z11 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+DEx4 work 8 flipflop 0 22 zZ>dW?QFXAFLl>@eiLioK1
+!i122 48
+l17
+L16 11
+VfBXa^Z5h0j<7j`UejXoEX3
+!s100 O6:<DdhLjPBYc0:1hOckd2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Esequencedetector
+Z14 w1744663840
+R2
+R3
+!i122 49
+R0
+Z15 8C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM.vhd
+Z16 FC:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM.vhd
+l0
+R6
+V4:@6@f@m?Sj^><R`OFzOS0
+!s100 JgSWOGdNBg=]VBfAfhf]?3
+R7
+32
+Z17 !s110 1744664019
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM.vhd|
+Z19 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM.vhd|
+!i113 1
+R12
+R13
+Astructure
+R2
+R3
+DEx4 work 16 sequencedetector 0 22 4:@6@f@m?Sj^><R`OFzOS0
+!i122 49
+l25
+L16 35
+Vd3i2:a7CAKNm[Ya1IKAbm0
+!s100 aK<XBHVO_dl2m_ME0i^A=0
+R7
+32
+R17
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
+Esequencedetector_tb
+Z20 w1744664016
+R2
+R3
+!i122 50
+R0
+Z21 8C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM_tb.vhd
+Z22 FC:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM_tb.vhd
+l0
+R6
+VMPGKC]=JSXF5VSfbglPze2
+!s100 Ve8n@`PTjA[=L0ZH:LX@V3
+R7
+32
+R17
+!i10b 1
+Z23 !s108 1744664019.000000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM_tb.vhd|
+Z25 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/FSM_tb.vhd|
+!i113 1
+R12
+R13
+Atestbench
+R2
+R3
+Z26 DEx4 work 19 sequencedetector_tb 0 22 MPGKC]=JSXF5VSfbglPze2
+!i122 50
+l25
+L13 111
+V=`hemNzS3GBoL9=aZMEl53
+!s100 >9WDg=3G]YdiGkhdPlFTd3
+R7
+32
+R17
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R12
+R13
+Astructure
+R2
+R3
+R26
+!i122 41
+l22
+L13 49
+VRC:I:HW0BBnoLR_TFgUTY1
+!s100 IEJ:UfTm5>cJ@oFHaHc[S3
+R7
+32
+!s110 1743441696
+!i10b 1
+!s108 1743441696.000000
+R24
+R25
+!i113 1
+R12
+R13
+w1743377456

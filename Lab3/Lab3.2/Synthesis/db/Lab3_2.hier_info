@@ -1,0 +1,521 @@
+|device_signedAdderSubtractor
+SW[0] => signedAdderSubtractor:DEV.IN1[0]
+SW[0] => hexDecoder:DEC0.IN1[0]
+SW[1] => signedAdderSubtractor:DEV.IN1[1]
+SW[1] => hexDecoder:DEC0.IN1[1]
+SW[2] => signedAdderSubtractor:DEV.IN1[2]
+SW[2] => hexDecoder:DEC0.IN1[2]
+SW[3] => signedAdderSubtractor:DEV.IN1[3]
+SW[3] => hexDecoder:DEC0.IN1[3]
+SW[4] => signedAdderSubtractor:DEV.IN2[0]
+SW[4] => hexDecoder:DEC1.IN1[0]
+SW[5] => signedAdderSubtractor:DEV.IN2[1]
+SW[5] => hexDecoder:DEC1.IN1[1]
+SW[6] => signedAdderSubtractor:DEV.IN2[2]
+SW[6] => hexDecoder:DEC1.IN1[2]
+SW[7] => signedAdderSubtractor:DEV.IN2[3]
+SW[7] => hexDecoder:DEC1.IN1[3]
+SW[8] => signedAdderSubtractor:DEV.IN3
+KEY[0] => signedAdderSubtractor:DEV.RESN
+KEY[1] => signedAdderSubtractor:DEV.CLK
+LEDR[0] <= <GND>
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= signedAdderSubtractor:DEV.OUT2
+HEX0[6] <= hexDecoder:DEC2.OUT1[6]
+HEX0[5] <= hexDecoder:DEC2.OUT1[5]
+HEX0[4] <= hexDecoder:DEC2.OUT1[4]
+HEX0[3] <= hexDecoder:DEC2.OUT1[3]
+HEX0[2] <= hexDecoder:DEC2.OUT1[2]
+HEX0[1] <= hexDecoder:DEC2.OUT1[1]
+HEX0[0] <= hexDecoder:DEC2.OUT1[0]
+HEX1[6] <= hexDecoder:DEC2.OUT2[6]
+HEX1[5] <= hexDecoder:DEC2.OUT2[5]
+HEX1[4] <= hexDecoder:DEC2.OUT2[4]
+HEX1[3] <= hexDecoder:DEC2.OUT2[3]
+HEX1[2] <= hexDecoder:DEC2.OUT2[2]
+HEX1[1] <= hexDecoder:DEC2.OUT2[1]
+HEX1[0] <= hexDecoder:DEC2.OUT2[0]
+HEX2[6] <= hexDecoder:DEC1.OUT1[6]
+HEX2[5] <= hexDecoder:DEC1.OUT1[5]
+HEX2[4] <= hexDecoder:DEC1.OUT1[4]
+HEX2[3] <= hexDecoder:DEC1.OUT1[3]
+HEX2[2] <= hexDecoder:DEC1.OUT1[2]
+HEX2[1] <= hexDecoder:DEC1.OUT1[1]
+HEX2[0] <= hexDecoder:DEC1.OUT1[0]
+HEX3[6] <= hexDecoder:DEC1.OUT2[6]
+HEX3[5] <= hexDecoder:DEC1.OUT2[5]
+HEX3[4] <= hexDecoder:DEC1.OUT2[4]
+HEX3[3] <= hexDecoder:DEC1.OUT2[3]
+HEX3[2] <= hexDecoder:DEC1.OUT2[2]
+HEX3[1] <= hexDecoder:DEC1.OUT2[1]
+HEX3[0] <= hexDecoder:DEC1.OUT2[0]
+HEX4[6] <= hexDecoder:DEC0.OUT1[6]
+HEX4[5] <= hexDecoder:DEC0.OUT1[5]
+HEX4[4] <= hexDecoder:DEC0.OUT1[4]
+HEX4[3] <= hexDecoder:DEC0.OUT1[3]
+HEX4[2] <= hexDecoder:DEC0.OUT1[2]
+HEX4[1] <= hexDecoder:DEC0.OUT1[1]
+HEX4[0] <= hexDecoder:DEC0.OUT1[0]
+HEX5[6] <= hexDecoder:DEC0.OUT2[6]
+HEX5[5] <= hexDecoder:DEC0.OUT2[5]
+HEX5[4] <= hexDecoder:DEC0.OUT2[4]
+HEX5[3] <= hexDecoder:DEC0.OUT2[3]
+HEX5[2] <= hexDecoder:DEC0.OUT2[2]
+HEX5[1] <= hexDecoder:DEC0.OUT2[1]
+HEX5[0] <= hexDecoder:DEC0.OUT2[0]
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV
+IN1[0] => regn:REG0.R[0]
+IN1[1] => regn:REG0.R[1]
+IN1[2] => regn:REG0.R[2]
+IN1[3] => regn:REG0.R[3]
+IN2[0] => regn:REG1.R[0]
+IN2[1] => regn:REG1.R[1]
+IN2[2] => regn:REG1.R[2]
+IN2[3] => regn:REG1.R[3]
+IN3 => rippleCarryAdderSubtractor:RCA0.P
+IN3 => ovfdetector:OVFD.MODE
+CLK => regn:REG0.Clock
+CLK => regn:REG1.Clock
+CLK => regn:REG2.Clock
+CLK => flipflop:DFF0.Clock
+RESN => regn:REG0.Resetn
+RESN => regn:REG1.Resetn
+RESN => regn:REG2.Resetn
+RESN => flipflop:DFF0.Resetn
+OUT1[0] <= regn:REG2.Q[0]
+OUT1[1] <= regn:REG2.Q[1]
+OUT1[2] <= regn:REG2.Q[2]
+OUT1[3] <= regn:REG2.Q[3]
+OUT2 <= flipflop:DFF0.Q
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|regn:REG0
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|regn:REG1
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|regn:REG2
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Resetn => Q[0]~reg0.ACLR
+Resetn => Q[1]~reg0.ACLR
+Resetn => Q[2]~reg0.ACLR
+Resetn => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0
+A1[0] => fullAdder:FA0.A
+A1[1] => fullAdder:FA1.A
+A1[2] => fullAdder:FA2.A
+A1[3] => fullAdder:FA3.A
+A2[0] => fullAdder:FA0.B
+A2[1] => fullAdder:FA1.B
+A2[2] => fullAdder:FA2.B
+A2[3] => fullAdder:FA3.B
+P => fullAdder:FA0.P
+P => fullAdder:FA0.CIN
+P => fullAdder:FA1.P
+P => fullAdder:FA2.P
+P => fullAdder:FA3.P
+B1[0] <= fullAdder:FA0.S
+B1[1] <= fullAdder:FA1.S
+B1[2] <= fullAdder:FA2.S
+B1[3] <= fullAdder:FA3.S
+COUT <= fullAdder:FA3.Cout
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA0
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA0|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA1
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA1|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA2
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA2|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA3
+A => SEL.IN1
+B => B2.IN0
+P => B2.IN1
+CIN => S.IN1
+CIN => mux:MUX0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= mux:MUX0.OUT1
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|rippleCarryAdderSubtractor:RCA0|fullAdder:FA3|mux:MUX0
+IN0 => OUT1.IN0
+IN1 => OUT1.IN0
+SEL => OUT1.IN1
+SEL => OUT1.IN1
+OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|flipflop:DFF0
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|signedAdderSubtractor:DEV|ovfdetector:OVFD
+A => OVF.IN0
+A => OVF.IN0
+A => OVF.IN0
+A => OVF.IN0
+B => OVF.IN1
+B => OVF.IN1
+B => OVF.IN1
+B => OVF.IN1
+S => OVF.IN1
+S => OVF.IN1
+S => OVF.IN1
+S => OVF.IN1
+MODE => OVF.OUTPUTSELECT
+COUT => ~NO_FANOUT~
+OVF <= OVF.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|device_signedAdderSubtractor|hexDecoder:DEC0
+IN1[0] => Equal0.IN2
+IN1[0] => Equal1.IN3
+IN1[0] => Equal2.IN3
+IN1[0] => Equal3.IN1
+IN1[0] => Equal4.IN1
+IN1[0] => Equal5.IN3
+IN1[0] => Equal6.IN3
+IN1[0] => Equal7.IN2
+IN1[0] => Equal8.IN1
+IN1[0] => Equal9.IN3
+IN1[0] => Equal10.IN3
+IN1[0] => Equal11.IN2
+IN1[0] => Equal12.IN0
+IN1[0] => Equal13.IN3
+IN1[0] => Equal14.IN3
+IN1[0] => Equal15.IN3
+IN1[1] => Equal0.IN1
+IN1[1] => Equal1.IN2
+IN1[1] => Equal2.IN1
+IN1[1] => Equal3.IN3
+IN1[1] => Equal4.IN3
+IN1[1] => Equal5.IN1
+IN1[1] => Equal6.IN2
+IN1[1] => Equal7.IN1
+IN1[1] => Equal8.IN0
+IN1[1] => Equal9.IN2
+IN1[1] => Equal10.IN0
+IN1[1] => Equal11.IN3
+IN1[1] => Equal12.IN3
+IN1[1] => Equal13.IN2
+IN1[1] => Equal14.IN2
+IN1[1] => Equal15.IN2
+IN1[2] => Equal0.IN0
+IN1[2] => Equal1.IN1
+IN1[2] => Equal2.IN0
+IN1[2] => Equal3.IN2
+IN1[2] => Equal4.IN0
+IN1[2] => Equal5.IN2
+IN1[2] => Equal6.IN0
+IN1[2] => Equal7.IN3
+IN1[2] => Equal8.IN3
+IN1[2] => Equal9.IN1
+IN1[2] => Equal10.IN2
+IN1[2] => Equal11.IN1
+IN1[2] => Equal12.IN2
+IN1[2] => Equal13.IN1
+IN1[2] => Equal14.IN1
+IN1[2] => Equal15.IN1
+IN1[3] => Equal0.IN3
+IN1[3] => Equal1.IN0
+IN1[3] => Equal2.IN2
+IN1[3] => Equal3.IN0
+IN1[3] => Equal4.IN2
+IN1[3] => Equal5.IN0
+IN1[3] => Equal6.IN1
+IN1[3] => Equal7.IN0
+IN1[3] => Equal8.IN2
+IN1[3] => Equal9.IN0
+IN1[3] => Equal10.IN1
+IN1[3] => Equal11.IN0
+IN1[3] => Equal12.IN1
+IN1[3] => Equal13.IN0
+IN1[3] => Equal14.IN0
+IN1[3] => Equal15.IN0
+IN1[3] => OUT2[6].DATAIN
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT2[6] <= IN1[3].DB_MAX_OUTPUT_PORT_TYPE
+OUT2[5] <= <VCC>
+OUT2[4] <= <VCC>
+OUT2[3] <= <VCC>
+OUT2[2] <= <VCC>
+OUT2[1] <= <VCC>
+OUT2[0] <= <VCC>
+
+
+|device_signedAdderSubtractor|hexDecoder:DEC1
+IN1[0] => Equal0.IN2
+IN1[0] => Equal1.IN3
+IN1[0] => Equal2.IN3
+IN1[0] => Equal3.IN1
+IN1[0] => Equal4.IN1
+IN1[0] => Equal5.IN3
+IN1[0] => Equal6.IN3
+IN1[0] => Equal7.IN2
+IN1[0] => Equal8.IN1
+IN1[0] => Equal9.IN3
+IN1[0] => Equal10.IN3
+IN1[0] => Equal11.IN2
+IN1[0] => Equal12.IN0
+IN1[0] => Equal13.IN3
+IN1[0] => Equal14.IN3
+IN1[0] => Equal15.IN3
+IN1[1] => Equal0.IN1
+IN1[1] => Equal1.IN2
+IN1[1] => Equal2.IN1
+IN1[1] => Equal3.IN3
+IN1[1] => Equal4.IN3
+IN1[1] => Equal5.IN1
+IN1[1] => Equal6.IN2
+IN1[1] => Equal7.IN1
+IN1[1] => Equal8.IN0
+IN1[1] => Equal9.IN2
+IN1[1] => Equal10.IN0
+IN1[1] => Equal11.IN3
+IN1[1] => Equal12.IN3
+IN1[1] => Equal13.IN2
+IN1[1] => Equal14.IN2
+IN1[1] => Equal15.IN2
+IN1[2] => Equal0.IN0
+IN1[2] => Equal1.IN1
+IN1[2] => Equal2.IN0
+IN1[2] => Equal3.IN2
+IN1[2] => Equal4.IN0
+IN1[2] => Equal5.IN2
+IN1[2] => Equal6.IN0
+IN1[2] => Equal7.IN3
+IN1[2] => Equal8.IN3
+IN1[2] => Equal9.IN1
+IN1[2] => Equal10.IN2
+IN1[2] => Equal11.IN1
+IN1[2] => Equal12.IN2
+IN1[2] => Equal13.IN1
+IN1[2] => Equal14.IN1
+IN1[2] => Equal15.IN1
+IN1[3] => Equal0.IN3
+IN1[3] => Equal1.IN0
+IN1[3] => Equal2.IN2
+IN1[3] => Equal3.IN0
+IN1[3] => Equal4.IN2
+IN1[3] => Equal5.IN0
+IN1[3] => Equal6.IN1
+IN1[3] => Equal7.IN0
+IN1[3] => Equal8.IN2
+IN1[3] => Equal9.IN0
+IN1[3] => Equal10.IN1
+IN1[3] => Equal11.IN0
+IN1[3] => Equal12.IN1
+IN1[3] => Equal13.IN0
+IN1[3] => Equal14.IN0
+IN1[3] => Equal15.IN0
+IN1[3] => OUT2[6].DATAIN
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT2[6] <= IN1[3].DB_MAX_OUTPUT_PORT_TYPE
+OUT2[5] <= <VCC>
+OUT2[4] <= <VCC>
+OUT2[3] <= <VCC>
+OUT2[2] <= <VCC>
+OUT2[1] <= <VCC>
+OUT2[0] <= <VCC>
+
+
+|device_signedAdderSubtractor|hexDecoder:DEC2
+IN1[0] => Equal0.IN2
+IN1[0] => Equal1.IN3
+IN1[0] => Equal2.IN3
+IN1[0] => Equal3.IN1
+IN1[0] => Equal4.IN1
+IN1[0] => Equal5.IN3
+IN1[0] => Equal6.IN3
+IN1[0] => Equal7.IN2
+IN1[0] => Equal8.IN1
+IN1[0] => Equal9.IN3
+IN1[0] => Equal10.IN3
+IN1[0] => Equal11.IN2
+IN1[0] => Equal12.IN0
+IN1[0] => Equal13.IN3
+IN1[0] => Equal14.IN3
+IN1[0] => Equal15.IN3
+IN1[1] => Equal0.IN1
+IN1[1] => Equal1.IN2
+IN1[1] => Equal2.IN1
+IN1[1] => Equal3.IN3
+IN1[1] => Equal4.IN3
+IN1[1] => Equal5.IN1
+IN1[1] => Equal6.IN2
+IN1[1] => Equal7.IN1
+IN1[1] => Equal8.IN0
+IN1[1] => Equal9.IN2
+IN1[1] => Equal10.IN0
+IN1[1] => Equal11.IN3
+IN1[1] => Equal12.IN3
+IN1[1] => Equal13.IN2
+IN1[1] => Equal14.IN2
+IN1[1] => Equal15.IN2
+IN1[2] => Equal0.IN0
+IN1[2] => Equal1.IN1
+IN1[2] => Equal2.IN0
+IN1[2] => Equal3.IN2
+IN1[2] => Equal4.IN0
+IN1[2] => Equal5.IN2
+IN1[2] => Equal6.IN0
+IN1[2] => Equal7.IN3
+IN1[2] => Equal8.IN3
+IN1[2] => Equal9.IN1
+IN1[2] => Equal10.IN2
+IN1[2] => Equal11.IN1
+IN1[2] => Equal12.IN2
+IN1[2] => Equal13.IN1
+IN1[2] => Equal14.IN1
+IN1[2] => Equal15.IN1
+IN1[3] => Equal0.IN3
+IN1[3] => Equal1.IN0
+IN1[3] => Equal2.IN2
+IN1[3] => Equal3.IN0
+IN1[3] => Equal4.IN2
+IN1[3] => Equal5.IN0
+IN1[3] => Equal6.IN1
+IN1[3] => Equal7.IN0
+IN1[3] => Equal8.IN2
+IN1[3] => Equal9.IN0
+IN1[3] => Equal10.IN1
+IN1[3] => Equal11.IN0
+IN1[3] => Equal12.IN1
+IN1[3] => Equal13.IN0
+IN1[3] => Equal14.IN0
+IN1[3] => Equal15.IN0
+IN1[3] => OUT2[6].DATAIN
+OUT1[6] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[5] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[4] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[3] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[2] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[1] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT1[0] <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
+OUT2[6] <= IN1[3].DB_MAX_OUTPUT_PORT_TYPE
+OUT2[5] <= <VCC>
+OUT2[4] <= <VCC>
+OUT2[3] <= <VCC>
+OUT2[2] <= <VCC>
+OUT2[1] <= <VCC>
+OUT2[0] <= <VCC>
+
+

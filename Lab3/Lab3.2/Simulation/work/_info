@@ -1,0 +1,519 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Eflipflop
+Z0 w1743374561
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 245
+Z3 dC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation
+Z4 8C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd
+Z5 FC:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd
+l0
+Z6 L10 1
+VH<gcnjJdnHn]OBd7@jBzQ2
+!s100 U9KNDHKPbjPJK6af@3PPX3
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1743376203
+!i10b 1
+Z9 !s108 1743376203.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd|
+Z11 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab5/Lab5.1/Simulation/flipflop.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavior
+R1
+R2
+DEx4 work 8 flipflop 0 22 H<gcnjJdnHn]OBd7@jBzQ2
+!i122 245
+l17
+L16 11
+VfBXa^Z5h0j<7j`UejXoEX3
+!s100 O6:<DdhLjPBYc0:1hOckd2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Efulladder
+Z14 w1743109878
+R1
+R2
+!i122 232
+R3
+Z15 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/fullAdder.vhd
+Z16 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/fullAdder.vhd
+l0
+R6
+VRF<;;WP>Aa8?3<f1Z7LlS2
+!s100 40lH0a6QG1<Wi@j7WLIU<1
+R7
+32
+Z17 !s110 1743111549
+!i10b 1
+Z18 !s108 1743111549.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/fullAdder.vhd|
+Z20 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/fullAdder.vhd|
+!i113 1
+R12
+R13
+Astuctural
+R1
+R2
+DEx4 work 9 fulladder 0 22 RF<;;WP>Aa8?3<f1Z7LlS2
+!i122 232
+l26
+L17 19
+VS4XA]Io?HTSOO;ChR3XCi2
+!s100 bzzVkfI=M<>KaVA@BJa;M3
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Emux
+Z21 w1743109384
+R1
+R2
+!i122 233
+R3
+Z22 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/mux.vhd
+Z23 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/mux.vhd
+l0
+R6
+VzkiIJMk^m7n?K]UMn8kSC3
+!s100 93AQo`kIMdT;OojiQ2XiD1
+R7
+32
+R17
+!i10b 1
+R18
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/mux.vhd|
+Z25 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/mux.vhd|
+!i113 1
+R12
+R13
+Adataflow
+R1
+R2
+Z26 DEx4 work 3 mux 0 22 zkiIJMk^m7n?K]UMn8kSC3
+!i122 233
+l17
+Z27 L16 5
+VDz17lFJ]fYC@U7X7DQQCl1
+!s100 d8`1;TjD>j@1f?c;lnhDe0
+R7
+32
+R17
+!i10b 1
+R18
+R24
+R25
+!i113 1
+R12
+R13
+Astuctural
+R1
+R2
+R26
+!i122 129
+l17
+R27
+Vb:`028iXTVRdLC?n[faCG0
+!s100 ^HeT=U]lJQo<zOH:KEe`R2
+R7
+32
+Z28 !s110 1742502269
+!i10b 1
+Z29 !s108 1742502269.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\mux.vhd|
+!s107 C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\mux.vhd|
+!i113 1
+R12
+R13
+FC:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\mux.vhd
+w1742502081
+8C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\mux.vhd
+Eovfdetector
+Z30 w1743109733
+R1
+R2
+!i122 238
+R3
+Z31 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/ovfdetector.vhd
+Z32 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/ovfdetector.vhd
+l0
+R6
+V>E@2NzZ1jP@6C^baCO6V63
+!s100 538]6DSk;0EZk9TbZd^GC2
+R7
+32
+Z33 !s110 1743111565
+!i10b 1
+Z34 !s108 1743111565.000000
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/ovfdetector.vhd|
+Z36 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/ovfdetector.vhd|
+!i113 1
+R12
+R13
+Adataflow
+R1
+R2
+DEx4 work 11 ovfdetector 0 22 >E@2NzZ1jP@6C^baCO6V63
+!i122 238
+l17
+R27
+VgC5IeGmeW^8j>d1D^>Pad3
+!s100 aag@_RbBPkRD?NekcS?KN2
+R7
+32
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R12
+R13
+Abehavior
+R1
+R2
+DEx4 work 11 ovfdetector 0 22 UR?zN<jJbLJGj;G[ooYdk3
+!i122 134
+l17
+R27
+V1B^AT2j_DFZQZe5L_Rhg51
+!s100 =gHVBSN?M8cFP^@@I3B?k1
+R7
+32
+!s110 1742502270
+!i10b 1
+!s108 1742502270.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\ovfdetector.vhd|
+!s107 C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\ovfdetector.vhd|
+!i113 1
+R12
+R13
+FC:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\ovfdetector.vhd
+w1742502215
+8C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\ovfdetector.vhd
+Eregn
+Z37 w1743109796
+Z38 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R1
+R2
+!i122 234
+R3
+Z39 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/regn.vhd
+Z40 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/regn.vhd
+l0
+Z41 L11 1
+VOX9^gH[UKb3@_V79TnB[N0
+!s100 _l;JZb[MQ?OP]>I2LH<gH3
+R7
+32
+R17
+!i10b 1
+R18
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/regn.vhd|
+Z43 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/regn.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R38
+R1
+R2
+DEx4 work 4 regn 0 22 OX9^gH[UKb3@_V79TnB[N0
+!i122 234
+l21
+L20 11
+V<Z[X=7@6<@fzn8zCWOA;I2
+!s100 ]2PinZ`P=952o>boSIabf2
+R7
+32
+R17
+!i10b 1
+R18
+R42
+R43
+!i113 1
+R12
+R13
+Eripplecarryaddersubtractor
+Z44 w1743110427
+R38
+R1
+R2
+!i122 235
+R3
+Z45 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/rippleCarryAdderSubtractor.vhd
+Z46 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/rippleCarryAdderSubtractor.vhd
+l0
+R41
+Vd@MChY:R[1H8Z;la09]U11
+!s100 T_Uc>04]gmdHfe1S9TX5X1
+R7
+32
+Z47 !s110 1743111551
+!i10b 1
+Z48 !s108 1743111550.000000
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/rippleCarryAdderSubtractor.vhd|
+Z50 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/rippleCarryAdderSubtractor.vhd|
+!i113 1
+R12
+R13
+Astructural
+R38
+R1
+R2
+DEx4 work 26 ripplecarryaddersubtractor 0 22 d@MChY:R[1H8Z;la09]U11
+!i122 235
+l29
+L20 22
+V>2P]<Q`lmLzL0?W<T:h6Y2
+!s100 ki=ZL7Kj1YCgKWn@JGeVK3
+R7
+32
+R47
+!i10b 1
+R48
+R49
+R50
+!i113 1
+R12
+R13
+Abehavior
+R38
+R1
+R2
+DEx4 work 26 ripplecarryaddersubtractor 0 22 _m763]LHgH_ZJEC42kT]n0
+!i122 131
+l29
+L20 19
+VY8<WXH^^:cD65fY5Z7iXX1
+!s100 lMI=WQdJjnF[^JJmNB1CB3
+R7
+32
+R28
+!i10b 1
+R29
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\rippleCarryAdderSubtractor.vhd|
+!s107 C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\rippleCarryAdderSubtractor.vhd|
+!i113 1
+R12
+R13
+FC:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\rippleCarryAdderSubtractor.vhd
+w1742502200
+8C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\rippleCarryAdderSubtractor.vhd
+Esequencedetector
+Z51 w1743376200
+R1
+R2
+!i122 246
+R3
+Z52 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM.vhd
+Z53 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM.vhd
+l0
+R6
+V4:@6@f@m?Sj^><R`OFzOS0
+!s100 JgSWOGdNBg=]VBfAfhf]?3
+R7
+32
+Z54 !s110 1743376204
+!i10b 1
+R9
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM.vhd|
+Z56 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+DEx4 work 16 sequencedetector 0 22 4:@6@f@m?Sj^><R`OFzOS0
+!i122 246
+l26
+L16 44
+VO6eFS;`;4lQ:;o=ba<PVg2
+!s100 B5cEdZM4:f4?Jez3W30ho3
+R7
+32
+R54
+!i10b 1
+R9
+R55
+R56
+!i113 1
+R12
+R13
+Esequencedetector_tb
+Z57 w1743376180
+R1
+R2
+!i122 247
+R3
+Z58 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM_tb.vhd
+Z59 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM_tb.vhd
+l0
+R6
+VMPGKC]=JSXF5VSfbglPze2
+!s100 Ve8n@`PTjA[=L0ZH:LX@V3
+R7
+32
+R54
+!i10b 1
+Z60 !s108 1743376204.000000
+Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM_tb.vhd|
+!s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM_tb.vhd|
+!i113 1
+R12
+R13
+Astructure
+R1
+R2
+DEx4 work 19 sequencedetector_tb 0 22 MPGKC]=JSXF5VSfbglPze2
+!i122 247
+l22
+L13 38
+VaR[NfUJoUdeE]d7_7G;;V0
+!s100 2[3G5`aFRHBl`X0`@Z]N=2
+R7
+32
+R54
+!i10b 1
+R60
+R61
+Z62 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/FSM_tb.vhd|
+!i113 1
+R12
+R13
+Esignedaddersubtractor
+Z63 w1743110511
+R38
+R1
+R2
+!i122 236
+R3
+Z64 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor.vhd
+Z65 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor.vhd
+l0
+R41
+VdUX9OLdY9bUV?Vg56i?`<0
+!s100 =2^=omd8]lC8Bz9R3R0`>0
+R7
+32
+Z66 !s110 1743111562
+!i10b 1
+Z67 !s108 1743111562.000000
+Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor.vhd|
+Z69 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor.vhd|
+!i113 1
+R12
+R13
+Astructural
+R38
+R1
+R2
+Z70 DEx4 work 21 signedaddersubtractor 0 22 dUX9OLdY9bUV?Vg56i?`<0
+!i122 236
+l58
+L20 57
+V1BIzfoam]cfY`B6K[ThfS3
+!s100 4U25dAz5lC`bH1:m1IOi:1
+R7
+32
+R66
+!i10b 1
+R67
+R68
+R69
+!i113 1
+R12
+R13
+Abehavior
+R38
+R1
+R2
+R70
+!i122 132
+l52
+L20 46
+VbKaJ^h82XV@zhFj]6>WES0
+!s100 ?n[mKM<KM5oP5KzbgE;JP1
+R7
+32
+R28
+!i10b 1
+R29
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\signedAdderSubtractor.vhd|
+!s107 C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\signedAdderSubtractor.vhd|
+!i113 1
+R12
+R13
+FC:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\signedAdderSubtractor.vhd
+w1742502091
+8C:\Users\viola\Desktop\DSE\Laboratory\Lab3\Lab3.2\Simulation\signedAdderSubtractor.vhd
+Esignedaddersubtractor_tb
+Z71 w1743111412
+R38
+R1
+R2
+!i122 237
+R3
+Z72 8C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor_tb.vhd
+Z73 FC:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor_tb.vhd
+l0
+R41
+V3NQ`GaHJm8SDQ6clQU57X2
+!s100 9X?0H]KJR0F05J<AcX>j;3
+R7
+32
+R33
+!i10b 1
+R34
+Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor_tb.vhd|
+Z75 !s107 C:/Users/viola/Desktop/DSE/Laboratory/Lab3/Lab3.2/Simulation/signedAdderSubtractor_tb.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R38
+R1
+R2
+DEx4 work 24 signedaddersubtractor_tb 0 22 3NQ`GaHJm8SDQ6clQU57X2
+!i122 237
+l27
+L14 65
+Vf`1akQG1C6zPGc@ag>NVm3
+!s100 ZEI6Zh_]bPoh8@SogETao0
+R7
+32
+R33
+!i10b 1
+R34
+R74
+R75
+!i113 1
+R12
+R13
