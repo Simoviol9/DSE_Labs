@@ -93,33 +93,17 @@ int main(void) {
 	MX_GPIO_Init();
 	MX_USART2_UART_Init();
 	/* USER CODE BEGIN 2 */
-	volatile unsigned int *GPIOA_MODER = (unsigned int*) (0x40020000 + 0x00);
-	volatile unsigned int *GPIOA_ODR = (unsigned int*) (0x40020000 + 0x14);
-	//CLOCK REGISTERS
-	volatile unsigned int *RCC_AHB1ENR = (unsigned int*) (0x40023800 + 0x30);
 
-	//VARIABLES
-	int i;
-	//ENABLE PORT CLOCK:
-	// this ensure that the peripheral is enabled and connected to the AHB1 bus
-	*RCC_AHB1ENR |= 0x01U;
-	//CONFIGURE PORT: set MODER[11:10] = 0x1
-	*GPIOA_MODER = *GPIOA_MODER | 0x00100000;
-	//SWITCH ON THE LED: set ODR[5] = 0x1, that is pulls PA5 high
-	*GPIOA_ODR = *GPIOA_ODR | 0x00;
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	SysTick_Config(SystemCoreClock / 1000);
+
 	while (1) {
 		for (i = 0; i < (INTERVAL / 2); i++)
 			;
-		*GPIOA_ODR = *GPIOA_ODR | 0x0400;
-		for (i = 0; i < (INTERVAL / 2); i++)
-			;
-		*GPIOA_ODR = *GPIOA_ODR & 0xFFFFFBFF;
-		/* USER CODE END WHILE */
+		LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x020);
 
 		/* USER CODE BEGIN 3 */
 	}
