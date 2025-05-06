@@ -104,6 +104,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	SysTick_Config(SystemCoreClock / 1000);
   while (1)
   {
 	  if(LL_TIM_ReadReg(TIM3,CNT) == 0x7CF){

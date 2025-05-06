@@ -1,4 +1,6 @@
 ../Drivers/CMSIS/Include/core_cm4.h:1653:22:__NVIC_SetPriorityGrouping	1
+../Drivers/CMSIS/Include/core_cm4.h:1814:22:__NVIC_SetPriority	2
+../Drivers/CMSIS/Include/core_cm4.h:2022:26:SysTick_Config	2
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h:2988:22:LL_RCC_HSI_Enable	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h:3008:26:LL_RCC_HSI_IsReady	1
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h:3034:22:LL_RCC_HSI_SetCalibTrimming	1
@@ -30,8 +32,8 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:484:22:LL_GPIO_SetPinPull	3
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:910:22:LL_GPIO_ResetOutputPin	1
 ../Core/Src/main.c:66:5:main	2
-../Core/Src/main.c:129:6:SystemClock_Config	6
-../Core/Src/main.c:175:13:MX_TIM3_Init	1
-../Core/Src/main.c:218:13:MX_USART2_UART_Init	1
-../Core/Src/main.c:269:13:MX_GPIO_Init	1
-../Core/Src/main.c:323:6:Error_Handler	1
+../Core/Src/main.c:130:6:SystemClock_Config	6
+../Core/Src/main.c:176:13:MX_TIM3_Init	1
+../Core/Src/main.c:219:13:MX_USART2_UART_Init	1
+../Core/Src/main.c:270:13:MX_GPIO_Init	1
+../Core/Src/main.c:324:6:Error_Handler	1
