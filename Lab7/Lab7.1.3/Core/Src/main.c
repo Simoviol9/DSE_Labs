@@ -106,8 +106,7 @@ int main(void) {
 			timeInterval = timeInterval >> 1;	// Decrease the time-interval
 		}
 
-		for (int i = 0; i < (timeInterval / 2); i++)
-			;	// Delay statement
+		for (int i = 0; i < (timeInterval / 2); i++);	// Delay statement
 		LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x020));
 
 		/* USER CODE END WHILE */
