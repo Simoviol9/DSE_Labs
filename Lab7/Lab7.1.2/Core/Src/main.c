@@ -100,14 +100,11 @@ int main(void) {
 	while (1) {
 
 		// If button is not pressed (USER BUTTON is active-low)
-		if ((LL_GPIO_ReadReg(GPIOC, IDR) & 0x02000) == 0x02000) {
-			LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) & 0xFFFFFFDF));
-
+		if ((LL_GPIO_ReadReg(GPIOC, IDR) & 0x02000) != 0x00) {
+			LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) & 0xFFFFFFDF));// Set bit in position 5 at 0
 		}
 		else{
-
-			LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) | 0x020));
-
+			LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) | 0x020));	// Set bit in position 5 at 1
 		}
 		/* USER CODE END WHILE */
 
