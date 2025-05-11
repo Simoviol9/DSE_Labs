@@ -31,7 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define INTERVAL 1420
+#define INTERVAL 8500
 
 /* USER CODE END PD */
 
