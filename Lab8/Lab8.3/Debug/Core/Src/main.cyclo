@@ -32,9 +32,9 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:273:22:LL_GPIO_SetPinMode	3
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:484:22:LL_GPIO_SetPinPull	3
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:910:22:LL_GPIO_ResetOutputPin	1
-../Core/Src/main.c:66:5:main	4
-../Core/Src/main.c:134:6:SystemClock_Config	6
-../Core/Src/main.c:175:13:MX_TIM3_Init	1
-../Core/Src/main.c:219:13:MX_USART2_UART_Init	1
-../Core/Src/main.c:269:13:MX_GPIO_Init	1
-../Core/Src/main.c:333:6:Error_Handler	1
+../Core/Src/main.c:66:5:main	2
+../Core/Src/main.c:135:6:SystemClock_Config	6
+../Core/Src/main.c:181:13:MX_TIM3_Init	1
+../Core/Src/main.c:226:13:MX_USART2_UART_Init	1
+../Core/Src/main.c:277:13:MX_GPIO_Init	1
+../Core/Src/main.c:342:6:Error_Handler	1

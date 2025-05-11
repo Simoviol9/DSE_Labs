@@ -94,13 +94,16 @@ int main(void) {
 	MX_USART2_UART_Init();
 	MX_TIM3_Init();
 	/* USER CODE BEGIN 2 */
-	LL_DBGMCU_APB1_GRP1_FreezePeriph (LL_DBGMCU_APB1_GRP1_TIM3_STOP);
+	LL_DBGMCU_APB1_GRP1_FreezePeriph(LL_DBGMCU_APB1_GRP1_TIM3_STOP);
+
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
-	LL_TIM_WriteReg(TIM3, PSC, 0x147);			// 327 in decimal
-	LL_TIM_WriteReg(TIM3, ARR, 0x09);			// 9 in decimal
-	LL_TIM_WriteReg(TIM3, CCR1, 0xCCF);			// 3279 in decimal
-	LL_TIM_WriteReg(TIM3, CCR2, 0x33D);			// 829 in decimal
-	LL_TIM_WriteReg(TIM3, CCMR1, LL_TIM_ReadReg(TIM3, CCMR1) | 0b1011000010110000);
+	//LL_TIM_WriteReg(TIM3, PSC, 0x2328);			// 9000 in decimal (uncomment to test application if no scope is available)
+	LL_TIM_WriteReg(TIM3, PSC, 0x2328);			// 9 in decimal
+	LL_TIM_WriteReg(TIM3, ARR, 0x03E7);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, CCR1, 0x03E7);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, CCR2, 0x00F9);			// 249 in decimal
+	LL_TIM_WriteReg(TIM3, CCMR1,
+			LL_TIM_ReadReg(TIM3, CCMR1) | 0b1011000010110000);
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -108,20 +111,24 @@ int main(void) {
 	SysTick_Config(SystemCoreClock / 1000);
 	while (1) {
 		/* USER CODE END WHILE */
-		if ((LL_TIM_ReadReg(TIM3,SR) & 0x02) == 0x02) {// If output compare #1 is true
-			LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA,ODR) ^ 0x0400); // Toggle PA10
-			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & 0xFFFD); // Update status register
+		// Test for OC1 (=999)
+		if (LL_TIM_ReadReg(TIM3, SR) & 0x02) {
+			LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA,ODR) ^ 0x0400);// Toggle PA10
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x02));// Reset interrupt flag OC1
 		}
-		if ((LL_TIM_ReadReg(TIM3,SR) & 0x04) == 0x04) {// If output compare #2 is true
-			LL_GPIO_WriteReg(GPIOB, ODR, LL_GPIO_ReadReg(GPIOB,ODR) ^ 0x0400); // Toggle PB10
-			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & 0xFFFB); // Update status register
-			if(LL_TIM_ReadReg(TIM3,CCR2) != 0xCCF){
-				LL_TIM_WriteReg(TIM3,CCR2,LL_TIM_ReadReg(TIM3,CCR2) + 0x33E);
-			}
-			else{
-				LL_TIM_WriteReg(TIM3, CCR2, 0x33D);
-			}
+		// Test for OC2 (=249)
+		if (LL_TIM_ReadReg(TIM3, SR) & 0x04) {
+			LL_GPIO_WriteReg(GPIOB, ODR, LL_GPIO_ReadReg(GPIOB,ODR) ^ 0x0400);// Toggle PB10
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x04));// Reset interrupt flag OC2
 		}
+
+		/* If no scope is available, test application with LED on PA5
+		 if (LL_TIM_ReadReg(TIM3, SR) & 0x04){
+		 LL_GPIO_WriteReg(GPIOA,ODR,LL_GPIO_ReadReg(GPIOA,ODR) ^ 0x020);	// Toggle PA5
+		 LL_TIM_WriteReg(TIM3, SR,LL_TIM_ReadReg(TIM3,SR) & (~0x04));		// Reset interrupt flag OC2
+		 }
+		 */
+
 		/* USER CODE BEGIN 3 */
 	}
 	/* USER CODE END 3 */
@@ -132,8 +139,8 @@ int main(void) {
  * @retval None
  */
 void SystemClock_Config(void) {
-	LL_FLASH_SetLatency(LL_FLASH_LATENCY_2);
-	while (LL_FLASH_GetLatency() != LL_FLASH_LATENCY_2) {
+	LL_FLASH_SetLatency(LL_FLASH_LATENCY_1);
+	while (LL_FLASH_GetLatency() != LL_FLASH_LATENCY_1) {
 	}
 	LL_PWR_SetRegulVoltageScaling(LL_PWR_REGU_VOLTAGE_SCALE2);
 	LL_RCC_HSI_SetCalibTrimming(16);
@@ -143,8 +150,8 @@ void SystemClock_Config(void) {
 	while (LL_RCC_HSI_IsReady() != 1) {
 
 	}
-	LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSI, LL_RCC_PLLM_DIV_16, 336,
-			LL_RCC_PLLP_DIV_4);
+	LL_RCC_PLL_ConfigDomain_SYS(LL_RCC_PLLSOURCE_HSI, LL_RCC_PLLM_DIV_8, 50,
+	LL_RCC_PLLP_DIV_2);
 	LL_RCC_PLL_Enable();
 
 	/* Wait till PLL is ready */
@@ -155,15 +162,15 @@ void SystemClock_Config(void) {
 	}
 	LL_RCC_SetAHBPrescaler(LL_RCC_SYSCLK_DIV_1);
 	LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_2);
-	LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
+	LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_2);
 	LL_RCC_SetSysClkSource(LL_RCC_SYS_CLKSOURCE_PLL);
 
 	/* Wait till System clock is ready */
 	while (LL_RCC_GetSysClkSource() != LL_RCC_SYS_CLKSOURCE_STATUS_PLL) {
 
 	}
-	LL_Init1msTick(84000000);
-	LL_SetSystemCoreClock(84000000);
+	LL_Init1msTick(50000000);
+	LL_SetSystemCoreClock(50000000);
 	LL_RCC_SetTIMPrescaler(LL_RCC_TIM_PRESCALER_TWICE);
 }
 
