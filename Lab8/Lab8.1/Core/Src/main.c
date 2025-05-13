@@ -97,9 +97,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   //int flag = 0;
   //int prevFlag = 0;
-  LL_TIM_WriteReg(TIM3,CR1,LL_TIM_ReadReg(TIM3,CR1) | 0x01);
-  LL_TIM_WriteReg(TIM3,PSC,0x5207);			// 20999 in decimal
-  LL_TIM_WriteReg(TIM3,ARR,0x7CF);			// 1999 in decimal
+  LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+  	LL_TIM_WriteReg(TIM3, PSC, 0x2903);			// 10499 in decimal
+  	LL_TIM_WriteReg(TIM3, ARR, 0x01);			// 1 in decimal
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,7 +107,7 @@ int main(void)
 	SysTick_Config(SystemCoreClock / 1000);
   while (1)
   {
-	  if(LL_TIM_ReadReg(TIM3,CNT) == 0x7CF){
+	  if(LL_TIM_ReadReg(TIM3,CNT) == 0x01){
 		  LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400);
 	  }
 

@@ -99,9 +99,9 @@ int main(void) {
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
 	//LL_TIM_WriteReg(TIM3, PSC, 0x2328);			// 9000 in decimal (uncomment to test application if no scope is available)
 	LL_TIM_WriteReg(TIM3, PSC, 0x0009);			// 9 in decimal
-	LL_TIM_WriteReg(TIM3, ARR, 0x03E7);			// 999 in decimal
-	LL_TIM_WriteReg(TIM3, CCR1, 0x03E7);			// 999 in decimal
-	LL_TIM_WriteReg(TIM3, CCR2, 0x00F9);			// 249 in decimal
+	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, CCR1, 999);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, CCR2, 199);			// 249 in decimal
 	LL_TIM_WriteReg(TIM3, CCMR1,
 			LL_TIM_ReadReg(TIM3, CCMR1) | 0b1011000010110000);
 	/* USER CODE END 2 */
@@ -114,22 +114,15 @@ int main(void) {
 		// Test for OC1 (=999)
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x02) {
 			LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA,ODR) ^ 0x0400);// Toggle PA10
+			LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3, CCR1) + 1000);
 			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x02));// Reset interrupt flag OC1
 		}
 		// Test for OC2 (=249)
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x04) {
 			LL_GPIO_WriteReg(GPIOB, ODR, LL_GPIO_ReadReg(GPIOB,ODR) ^ 0x0400);// Toggle PB10
+			LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3, CCR2) + 200);
 			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x04));// Reset interrupt flag OC2
-			uint16_t threshold = LL_TIM_ReadReg(TIM3, CCR2);
-			if (treshold == 249) {
-				LL_TIM_WriteReg(TIM3, CCR2, 0x01F3);		// 499 in decimal
-			} else if (treshold == 499) {
-				LL_TIM_WriteReg(TIM3, CCR2, 0x02ED);		// 749 in decimal
-			} else if (treshold == 749) {
-				LL_TIM_WriteReg(TIM3, CCR2, 0x03E7);		// 999 in decimal
-			} else {
-				LL_TIM_WriteReg(TIM3, CCR2, 0x00F9);		// 249 in decimal
-			}
+
 		}
 
 		/* If no scope is available, test application with LED on PA5
