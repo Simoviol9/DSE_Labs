@@ -1,0 +1,37 @@
+10:33:34 **** Incremental Build of configuration Debug for project Lab8.1.1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:3: warning: implicit declaration of function 'LL_TIM_WriteReg' [-Wimplicit-function-declaration]
+   97 |   LL_TIM_WriteReg(TIM3, CR1, (LL_TIM_ReadReg(TIM3, CR1) | 0x01));
+      |   ^~~~~~~~~~~~~~~
+../Core/Src/main.c:97:25: error: 'CR1' undeclared (first use in this function); did you mean 'CRC'?
+   97 |   LL_TIM_WriteReg(TIM3, CR1, (LL_TIM_ReadReg(TIM3, CR1) | 0x01));
+      |                         ^~~
+      |                         CRC
+../Core/Src/main.c:97:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:97:31: warning: implicit declaration of function 'LL_TIM_ReadReg' [-Wimplicit-function-declaration]
+   97 |   LL_TIM_WriteReg(TIM3, CR1, (LL_TIM_ReadReg(TIM3, CR1) | 0x01));
+      |                               ^~~~~~~~~~~~~~
+../Core/Src/main.c:100:25: error: 'SR' undeclared (first use in this function)
+  100 |   LL_TIM_WriteReg(TIM3, SR, 0x0000);
+      |                         ^~
+../Core/Src/main.c:103:25: error: 'CNT' undeclared (first use in this function)
+  103 |   LL_TIM_WriteReg(TIM3, CNT, 0x0000);
+      |                         ^~~
+../Core/Src/main.c:117:11: warning: implicit declaration of function 'LL_GPIO_WriteReg'; did you mean 'HAL_GPIO_WritePin'? [-Wimplicit-function-declaration]
+  117 |           LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400));
+      |           ^~~~~~~~~~~~~~~~
+      |           HAL_GPIO_WritePin
+../Core/Src/main.c:117:35: error: 'ODR' undeclared (first use in this function)
+  117 |           LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400));
+      |                                   ^~~
+../Core/Src/main.c:117:41: warning: implicit declaration of function 'LL_GPIO_ReadReg'; did you mean 'HAL_GPIO_ReadPin'? [-Wimplicit-function-declaration]
+  117 |           LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400));
+      |                                         ^~~~~~~~~~~~~~~
+      |                                         HAL_GPIO_ReadPin
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+10:33:35 Build Failed. 5 errors, 4 warnings. (took 307ms)
+
