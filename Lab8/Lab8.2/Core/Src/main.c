@@ -97,7 +97,7 @@ int main(void) {
 	int flag = 0;
 	//int prevFlag = 0;
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
-	LL_TIM_WriteReg(TIM3, PSC, 0x2903);			// 20999 in decimal
+	LL_TIM_WriteReg(TIM3, PSC, 0x2903);			// 10499 in decimal
 	LL_TIM_WriteReg(TIM3, ARR, 0x01);			// 1 in decimal
 	/* USER CODE END 2 */
 
