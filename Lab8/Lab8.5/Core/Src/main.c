@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -31,7 +31,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define MIN_INTERVAL 444
+#define MAX_INTERVAL 2500
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -97,41 +98,34 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  LL_TIM_WriteReg(TIM3, PSC, 0x03D);			// 61 in decimal
-  	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
-  	LL_TIM_WriteReg(TIM3, CCR1, 0xFFFF);			// 41999 in decimal
+	LL_TIM_WriteReg(TIM3, PSC, 84);			// 61 in decimal
+	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, CCER, LL_TIM_ReadReg(TIM3, CCER) | 0x01);
+	LL_TIM_WriteReg(TIM3, CCMR1, LL_TIM_ReadReg(TIM3, CCMR1) | 0b00110000);
+	LL_TIM_WriteReg(TIM3, CCR1, 800);
+	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
 
-  	LL_TIM_WriteReg(TIM3, CCMR1,
-  			LL_TIM_ReadReg(TIM3, CCMR1) | 0b10110000);
-
-LL_ADC_WriteReg(ADC1,CR2,LL_ADC_ReadReg(ADC1,CR2) | 0x01);
-LL_ADC_WriteReg(ADC1,CR2,LL_ADC_ReadReg(ADC1,CR2) | (1 << 30));
+	LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | 0x01);
+	LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | (1 << 30));
+	uint8_t voltage;
+	uint16_t timeInterval;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-	  if((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02){
-		  uint16_t voltage = LL_ADC_ReadReg(ADC1,SR);
-		  LL_ADC_WriteReg(ADC1,SR,LL_ADC_ReadReg(ADC1,SR) & (~0x02));
-	  }
+	while (1) {
+		if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
+			voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF;
+			timeInterval = MIN_INTERVAL
+					+ ((MAX_INTERVAL - MIN_INTERVAL) * voltage) / 255;
+			LL_TIM_WriteReg(TIM3, CCR1, timeInterval);
+			LL_ADC_WriteReg(ADC1, SR, LL_ADC_ReadReg(ADC1,SR) & (~0x02));
+		}
 
-
-	  uint16_t threshold = LL_TIM_ReadReg(TIM3, CCR2);
-	  		if (treshold == 249) {
-	  			LL_TIM_WriteReg(TIM3, CCR2, 0x01F3);		// 499 in decimal
-	  		} else if (treshold == 499) {
-	  			LL_TIM_WriteReg(TIM3, CCR2, 0x02ED);		// 749 in decimal
-	  		} else if (treshold == 749) {
-	  			LL_TIM_WriteReg(TIM3, CCR2, 0x03E7);		// 999 in decimal
-	  		} else {
-	  			LL_TIM_WriteReg(TIM3, CCR2, 0x00F9);		// 249 in decimal
-	  		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+	}
   /* USER CODE END 3 */
 }
 
@@ -409,11 +403,10 @@ static void MX_GPIO_Init(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1) {
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
