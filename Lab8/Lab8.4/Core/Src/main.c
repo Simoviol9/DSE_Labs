@@ -101,6 +101,7 @@ int main(void) {
 	LL_TIM_WriteReg(TIM3, CCR2, 0x00F9);			// 249 in decimal
 	LL_TIM_WriteReg(TIM3, CCMR1,
 			LL_TIM_ReadReg(TIM3, CCMR1) | 0b1011000010110000);
+	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
