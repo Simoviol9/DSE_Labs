@@ -93,22 +93,25 @@ int main(void)
   /* Infinite loop */
 
   /* USER CODE BEGIN WHILE */
+  // Enable TIM3 by setting the CEN (counter enable) bit in CR1 register
+  LL_TIM_WriteReg(TIM3, CR1, (LL_TIM_ReadReg(TIM3, CR1) | 0x01));
 
-  LL_TIM_WriteReg(TIM3, CR1, (LL_TIM_ReadReg(TIM3, CR1) | 0x01)); // Enable TIM3 by setting the CEN (counter enable) bit in CR1 register
+  // Clear the status register (SR) to reset any pending flags
+  LL_TIM_WriteReg(TIM3, SR, 0x0000);
 
-  LL_TIM_WriteReg(TIM3, SR, 0x0000); // Clear the status register (SR) to reset any pending flags
-
-  LL_TIM_WriteReg(TIM3, CNT, 0x0000); // Reset the timer counter value to 0
+  // Reset the timer counter value to 0
+  LL_TIM_WriteReg(TIM3, CNT, 0x0000);
 
   // TIM3 input clock = 20 MHz
   // Prescaler = 49, Auto-reload = 99
   // Timer tick frequency = 20 MHz / ((49 + 1) * (99 + 1)) = 4 kHz
+  // --> One timer tick = 250 microseconds
 
-  int count_target = 8;
+  int target = 8;  // Target count value (8 * 250 us = 2 ms)
 
   while (1) {
       // Check if the timer count has reached the target value
-      if (LL_TIM_ReadReg(TIM3, CNT) == count_target) {
+      if (LL_TIM_ReadReg(TIM3, CNT) == target) {
           // Toggle PA10 pin by XOR-ing its bit in the output data register (ODR)
           LL_GPIO_WriteReg(GPIOA, ODR, (LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400));
       }

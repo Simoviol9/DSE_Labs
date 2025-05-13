@@ -104,6 +104,7 @@ int main(void) {
 		for (i = 0; i < (INTERVAL / 2); i++)
 			;
 		LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x020);
+		//Commit test - Dani
 
 		/* USER CODE BEGIN 3 */
 	}
