@@ -94,21 +94,19 @@ int main(void) {
 	MX_USART2_UART_Init();
 	MX_TIM3_Init();
 	/* USER CODE BEGIN 2 */
-	int flag = 0;
-	//int prevFlag = 0;
-	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
 	LL_TIM_WriteReg(TIM3, PSC, 0x2903);			// 10499 in decimal
 	LL_TIM_WriteReg(TIM3, ARR, 0x01);			// 1 in decimal
+	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	SysTick_Config(SystemCoreClock / 1000);
 	while (1) {
-		flag = LL_TIM_ReadReg(TIM3, SR) & 0x01;
-		if (flag != 0) {
+
+		if ((LL_TIM_ReadReg(TIM3, SR) & 0x01) != 0x00) {
 			LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400);
-			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3, SR) & 0xFFFE);
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3, SR) & (~0x0001));
 		}
 
 		/* USER CODE END WHILE */
