@@ -113,6 +113,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	SysTick_Config(SystemCoreClock / 1000);
 	while (1) {
 		if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
 			voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF;

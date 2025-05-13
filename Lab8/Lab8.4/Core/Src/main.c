@@ -107,17 +107,19 @@ int main(void) {
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
+	SysTick_Config(SystemCoreClock / 1000);
+
 	while (1) {
 
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x02) {
-					LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3, CCR1) + 1000);
-					LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x02));// Reset interrupt flag OC1
-				}
-				// Test for OC2 (=249)
-				if (LL_TIM_ReadReg(TIM3, SR) & 0x04) {
-					LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3, CCR2) + 200);
-					LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x04));// Reset interrupt flag OC2
-				}
+			LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3, CCR1) + 1000);
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x02));// Reset interrupt flag OC1
+		}
+		// Test for OC2 (=249)
+		if (LL_TIM_ReadReg(TIM3, SR) & 0x04) {
+			LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3, CCR2) + 200);
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x04));// Reset interrupt flag OC2
+		}
 		/* USER CODE END WHILE */
 
 	}
