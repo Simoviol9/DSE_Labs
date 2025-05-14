@@ -31,8 +31,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define MIN_INTERVAL 444
-#define MAX_INTERVAL 2500
+#define MIN_FREQ_INC 625
+#define MAX_FREQ_INC 312
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -116,8 +116,8 @@ int main(void) {
 	while (1) {
 		if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
 			voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF;
-			timeInterval = MIN_INTERVAL
-					+ ((MAX_INTERVAL - MIN_INTERVAL) * voltage) / 255;
+			timeInterval = MIN_FREQ_INC
+					+ ((MAX_FREQ_INC - MIN_FREQ_INC) * voltage) / 255;
 			LL_ADC_WriteReg(ADC1, SR, LL_ADC_ReadReg(ADC1,SR) & (~0x02));
 		}
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x02) {
