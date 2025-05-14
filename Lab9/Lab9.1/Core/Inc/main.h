@@ -74,8 +74,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define B1_Pin LL_GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
-#define ADC_IN_Pin LL_GPIO_PIN_0
-#define ADC_IN_GPIO_Port GPIOA
 #define USART_TX_Pin LL_GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin LL_GPIO_PIN_3
