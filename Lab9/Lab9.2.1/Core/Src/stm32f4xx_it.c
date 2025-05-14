@@ -31,9 +31,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define INTERVAL1 8000
-#define INTERVAL2 4000
-#define INTERVAL3 2000
+#define INTERVAL1 2000
+#define INTERVAL2 1000
+#define INTERVAL3 500
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
