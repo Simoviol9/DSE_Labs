@@ -98,7 +98,7 @@ int main(void)
   MX_TIM3_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-	LL_TIM_WriteReg(TIM3, PSC, 84);			// 61 in decimal
+	LL_TIM_WriteReg(TIM3, PSC, 83);			// 61 in decimal
 	//LL_TIM_WriteReg(TIM3, PSC, 42000);		// Debug purposes
 	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
 	LL_TIM_WriteReg(TIM3, DIER, LL_TIM_ReadReg(TIM3,DIER) | 0b010);
