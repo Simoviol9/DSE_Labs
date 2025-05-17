@@ -110,7 +110,7 @@ int main(void)
 	  if(LL_TIM_ReadReg(TIM3,CNT) == threshold){
 
 	  // Test for threshold (greater or equal condition)
-	  //if(LL_TIM_ReadReg(TIM3,CNT) == threshold){
+	  //if(LL_TIM_ReadReg(TIM3,CNT) >= threshold){
 
 
 		  LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400);	// Toggle PA10
