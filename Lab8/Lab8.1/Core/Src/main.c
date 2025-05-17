@@ -31,7 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define INCREMENT 250	// Increment constant
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -95,9 +95,10 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  	LL_TIM_WriteReg(TIM3, PSC, 0x2903);			// 10499 in decimal
-  	LL_TIM_WriteReg(TIM3, ARR, 0x01);			// 1 in decimal
-  	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+  	LL_TIM_WriteReg(TIM3, PSC, 0x0053);			// 83 in decimal
+  	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 65535 in decimal
+  	uint16_t threshold = 249;
+  	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);	// Timer enabled
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -105,14 +106,16 @@ int main(void)
 	SysTick_Config(SystemCoreClock / 1000);
   while (1)
   {
-	  if(LL_TIM_ReadReg(TIM3,CNT) == 0x01){
-		  LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400);
-	  }
+	  // Test for threshold (equal condition)
+	  if(LL_TIM_ReadReg(TIM3,CNT) == threshold){
 
-//	  if((flag ==1)&&(prevFlag != flag)){
-//
-//	  	  }
-//	  prevFlag = flag;
+	  // Test for threshold (greater or equal condition)
+	  //if(LL_TIM_ReadReg(TIM3,CNT) == threshold){
+
+
+		  LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400);	// Toggle PA10
+		  threshold += INCREMENT;												// Increment threshold
+	  }
 
     /* USER CODE END WHILE */
 
