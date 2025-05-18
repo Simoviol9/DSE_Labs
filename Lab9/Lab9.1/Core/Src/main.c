@@ -32,7 +32,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define MIN_FREQ_INC 625
-#define MAX_FREQ_INC 312
+#define MAX_FREQ_INC 111
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -98,7 +98,7 @@ int main(void)
   MX_TIM3_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-	LL_TIM_WriteReg(TIM3, PSC, 84);			// 61 in decimal
+	LL_TIM_WriteReg(TIM3, PSC, 84);
 	//LL_TIM_WriteReg(TIM3, PSC, 42000);		// Debug purposes
 	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
 	LL_TIM_WriteReg(TIM3, DIER, LL_TIM_ReadReg(TIM3,DIER) | 0b010);
@@ -106,25 +106,27 @@ int main(void)
 	//LL_TIM_WriteReg(TIM3, CCR1, 800);
 	LL_TIM_WriteReg(TIM3, CCR1, 0);
 	//LL_TIM_WriteReg(TIM3, CCMR1, LL_TIM_ReadReg(TIM3, CCMR1) | 0b010110000);
-	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+
 
 	LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | 0x01);
 	LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | (1 << 30));
 	uint8_t voltage;
 
+	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	SysTick_Config(SystemCoreClock / 1000);
 	while (1) {
+		// Check for ADC_EOC
 		if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
-			voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF;
+			voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF;	// Get converted value
 			timeInterval = MIN_FREQ_INC
-								+ ((MAX_FREQ_INC - MIN_FREQ_INC) * voltage) / 255;
+								+ ((MAX_FREQ_INC - MIN_FREQ_INC) * voltage) / 255;	// Compute interval
 			//timeInterval = 1000;
 
-			LL_ADC_WriteReg(ADC1, SR, LL_ADC_ReadReg(ADC1,SR) & (~0x02));
+			LL_ADC_WriteReg(ADC1, SR, LL_ADC_ReadReg(ADC1,SR) & (~0x02));	// Clear EOC
 		}
     /* USER CODE END WHILE */
 
