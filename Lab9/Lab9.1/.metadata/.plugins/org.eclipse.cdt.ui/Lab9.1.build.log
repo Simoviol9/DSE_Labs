@@ -1,0 +1,37 @@
+00:05:13 **** Incremental Build of configuration Debug for project Lab9.1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:104:3: warning: implicit declaration of function 'LL_TIM_WriteReg'; did you mean 'LL_PWR_WriteReg'? [-Wimplicit-function-declaration]
+  104 |   LL_TIM_WriteReg(TIM3,CR1,(LL_TIM_ReadReg(TIM3,CR1) | 0x01));
+      |   ^~~~~~~~~~~~~~~
+      |   LL_PWR_WriteReg
+../Core/Src/main.c:104:24: error: 'CR1' undeclared (first use in this function); did you mean 'CRC'?
+  104 |   LL_TIM_WriteReg(TIM3,CR1,(LL_TIM_ReadReg(TIM3,CR1) | 0x01));
+      |                        ^~~
+      |                        CRC
+../Core/Src/main.c:104:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:104:29: warning: implicit declaration of function 'LL_TIM_ReadReg'; did you mean 'LL_GPIO_ReadReg'? [-Wimplicit-function-declaration]
+  104 |   LL_TIM_WriteReg(TIM3,CR1,(LL_TIM_ReadReg(TIM3,CR1) | 0x01));
+      |                             ^~~~~~~~~~~~~~
+      |                             LL_GPIO_ReadReg
+../Core/Src/main.c:105:24: error: 'SR' undeclared (first use in this function)
+  105 |   LL_TIM_WriteReg(TIM3,SR,0X0000);
+      |                        ^~
+../Core/Src/main.c:106:24: error: 'CNT' undeclared (first use in this function)
+  106 |   LL_TIM_WriteReg(TIM3,CNT,0X0000);
+      |                        ^~~
+../Core/Src/main.c:107:24: error: 'CCER' undeclared (first use in this function)
+  107 |   LL_TIM_WriteReg(TIM3,CCER,(LL_TIM_ReadReg(TIM3,CCER) | 0x0001));
+      |                        ^~~~
+../Core/Src/main.c:108:24: error: 'DIER' undeclared (first use in this function)
+  108 |   LL_TIM_WriteReg(TIM3,DIER,(LL_TIM_ReadReg(TIM3,DIER) | 0x0002));
+      |                        ^~~~
+../Core/Src/main.c:121:27: error: 'half_period' undeclared (first use in this function)
+  121 |                           half_period = offset_ADC + sample*gain_ADC;
+      |                           ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+00:05:13 Build Failed. 7 errors, 2 warnings. (took 352ms)
+
