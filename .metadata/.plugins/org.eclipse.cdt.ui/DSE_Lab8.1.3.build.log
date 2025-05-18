@@ -1,0 +1,146 @@
+18:52:22 **** Build of configuration Debug for project DSE_Lab8.1.3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -DUSE_FULL_LL_DRIVER -DUSE_HAL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:99:9: warning: implicit declaration of function 'LL_TIM_WriteReg'; did you mean 'LL_PWR_WriteReg'? [-Wimplicit-function-declaration]
+   99 |         LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+      |         ^~~~~~~~~~~~~~~
+      |         LL_PWR_WriteReg
+../Core/Src/main.c:99:31: error: 'CR1' undeclared (first use in this function); did you mean 'CRC'?
+   99 |         LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+      |                               ^~~
+      |                               CRC
+../Core/Src/main.c:99:31: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:99:36: warning: implicit declaration of function 'LL_TIM_ReadReg'; did you mean 'LL_GPIO_ReadReg'? [-Wimplicit-function-declaration]
+   99 |         LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+      |                                    ^~~~~~~~~~~~~~
+      |                                    LL_GPIO_ReadReg
+../Core/Src/main.c:101:31: error: 'PSC' undeclared (first use in this function)
+  101 |         LL_TIM_WriteReg(TIM3, PSC, 0x0009);                     // 9 in decimal
+      |                               ^~~
+../Core/Src/main.c:102:31: error: 'ARR' undeclared (first use in this function)
+  102 |         LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);                     // 999 in decimal
+      |                               ^~~
+../Core/Src/main.c:103:31: error: 'CCR1' undeclared (first use in this function)
+  103 |         LL_TIM_WriteReg(TIM3, CCR1, 999);                       // 999 in decimal
+      |                               ^~~~
+../Core/Src/main.c:104:31: error: 'CCR2' undeclared (first use in this function)
+  104 |         LL_TIM_WriteReg(TIM3, CCR2, 199);                       // 249 in decimal
+      |                               ^~~~
+../Core/Src/main.c:105:31: error: 'CCMR1' undeclared (first use in this function)
+  105 |         LL_TIM_WriteReg(TIM3, CCMR1,
+      |                               ^~~~~
+../Core/Src/main.c:115:42: error: 'SR' undeclared (first use in this function)
+  115 |                 if (LL_TIM_ReadReg(TIM3, SR) & 0x02) {
+      |                                          ^~
+../Core/Src/main.c: In function 'MX_TIM3_Init':
+../Core/Src/main.c:191:9: error: unknown type name 'LL_TIM_InitTypeDef'; did you mean 'LL_GPIO_InitTypeDef'?
+  191 |         LL_TIM_InitTypeDef TIM_InitStruct = { 0 };
+      |         ^~~~~~~~~~~~~~~~~~
+      |         LL_GPIO_InitTypeDef
+../Core/Src/main.c:192:9: error: unknown type name 'LL_TIM_OC_InitTypeDef'; did you mean 'TIM_OC_InitTypeDef'?
+  192 |         LL_TIM_OC_InitTypeDef TIM_OC_InitStruct = { 0 };
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         TIM_OC_InitTypeDef
+../Core/Src/main.c:200:23: error: request for member 'Prescaler' in something not a structure or union
+  200 |         TIM_InitStruct.Prescaler = 0;
+      |                       ^
+../Core/Src/main.c:201:23: error: request for member 'CounterMode' in something not a structure or union
+  201 |         TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
+      |                       ^
+../Core/Src/main.c:201:38: error: 'LL_TIM_COUNTERMODE_UP' undeclared (first use in this function); did you mean 'TIM_COUNTERMODE_UP'?
+  201 |         TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
+      |                                      ^~~~~~~~~~~~~~~~~~~~~
+      |                                      TIM_COUNTERMODE_UP
+../Core/Src/main.c:202:23: error: request for member 'Autoreload' in something not a structure or union
+  202 |         TIM_InitStruct.Autoreload = 65535;
+      |                       ^
+../Core/Src/main.c:203:23: error: request for member 'ClockDivision' in something not a structure or union
+  203 |         TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
+      |                       ^
+../Core/Src/main.c:203:40: error: 'LL_TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function); did you mean 'IS_TIM_CLOCKDIVISION_DIV'?
+  203 |         TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                        IS_TIM_CLOCKDIVISION_DIV
+../Core/Src/main.c:204:9: warning: implicit declaration of function 'LL_TIM_Init'; did you mean 'MX_TIM3_Init'? [-Wimplicit-function-declaration]
+  204 |         LL_TIM_Init(TIM3, &TIM_InitStruct);
+      |         ^~~~~~~~~~~
+      |         MX_TIM3_Init
+../Core/Src/main.c:205:9: warning: implicit declaration of function 'LL_TIM_DisableARRPreload' [-Wimplicit-function-declaration]
+  205 |         LL_TIM_DisableARRPreload(TIM3);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:206:9: warning: implicit declaration of function 'LL_TIM_SetClockSource'; did you mean 'LL_RCC_SetRTCClockSource'? [-Wimplicit-function-declaration]
+  206 |         LL_TIM_SetClockSource(TIM3, LL_TIM_CLOCKSOURCE_INTERNAL);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         LL_RCC_SetRTCClockSource
+../Core/Src/main.c:206:37: error: 'LL_TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function); did you mean 'TIM_CLOCKSOURCE_INTERNAL'?
+  206 |         LL_TIM_SetClockSource(TIM3, LL_TIM_CLOCKSOURCE_INTERNAL);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                     TIM_CLOCKSOURCE_INTERNAL
+../Core/Src/main.c:207:26: error: request for member 'OCMode' in something not a structure or union
+  207 |         TIM_OC_InitStruct.OCMode = LL_TIM_OCMODE_FROZEN;
+      |                          ^
+../Core/Src/main.c:207:36: error: 'LL_TIM_OCMODE_FROZEN' undeclared (first use in this function)
+  207 |         TIM_OC_InitStruct.OCMode = LL_TIM_OCMODE_FROZEN;
+      |                                    ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:208:26: error: request for member 'OCState' in something not a structure or union
+  208 |         TIM_OC_InitStruct.OCState = LL_TIM_OCSTATE_DISABLE;
+      |                          ^
+../Core/Src/main.c:208:37: error: 'LL_TIM_OCSTATE_DISABLE' undeclared (first use in this function); did you mean 'TIM_OCFAST_DISABLE'?
+  208 |         TIM_OC_InitStruct.OCState = LL_TIM_OCSTATE_DISABLE;
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~
+      |                                     TIM_OCFAST_DISABLE
+../Core/Src/main.c:209:26: error: request for member 'OCNState' in something not a structure or union
+  209 |         TIM_OC_InitStruct.OCNState = LL_TIM_OCSTATE_DISABLE;
+      |                          ^
+../Core/Src/main.c:210:26: error: request for member 'CompareValue' in something not a structure or union
+  210 |         TIM_OC_InitStruct.CompareValue = 0;
+      |                          ^
+../Core/Src/main.c:211:26: error: request for member 'OCPolarity' in something not a structure or union
+  211 |         TIM_OC_InitStruct.OCPolarity = LL_TIM_OCPOLARITY_HIGH;
+      |                          ^
+../Core/Src/main.c:211:40: error: 'LL_TIM_OCPOLARITY_HIGH' undeclared (first use in this function); did you mean 'TIM_OCPOLARITY_HIGH'?
+  211 |         TIM_OC_InitStruct.OCPolarity = LL_TIM_OCPOLARITY_HIGH;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~
+      |                                        TIM_OCPOLARITY_HIGH
+../Core/Src/main.c:212:9: warning: implicit declaration of function 'LL_TIM_OC_Init'; did you mean 'HAL_TIM_OC_Init'? [-Wimplicit-function-declaration]
+  212 |         LL_TIM_OC_Init(TIM3, LL_TIM_CHANNEL_CH1, &TIM_OC_InitStruct);
+      |         ^~~~~~~~~~~~~~
+      |         HAL_TIM_OC_Init
+../Core/Src/main.c:212:30: error: 'LL_TIM_CHANNEL_CH1' undeclared (first use in this function); did you mean 'LL_DMA_CHANNEL_1'?
+  212 |         LL_TIM_OC_Init(TIM3, LL_TIM_CHANNEL_CH1, &TIM_OC_InitStruct);
+      |                              ^~~~~~~~~~~~~~~~~~
+      |                              LL_DMA_CHANNEL_1
+../Core/Src/main.c:213:9: warning: implicit declaration of function 'LL_TIM_OC_DisableFast' [-Wimplicit-function-declaration]
+  213 |         LL_TIM_OC_DisableFast(TIM3, LL_TIM_CHANNEL_CH1);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:214:30: error: 'LL_TIM_CHANNEL_CH2' undeclared (first use in this function); did you mean 'TIM_CHANNEL_2'?
+  214 |         LL_TIM_OC_Init(TIM3, LL_TIM_CHANNEL_CH2, &TIM_OC_InitStruct);
+      |                              ^~~~~~~~~~~~~~~~~~
+      |                              TIM_CHANNEL_2
+../Core/Src/main.c:216:9: warning: implicit declaration of function 'LL_TIM_SetTriggerOutput' [-Wimplicit-function-declaration]
+  216 |         LL_TIM_SetTriggerOutput(TIM3, LL_TIM_TRGO_RESET);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:216:39: error: 'LL_TIM_TRGO_RESET' undeclared (first use in this function); did you mean 'TIM_TRGO_RESET'?
+  216 |         LL_TIM_SetTriggerOutput(TIM3, LL_TIM_TRGO_RESET);
+      |                                       ^~~~~~~~~~~~~~~~~
+      |                                       TIM_TRGO_RESET
+../Core/Src/main.c:217:9: warning: implicit declaration of function 'LL_TIM_DisableMasterSlaveMode' [-Wimplicit-function-declaration]
+  217 |         LL_TIM_DisableMasterSlaveMode(TIM3);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:293:49: error: 'OUT11_Pin' undeclared (first use in this function)
+  293 |         LL_GPIO_ResetOutputPin(GPIOA, LD2_Pin | OUT11_Pin);
+      |                                                 ^~~~~~~~~
+../Core/Src/main.c:296:32: error: 'OUT2_GPIO_Port' undeclared (first use in this function); did you mean 'LD2_GPIO_Port'?
+  296 |         LL_GPIO_ResetOutputPin(OUT2_GPIO_Port, OUT2_Pin);
+      |                                ^~~~~~~~~~~~~~
+      |                                LD2_GPIO_Port
+../Core/Src/main.c:296:48: error: 'OUT2_Pin' undeclared (first use in this function)
+  296 |         LL_GPIO_ResetOutputPin(OUT2_GPIO_Port, OUT2_Pin);
+      |                                                ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+18:52:25 Build Failed. 31 errors, 9 warnings. (took 2s.894ms)
+
