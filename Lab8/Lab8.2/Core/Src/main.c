@@ -96,7 +96,7 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	LL_TIM_WriteReg(TIM3, PSC, 0x2903);			// 10499 in decimal
 	LL_TIM_WriteReg(TIM3, ARR, 0x01);			// 1 in decimal
-	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);	// Timer enable
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -104,9 +104,10 @@ int main(void) {
 	SysTick_Config(SystemCoreClock / 1000);
 	while (1) {
 
+		// Checks if UIF is not 0
 		if ((LL_TIM_ReadReg(TIM3, SR) & 0x01) != 0x00) {
-			LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400);
-			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3, SR) & (~0x0001));
+			LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA, ODR) ^ 0x0400);	// Toggle PA10
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3, SR) & (~0x0001));	// Clear UIF
 		}
 
 		/* USER CODE END WHILE */
