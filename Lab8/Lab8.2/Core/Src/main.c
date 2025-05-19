@@ -96,7 +96,7 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	LL_DBGMCU_APB1_GRP1_FreezePeriph(LL_DBGMCU_APB1_GRP1_TIM3_STOP);
 	//LL_TIM_WriteReg(TIM3, PSC, 0x2903);			// 10499 in decimal (2 kHz)
-	LL_TIM_WriteReg(TIM3, PSC, 10);			// 10499 in decimal	(4 MHz)
+	LL_TIM_WriteReg(TIM3, PSC, 4);			// 4 in decimal	(4 MHz)
 	LL_TIM_WriteReg(TIM3, ARR, 0x01);			// 1 in decimal
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);	// Timer enable
 	/* USER CODE END 2 */
