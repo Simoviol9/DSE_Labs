@@ -31,7 +31,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define INCREMENT1 1000
+#define INCREMENT2 200
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -96,31 +97,31 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	LL_DBGMCU_APB1_GRP1_FreezePeriph(LL_DBGMCU_APB1_GRP1_TIM3_STOP);
 
-	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
 	//LL_TIM_WriteReg(TIM3, PSC, 0x2328);			// 9000 in decimal (uncomment to test application if no scope is available)
 	LL_TIM_WriteReg(TIM3, PSC, 0x0009);			// 9 in decimal
 	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
-	LL_TIM_WriteReg(TIM3, CCR1, 999);			// 999 in decimal
-	LL_TIM_WriteReg(TIM3, CCR2, 199);			// 249 in decimal
+	LL_TIM_WriteReg(TIM3, CCR1, INCREMENT1 -1);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, CCR2, INCREMENT2 -1);			// 199 in decimal
 	LL_TIM_WriteReg(TIM3, CCMR1,
 			LL_TIM_ReadReg(TIM3, CCMR1) | 0b1011000010110000);
+	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01); // Enable timer
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	SysTick_Config(SystemCoreClock / 1000);
 	while (1) {
-		/* USER CODE END WHILE */
+
 		// Test for OC1 (=999)
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x02) {
 			LL_GPIO_WriteReg(GPIOA, ODR, LL_GPIO_ReadReg(GPIOA,ODR) ^ 0x0400);// Toggle PA10
-			LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3, CCR1) + 1000);
+			LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3, CCR1) + INCREMENT1);
 			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x02));// Reset interrupt flag OC1
 		}
 		// Test for OC2 (=249)
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x04) {
 			LL_GPIO_WriteReg(GPIOB, ODR, LL_GPIO_ReadReg(GPIOB,ODR) ^ 0x0400);// Toggle PB10
-			LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3, CCR2) + 200);
+			LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3, CCR2) + INCREMENT2);
 			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x04));// Reset interrupt flag OC2
 
 		}
@@ -131,6 +132,8 @@ int main(void) {
 		 LL_TIM_WriteReg(TIM3, SR,LL_TIM_ReadReg(TIM3,SR) & (~0x04));		// Reset interrupt flag OC2
 		 }
 		 */
+
+		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
 	}

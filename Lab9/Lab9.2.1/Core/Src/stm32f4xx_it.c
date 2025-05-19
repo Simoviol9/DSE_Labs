@@ -191,15 +191,21 @@ void SysTick_Handler(void) {
  */
 void TIM3_IRQHandler(void) {
 	/* USER CODE BEGIN TIM3_IRQn 0 */
+
+	// Check for CC1IF
 	if (LL_TIM_IsActiveFlag_CC1(TIM3)) {
-		LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3,CCR1) + INTERVAL3);
-		LL_TIM_ClearFlag_CC1(TIM3);
+		LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3,CCR1) + INTERVAL3);	// Update CCR1
+		LL_TIM_ClearFlag_CC1(TIM3);								// Clear CC1IF
+
+		// Check for CC2IF
 	} else if (LL_TIM_IsActiveFlag_CC2(TIM3)) {
-		LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3,CCR2) + INTERVAL2);
-		LL_TIM_ClearFlag_CC2(TIM3);
+		LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3,CCR2) + INTERVAL2);	// Update CCR2
+		LL_TIM_ClearFlag_CC2(TIM3);	// Clear CC2IF
+
+		// Check for CC3IF
 	} else if (LL_TIM_IsActiveFlag_CC3(TIM3)) {
-		LL_TIM_WriteReg(TIM3, CCR3, LL_TIM_ReadReg(TIM3,CCR3) + INTERVAL1);
-		LL_TIM_ClearFlag_CC3(TIM3);
+		LL_TIM_WriteReg(TIM3, CCR3, LL_TIM_ReadReg(TIM3,CCR3) + INTERVAL1);	// Update CCR3
+		LL_TIM_ClearFlag_CC3(TIM3);			// Clear CC3IF
 	}
 	/* USER CODE END TIM3_IRQn 0 */
 	/* USER CODE BEGIN TIM3_IRQn 1 */

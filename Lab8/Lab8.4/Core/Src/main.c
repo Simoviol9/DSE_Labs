@@ -31,7 +31,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define INCREMENT1 1000
+#define INCREMENT2 200
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -94,15 +95,18 @@ int main(void) {
 	MX_USART2_UART_Init();
 	MX_TIM3_Init();
 	/* USER CODE BEGIN 2 */
+
+	LL_DBGMCU_APB1_GRP1_FreezePeriph(LL_DBGMCU_APB1_GRP1_TIM3_STOP);
+
 	//LL_TIM_WriteReg(TIM3, PSC, 0x2328);			// 9000 in decimal
 	LL_TIM_WriteReg(TIM3, PSC, 0x0009);			// 9 in decimal
 	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
-	LL_TIM_WriteReg(TIM3, CCR1, 999);			// 999 in decimal
-	LL_TIM_WriteReg(TIM3, CCR2, 199);			// 249 in decimal
+	LL_TIM_WriteReg(TIM3, CCR1, INCREMENT1 -1);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, CCR2, INCREMENT2 -1);			// 249 in decimal
 	LL_TIM_WriteReg(TIM3, CCER, LL_TIM_ReadReg(TIM3, CCER) | 0x011);
 	LL_TIM_WriteReg(TIM3, CCMR1,
 			LL_TIM_ReadReg(TIM3, CCMR1) | 0b0011000000110000);
-	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
+	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);// Enable timer
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -111,14 +115,16 @@ int main(void) {
 
 	while (1) {
 
+		// Test for CC1IF
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x02) {
-			LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3, CCR1) + 1000);
-			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x02));// Reset interrupt flag OC1
+			LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3, CCR1) + INCREMENT1);	// Increment CCR1
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x02));// Clear CC1IF
 		}
-		// Test for OC2 (=249)
+
+		// Test for CC2IF
 		if (LL_TIM_ReadReg(TIM3, SR) & 0x04) {
-			LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3, CCR2) + 200);
-			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x04));// Reset interrupt flag OC2
+			LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3, CCR2) + INCREMENT2);// Increment CCR2
+			LL_TIM_WriteReg(TIM3, SR, LL_TIM_ReadReg(TIM3,SR) & (~0x04));// Clear CC2IF
 		}
 		/* USER CODE END WHILE */
 
