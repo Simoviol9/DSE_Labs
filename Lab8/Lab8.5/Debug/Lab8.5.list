@@ -1847,7 +1847,7 @@ int main(void) {
  8000d90:	2002      	movs	r0, #2
  8000d92:	f7ff fe4b 	bl	8000a2c <LL_DBGMCU_APB1_GRP1_FreezePeriph>
 
-	LL_TIM_WriteReg(TIM3, PSC, 84);			// 61 in decimal
+	LL_TIM_WriteReg(TIM3, PSC, 84);
  8000d96:	4b33      	ldr	r3, [pc, #204]	@ (8000e64 <main+0x104>)
  8000d98:	2254      	movs	r2, #84	@ 0x54
  8000d9a:	629a      	str	r2, [r3, #40]	@ 0x28
