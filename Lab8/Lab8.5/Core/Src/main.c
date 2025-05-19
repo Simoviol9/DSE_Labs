@@ -99,7 +99,8 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	LL_DBGMCU_APB1_GRP1_FreezePeriph(LL_DBGMCU_APB1_GRP1_TIM3_STOP);
 
-	LL_TIM_WriteReg(TIM3, PSC, 84);
+	LL_TIM_WriteReg(TIM3, PSC, 83);			// 61 in decimal
+ 
 	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
 	LL_TIM_WriteReg(TIM3, CCER, LL_TIM_ReadReg(TIM3, CCER) | 0x01);
 	LL_TIM_WriteReg(TIM3, CCMR1, LL_TIM_ReadReg(TIM3, CCMR1) | 0b00110000);

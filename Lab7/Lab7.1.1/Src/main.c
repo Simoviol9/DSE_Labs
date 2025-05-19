@@ -14,15 +14,18 @@ int main(void) {
 	//CONFIGURE PORT: set MODER[11:10] = 0x1
 	*GPIOA_MODER = *GPIOA_MODER | 0x400;
 	*GPIOC_MODER = *GPIOC_MODER | 0x000;
-	//SWITCH ON THE LED: set ODR[5] = 0x1, that is pulls PA5 high
+
+	// Clear GPIOA output data register
 	*GPIOA_ODR = *GPIOA_ODR | 0x00;
+
 	// Application code (Infinite loop)
 	while (1) {
-		// Add your code here.
-		if ((*GPIOC_IDR & 0x02000) == 0x00000) {
-			*GPIOA_ODR = *GPIOA_ODR | 0x20;
+		// If button is not pressed (USER BUTTON is active-low)
+		if ((*GPIOC_IDR & 0x02000) != 0x00) {
+			*GPIOA_ODR = *GPIOA_ODR & 0xFFFFFFDF;// Set bit in position 5 at 0
 		} else {
-			*GPIOA_ODR = *GPIOA_ODR & 0xFFDF;
+			*GPIOA_ODR = *GPIOA_ODR | 0x020;	// Set bit in position 5 at 1
 		}
+
 	}
 }
