@@ -1642,12 +1642,12 @@ int main(void) {
 	MX_TIM3_Init();
  8000c4e:	f000 f87b 	bl	8000d48 <MX_TIM3_Init>
 	/* USER CODE BEGIN 2 */
-	LL_TIM_WriteReg(TIM3, PSC, 84);			// 61 in decimal
+	LL_TIM_WriteReg(TIM3, PSC, 84);
  8000c52:	4b14      	ldr	r3, [pc, #80]	@ (8000ca4 <main+0x7c>)
  8000c54:	2254      	movs	r2, #84	@ 0x54
  8000c56:	629a      	str	r2, [r3, #40]	@ 0x28
 	//LL_TIM_WriteReg(TIM3, PSC, 42000);		// Debug purposes
-	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);			// 999 in decimal
+	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);
  8000c58:	4b12      	ldr	r3, [pc, #72]	@ (8000ca4 <main+0x7c>)
  8000c5a:	f64f 72ff 	movw	r2, #65535	@ 0xffff
  8000c5e:	62da      	str	r2, [r3, #44]	@ 0x2c
@@ -2559,19 +2559,21 @@ void TIM3_IRQHandler(void) {
  800110c:	b580      	push	{r7, lr}
  800110e:	af00      	add	r7, sp, #0
 	/* USER CODE BEGIN TIM3_IRQn 0 */
+
+	// Check for CC1IF
 	if (LL_TIM_IsActiveFlag_CC1(TIM3)) {
  8001110:	4818      	ldr	r0, [pc, #96]	@ (8001174 <TIM3_IRQHandler+0x68>)
  8001112:	f7ff ff75 	bl	8001000 <LL_TIM_IsActiveFlag_CC1>
  8001116:	4603      	mov	r3, r0
  8001118:	2b00      	cmp	r3, #0
  800111a:	d009      	beq.n	8001130 <TIM3_IRQHandler+0x24>
-		LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3,CCR1) + INTERVAL3);
+		LL_TIM_WriteReg(TIM3, CCR1, LL_TIM_ReadReg(TIM3,CCR1) + INTERVAL3);	// Update CCR1
  800111c:	4b15      	ldr	r3, [pc, #84]	@ (8001174 <TIM3_IRQHandler+0x68>)
  800111e:	6b5b      	ldr	r3, [r3, #52]	@ 0x34
  8001120:	4a14      	ldr	r2, [pc, #80]	@ (8001174 <TIM3_IRQHandler+0x68>)
  8001122:	f503 73fa 	add.w	r3, r3, #500	@ 0x1f4
  8001126:	6353      	str	r3, [r2, #52]	@ 0x34
-		LL_TIM_ClearFlag_CC1(TIM3);
+		LL_TIM_ClearFlag_CC1(TIM3);								// Clear CC1IF
  8001128:	4812      	ldr	r0, [pc, #72]	@ (8001174 <TIM3_IRQHandler+0x68>)
  800112a:	f7ff ff5b 	bl	8000fe4 <LL_TIM_ClearFlag_CC1>
 	}
@@ -2587,13 +2589,13 @@ void TIM3_IRQHandler(void) {
  8001136:	4603      	mov	r3, r0
  8001138:	2b00      	cmp	r3, #0
  800113a:	d009      	beq.n	8001150 <TIM3_IRQHandler+0x44>
-		LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3,CCR2) + INTERVAL2);
+		LL_TIM_WriteReg(TIM3, CCR2, LL_TIM_ReadReg(TIM3,CCR2) + INTERVAL2);	// Update CCR2
  800113c:	4b0d      	ldr	r3, [pc, #52]	@ (8001174 <TIM3_IRQHandler+0x68>)
  800113e:	6b9b      	ldr	r3, [r3, #56]	@ 0x38
  8001140:	4a0c      	ldr	r2, [pc, #48]	@ (8001174 <TIM3_IRQHandler+0x68>)
  8001142:	f503 737a 	add.w	r3, r3, #1000	@ 0x3e8
  8001146:	6393      	str	r3, [r2, #56]	@ 0x38
-		LL_TIM_ClearFlag_CC2(TIM3);
+		LL_TIM_ClearFlag_CC2(TIM3);	// Clear CC2IF
  8001148:	480a      	ldr	r0, [pc, #40]	@ (8001174 <TIM3_IRQHandler+0x68>)
  800114a:	f7ff ff6c 	bl	8001026 <LL_TIM_ClearFlag_CC2>
 }
@@ -2604,13 +2606,13 @@ void TIM3_IRQHandler(void) {
  8001156:	4603      	mov	r3, r0
  8001158:	2b00      	cmp	r3, #0
  800115a:	d008      	beq.n	800116e <TIM3_IRQHandler+0x62>
-		LL_TIM_WriteReg(TIM3, CCR3, LL_TIM_ReadReg(TIM3,CCR3) + INTERVAL1);
+		LL_TIM_WriteReg(TIM3, CCR3, LL_TIM_ReadReg(TIM3,CCR3) + INTERVAL1);	// Update CCR3
  800115c:	4b05      	ldr	r3, [pc, #20]	@ (8001174 <TIM3_IRQHandler+0x68>)
  800115e:	6bdb      	ldr	r3, [r3, #60]	@ 0x3c
  8001160:	4a04      	ldr	r2, [pc, #16]	@ (8001174 <TIM3_IRQHandler+0x68>)
  8001162:	f503 63fa 	add.w	r3, r3, #2000	@ 0x7d0
  8001166:	63d3      	str	r3, [r2, #60]	@ 0x3c
-		LL_TIM_ClearFlag_CC3(TIM3);
+		LL_TIM_ClearFlag_CC3(TIM3);			// Clear CC3IF
  8001168:	4802      	ldr	r0, [pc, #8]	@ (8001174 <TIM3_IRQHandler+0x68>)
  800116a:	f7ff ff7d 	bl	8001068 <LL_TIM_ClearFlag_CC3>
 }

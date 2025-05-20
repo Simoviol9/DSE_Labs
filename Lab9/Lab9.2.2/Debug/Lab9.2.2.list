@@ -1699,14 +1699,14 @@ int main(void)
  8000ca8:	4b09      	ldr	r3, [pc, #36]	@ (8000cd0 <main+0x7c>)
  8000caa:	f240 12f3 	movw	r2, #499	@ 0x1f3
  8000cae:	635a      	str	r2, [r3, #52]	@ 0x34
-  	LL_TIM_WriteReg(TIM3, CCR1, INTERVAL2 -1);
+  	LL_TIM_WriteReg(TIM3, CCR2, INTERVAL2 -1);
  8000cb0:	4b07      	ldr	r3, [pc, #28]	@ (8000cd0 <main+0x7c>)
  8000cb2:	f240 32e7 	movw	r2, #999	@ 0x3e7
- 8000cb6:	635a      	str	r2, [r3, #52]	@ 0x34
-  	LL_TIM_WriteReg(TIM3, CCR1, INTERVAL1 -1);
+ 8000cb6:	639a      	str	r2, [r3, #56]	@ 0x38
+  	LL_TIM_WriteReg(TIM3, CCR3, INTERVAL1 -1);
  8000cb8:	4b05      	ldr	r3, [pc, #20]	@ (8000cd0 <main+0x7c>)
  8000cba:	f240 72cf 	movw	r2, #1999	@ 0x7cf
- 8000cbe:	635a      	str	r2, [r3, #52]	@ 0x34
+ 8000cbe:	63da      	str	r2, [r3, #60]	@ 0x3c
   	//LL_TIM_WriteReg(TIM3, CCMR1, LL_TIM_ReadReg(TIM3, CCMR1) | 0b010110000);
   	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
  8000cc0:	4b03      	ldr	r3, [pc, #12]	@ (8000cd0 <main+0x7c>)
