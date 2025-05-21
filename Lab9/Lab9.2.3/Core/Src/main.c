@@ -126,6 +126,7 @@ int main(void) {
 
 	// ---- START ADC1 configuration ----
 	LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | 0x01); // Enable ADC1
+	LL_ADC_WriteReg(ADC1, CR1, LL_ADC_ReadReg(ADC1,CR1) | (1 << 5)); // Enable EOCIF
 	// ---- END ADC1 configuration ----
 
 	// Enable peripherals
@@ -138,11 +139,7 @@ int main(void) {
 	/* USER CODE BEGIN WHILE */
 	while (1) {
 
-		if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
-			voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF;// Get converted value
-			scalingFactor = 1 + (voltage * (10 - 1)) / 255;
-			LL_ADC_WriteReg(ADC1, SR, LL_ADC_ReadReg(ADC1,SR) & (~0x02));// Clear EOC
-		}
+
 
 		/* USER CODE END WHILE */
 
