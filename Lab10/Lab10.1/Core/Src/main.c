@@ -41,11 +41,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 
+UART_HandleTypeDef huart2;
+
 /* USER CODE BEGIN PV */
 volatile uint16_t period = 0;
-volatile uint16_t highTime = 0;
-volatile uint8_t ovf_cnt = 0;
-
+volatile float dutyCycle = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -75,11 +75,7 @@ int main(void) {
 	/* MCU Configuration--------------------------------------------------------*/
 
 	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SYSCFG);
-	LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR);
-
-	/* System interrupt init*/
-	NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+	HAL_Init();
 
 	/* USER CODE BEGIN Init */
 
@@ -103,17 +99,31 @@ int main(void) {
 	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);	// ARR value
 	LL_TIM_WriteReg(TIM3, DIER, LL_TIM_ReadReg(TIM3,DIER) | 0b011);	// Enable interrupt for CC1 and UIF
 	LL_TIM_WriteReg(TIM3, CCER, LL_TIM_ReadReg(TIM3, CCER) | 0x01); // Enable CC1
+	LL_TIM_WriteReg(TIM3, CNT, 0x0000); // Clear CNT
 	// ---- END TIM3 configuration ----
 
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01); // Enable TIM3
+	LL_DBGMCU_APB1_GRP1_FreezePeriph(LL_DBGMCU_APB1_GRP1_TIM3_STOP);
+
+	int i = 0;
+	const float timFreq = (84000000 / 100);
 
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	while (1) {
+		volatile int frequency = timFreq / period;
+		volatile int dutyCycleMain = dutyCycle;
+		char buffer[50];
+		snprintf(buffer, sizeof(buffer), "Period: %d\tDC: %d \n\n", frequency,
+				dutyCycleMain);
+		HAL_UART_Transmit(&huart2, (uint8_t*) buffer, strlen(buffer), 100000);
+
+		//HAL_UART_Transmit(&huart2,(uint8_t *) "Prova", 5,1);
+
 		/* USER CODE END WHILE */
-		uint8_t dutyCycle = (highTime * 100) / period;
+
 		/* USER CODE BEGIN 3 */
 	}
 	/* USER CODE END 3 */
@@ -154,8 +164,12 @@ void SystemClock_Config(void) {
 	while (LL_RCC_GetSysClkSource() != LL_RCC_SYS_CLKSOURCE_STATUS_PLL) {
 
 	}
-	LL_Init1msTick(84000000);
 	LL_SetSystemCoreClock(84000000);
+
+	/* Update the time base */
+	if (HAL_InitTick(TICK_INT_PRIORITY) != HAL_OK) {
+		Error_Handler();
+	}
 	LL_RCC_SetTIMPrescaler(LL_RCC_TIM_PRESCALER_TWICE);
 }
 
@@ -229,39 +243,20 @@ static void MX_USART2_UART_Init(void) {
 
 	/* USER CODE END USART2_Init 0 */
 
-	LL_USART_InitTypeDef USART_InitStruct = { 0 };
-
-	LL_GPIO_InitTypeDef GPIO_InitStruct = { 0 };
-
-	/* Peripheral clock enable */
-	LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_USART2);
-
-	LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
-	/**USART2 GPIO Configuration
-	 PA2   ------> USART2_TX
-	 PA3   ------> USART2_RX
-	 */
-	GPIO_InitStruct.Pin = USART_TX_Pin | USART_RX_Pin;
-	GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
-	GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
-	GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-	GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
-	GPIO_InitStruct.Alternate = LL_GPIO_AF_7;
-	LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
 	/* USER CODE BEGIN USART2_Init 1 */
 
 	/* USER CODE END USART2_Init 1 */
-	USART_InitStruct.BaudRate = 115200;
-	USART_InitStruct.DataWidth = LL_USART_DATAWIDTH_8B;
-	USART_InitStruct.StopBits = LL_USART_STOPBITS_1;
-	USART_InitStruct.Parity = LL_USART_PARITY_NONE;
-	USART_InitStruct.TransferDirection = LL_USART_DIRECTION_TX_RX;
-	USART_InitStruct.HardwareFlowControl = LL_USART_HWCONTROL_NONE;
-	USART_InitStruct.OverSampling = LL_USART_OVERSAMPLING_16;
-	LL_USART_Init(USART2, &USART_InitStruct);
-	LL_USART_ConfigAsyncMode(USART2);
-	LL_USART_Enable(USART2);
+	huart2.Instance = USART2;
+	huart2.Init.BaudRate = 115200;
+	huart2.Init.WordLength = UART_WORDLENGTH_8B;
+	huart2.Init.StopBits = UART_STOPBITS_1;
+	huart2.Init.Parity = UART_PARITY_NONE;
+	huart2.Init.Mode = UART_MODE_TX_RX;
+	huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+	if (HAL_UART_Init(&huart2) != HAL_OK) {
+		Error_Handler();
+	}
 	/* USER CODE BEGIN USART2_Init 2 */
 
 	/* USER CODE END USART2_Init 2 */

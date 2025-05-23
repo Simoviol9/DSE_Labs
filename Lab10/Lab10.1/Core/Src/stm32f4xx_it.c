@@ -41,7 +41,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+// Define static variables outside the IRQ handler to retain values
+static uint16_t prevInterval = 0;
+static uint16_t interval = 0;
+static uint16_t highTime = 0;
+static uint8_t ovf_cnt = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -58,125 +62,137 @@
 
 /* USER CODE BEGIN EV */
 extern uint16_t period;
-extern uint16_t highTime;
-extern uint8_t ovf_cnt;
+extern float dutyCycle;
 /* USER CODE END EV */
 
 /******************************************************************************/
 /*           Cortex-M4 Processor Interruption and Exception Handlers          */
 /******************************************************************************/
 /**
- * @brief This function handles Non maskable interrupt.
- */
-void NMI_Handler(void) {
-	/* USER CODE BEGIN NonMaskableInt_IRQn 0 */
+  * @brief This function handles Non maskable interrupt.
+  */
+void NMI_Handler(void)
+{
+  /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
 
-	/* USER CODE END NonMaskableInt_IRQn 0 */
-	/* USER CODE BEGIN NonMaskableInt_IRQn 1 */
+  /* USER CODE END NonMaskableInt_IRQn 0 */
+  /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
 	while (1) {
 	}
-	/* USER CODE END NonMaskableInt_IRQn 1 */
+  /* USER CODE END NonMaskableInt_IRQn 1 */
 }
 
 /**
- * @brief This function handles Hard fault interrupt.
- */
-void HardFault_Handler(void) {
-	/* USER CODE BEGIN HardFault_IRQn 0 */
+  * @brief This function handles Hard fault interrupt.
+  */
+void HardFault_Handler(void)
+{
+  /* USER CODE BEGIN HardFault_IRQn 0 */
 
-	/* USER CODE END HardFault_IRQn 0 */
-	while (1) {
-		/* USER CODE BEGIN W1_HardFault_IRQn 0 */
-		/* USER CODE END W1_HardFault_IRQn 0 */
-	}
+  /* USER CODE END HardFault_IRQn 0 */
+  while (1)
+  {
+    /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+    /* USER CODE END W1_HardFault_IRQn 0 */
+  }
 }
 
 /**
- * @brief This function handles Memory management fault.
- */
-void MemManage_Handler(void) {
-	/* USER CODE BEGIN MemoryManagement_IRQn 0 */
+  * @brief This function handles Memory management fault.
+  */
+void MemManage_Handler(void)
+{
+  /* USER CODE BEGIN MemoryManagement_IRQn 0 */
 
-	/* USER CODE END MemoryManagement_IRQn 0 */
-	while (1) {
-		/* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
-		/* USER CODE END W1_MemoryManagement_IRQn 0 */
-	}
+  /* USER CODE END MemoryManagement_IRQn 0 */
+  while (1)
+  {
+    /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
+    /* USER CODE END W1_MemoryManagement_IRQn 0 */
+  }
 }
 
 /**
- * @brief This function handles Pre-fetch fault, memory access fault.
- */
-void BusFault_Handler(void) {
-	/* USER CODE BEGIN BusFault_IRQn 0 */
+  * @brief This function handles Pre-fetch fault, memory access fault.
+  */
+void BusFault_Handler(void)
+{
+  /* USER CODE BEGIN BusFault_IRQn 0 */
 
-	/* USER CODE END BusFault_IRQn 0 */
-	while (1) {
-		/* USER CODE BEGIN W1_BusFault_IRQn 0 */
-		/* USER CODE END W1_BusFault_IRQn 0 */
-	}
+  /* USER CODE END BusFault_IRQn 0 */
+  while (1)
+  {
+    /* USER CODE BEGIN W1_BusFault_IRQn 0 */
+    /* USER CODE END W1_BusFault_IRQn 0 */
+  }
 }
 
 /**
- * @brief This function handles Undefined instruction or illegal state.
- */
-void UsageFault_Handler(void) {
-	/* USER CODE BEGIN UsageFault_IRQn 0 */
+  * @brief This function handles Undefined instruction or illegal state.
+  */
+void UsageFault_Handler(void)
+{
+  /* USER CODE BEGIN UsageFault_IRQn 0 */
 
-	/* USER CODE END UsageFault_IRQn 0 */
-	while (1) {
-		/* USER CODE BEGIN W1_UsageFault_IRQn 0 */
-		/* USER CODE END W1_UsageFault_IRQn 0 */
-	}
+  /* USER CODE END UsageFault_IRQn 0 */
+  while (1)
+  {
+    /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
+    /* USER CODE END W1_UsageFault_IRQn 0 */
+  }
 }
 
 /**
- * @brief This function handles System service call via SWI instruction.
- */
-void SVC_Handler(void) {
-	/* USER CODE BEGIN SVCall_IRQn 0 */
+  * @brief This function handles System service call via SWI instruction.
+  */
+void SVC_Handler(void)
+{
+  /* USER CODE BEGIN SVCall_IRQn 0 */
 
-	/* USER CODE END SVCall_IRQn 0 */
-	/* USER CODE BEGIN SVCall_IRQn 1 */
+  /* USER CODE END SVCall_IRQn 0 */
+  /* USER CODE BEGIN SVCall_IRQn 1 */
 
-	/* USER CODE END SVCall_IRQn 1 */
+  /* USER CODE END SVCall_IRQn 1 */
 }
 
 /**
- * @brief This function handles Debug monitor.
- */
-void DebugMon_Handler(void) {
-	/* USER CODE BEGIN DebugMonitor_IRQn 0 */
+  * @brief This function handles Debug monitor.
+  */
+void DebugMon_Handler(void)
+{
+  /* USER CODE BEGIN DebugMonitor_IRQn 0 */
 
-	/* USER CODE END DebugMonitor_IRQn 0 */
-	/* USER CODE BEGIN DebugMonitor_IRQn 1 */
+  /* USER CODE END DebugMonitor_IRQn 0 */
+  /* USER CODE BEGIN DebugMonitor_IRQn 1 */
 
-	/* USER CODE END DebugMonitor_IRQn 1 */
+  /* USER CODE END DebugMonitor_IRQn 1 */
 }
 
 /**
- * @brief This function handles Pendable request for system service.
- */
-void PendSV_Handler(void) {
-	/* USER CODE BEGIN PendSV_IRQn 0 */
+  * @brief This function handles Pendable request for system service.
+  */
+void PendSV_Handler(void)
+{
+  /* USER CODE BEGIN PendSV_IRQn 0 */
 
-	/* USER CODE END PendSV_IRQn 0 */
-	/* USER CODE BEGIN PendSV_IRQn 1 */
+  /* USER CODE END PendSV_IRQn 0 */
+  /* USER CODE BEGIN PendSV_IRQn 1 */
 
-	/* USER CODE END PendSV_IRQn 1 */
+  /* USER CODE END PendSV_IRQn 1 */
 }
 
 /**
- * @brief This function handles System tick timer.
- */
-void SysTick_Handler(void) {
-	/* USER CODE BEGIN SysTick_IRQn 0 */
+  * @brief This function handles System tick timer.
+  */
+void SysTick_Handler(void)
+{
+  /* USER CODE BEGIN SysTick_IRQn 0 */
 
-	/* USER CODE END SysTick_IRQn 0 */
+  /* USER CODE END SysTick_IRQn 0 */
+  HAL_IncTick();
+  /* USER CODE BEGIN SysTick_IRQn 1 */
 
-	/* USER CODE BEGIN SysTick_IRQn 1 */
-
-	/* USER CODE END SysTick_IRQn 1 */
+  /* USER CODE END SysTick_IRQn 1 */
 }
 
 /******************************************************************************/
@@ -187,32 +203,43 @@ void SysTick_Handler(void) {
 /******************************************************************************/
 
 /**
- * @brief This function handles TIM3 global interrupt.
- */
-void TIM3_IRQHandler(void) {
-	/* USER CODE BEGIN TIM3_IRQn 0 */
+  * @brief This function handles TIM3 global interrupt.
+  */
+void TIM3_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM3_IRQn 0 */
+
+	// Check CC1IF
 	if (LL_TIM_IsActiveFlag_CC1(TIM3)) {
-		LL_TIM_ClearFlag_CC1(TIM3);		// Clear CC1IF
-		static uint8_t prevInterval = 0;
-		uint16_t interval = LL_TIM_ReadReg(TIM3, CCR1) & 0x0000FFFF;
-		if (LL_GPIO_ReadReg(GPIOA,IDR) & (1 << 6)) {	// Rising edge detected
-			period = interval - prevInterval + ovf_cnt * 0xFFFF;
+		LL_TIM_ClearFlag_CC1(TIM3);  // Clear capture flag
+
+		interval = LL_TIM_ReadReg(TIM3, CCR1) & 0xFFFF; // Read captured value
+
+		if ((LL_GPIO_ReadReg(GPIOA,IDR) & (1<<6)) == (1<<6)) {
+			// Rising edge detected
+			period = ((interval + ovf_cnt * 0xFFFF) - prevInterval);
 			prevInterval = interval;
 			ovf_cnt = 0;
-		} else {	// Falling edge detected
-			highTime = interval - prevInterval + ovf_cnt * 0xFFFF;
+
+		} else {
+			// Falling edge detected
+			highTime = (interval + ovf_cnt * 0xFFFF) - prevInterval;
+
 		}
 	}
 
+	// Check if timer overflow occurred
 	if (LL_TIM_IsActiveFlag_UPDATE(TIM3)) {
-		ovf_cnt++;
-		LL_TIM_ClearFlag_UPDATE(TIM3);		// Clear UIF
-		//cnt_ovf++;
+		ovf_cnt += 1;
+		LL_TIM_ClearFlag_UPDATE(TIM3);  // Clear overflow flag
 	}
-	/* USER CODE END TIM3_IRQn 0 */
-	/* USER CODE BEGIN TIM3_IRQn 1 */
 
-	/* USER CODE END TIM3_IRQn 1 */
+	// Compute duty cycle
+	dutyCycle = (float) highTime / (float) period * 100.0;
+  /* USER CODE END TIM3_IRQn 0 */
+  /* USER CODE BEGIN TIM3_IRQn 1 */
+
+  /* USER CODE END TIM3_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
