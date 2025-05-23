@@ -41,7 +41,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-// Define static variables outside the IRQ handler to retain values
+
 static uint16_t prevInterval = 0;
 static uint16_t interval = 0;
 static uint16_t highTime = 0;
