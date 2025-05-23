@@ -6,6 +6,7 @@
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:3240:26:LL_TIM_IsActiveFlag_CC2	16	static
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:3251:22:LL_TIM_ClearFlag_CC3	16	static
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h:3262:26:LL_TIM_IsActiveFlag_CC3	16	static
+<<<<<<< Updated upstream
 ../Core/Src/stm32f4xx_it.c:72:6:NMI_Handler	4	static
 ../Core/Src/stm32f4xx_it.c:85:6:HardFault_Handler	4	static
 ../Core/Src/stm32f4xx_it.c:98:6:MemManage_Handler	4	static
@@ -19,3 +20,18 @@
 ../Core/Src/stm32f4xx_it.c:209:6:TIM3_IRQHandler	8	static
 ../Core/Src/stm32f4xx_it.c:238:6:TIM4_IRQHandler	8	static
 ../Core/Src/stm32f4xx_it.c:254:6:EXTI15_10_IRQHandler	8	static
+=======
+../Core/Src/stm32f4xx_it.c:71:6:NMI_Handler	4	static
+../Core/Src/stm32f4xx_it.c:84:6:HardFault_Handler	4	static
+../Core/Src/stm32f4xx_it.c:97:6:MemManage_Handler	4	static
+../Core/Src/stm32f4xx_it.c:110:6:BusFault_Handler	4	static
+../Core/Src/stm32f4xx_it.c:123:6:UsageFault_Handler	4	static
+../Core/Src/stm32f4xx_it.c:136:6:SVC_Handler	4	static
+../Core/Src/stm32f4xx_it.c:148:6:DebugMon_Handler	4	static
+../Core/Src/stm32f4xx_it.c:160:6:PendSV_Handler	4	static
+../Core/Src/stm32f4xx_it.c:172:6:SysTick_Handler	4	static
+../Core/Src/stm32f4xx_it.c:192:6:ADC_IRQHandler	4	static
+../Core/Src/stm32f4xx_it.c:210:6:TIM3_IRQHandler	8	static
+../Core/Src/stm32f4xx_it.c:239:6:TIM4_IRQHandler	8	static
+../Core/Src/stm32f4xx_it.c:255:6:EXTI15_10_IRQHandler	8	static
+>>>>>>> Stashed changes

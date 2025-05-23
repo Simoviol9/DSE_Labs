@@ -101,7 +101,11 @@ void Error_Handler(void);
 #endif
 
 /* USER CODE BEGIN Private defines */
-
+#define INTERVAL1 2000
+#define INTERVAL2 1000
+#define INTERVAL3 500
+//#define ADCINTERVAL 1000 // 0.5 s sampling time
+#define ADCINTERVAL 200 // 0.1 s sampling time
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

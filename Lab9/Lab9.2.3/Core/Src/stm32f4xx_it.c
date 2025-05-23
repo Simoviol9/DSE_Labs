@@ -31,9 +31,13 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+<<<<<<< Updated upstream
 #define INTERVAL1 2000
 #define INTERVAL2 1000
 #define INTERVAL3 500
+=======
+
+>>>>>>> Stashed changes
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -61,6 +65,7 @@
 /* USER CODE BEGIN EV */
 extern uint16_t voltage;
 extern uint8_t scalingFactor;
+extern uint8_t newData;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -192,6 +197,7 @@ void SysTick_Handler(void) {
  */
 void ADC_IRQHandler(void) {
 	/* USER CODE BEGIN ADC_IRQn 0 */
+<<<<<<< Updated upstream
 	if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
 		voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF; // Get converted value
 		scalingFactor = 1 + (voltage * (10 - 1)) / 255;
@@ -200,6 +206,18 @@ void ADC_IRQHandler(void) {
 	/* USER CODE END ADC_IRQn 0 */
 	/* USER CODE BEGIN ADC_IRQn 1 */
 
+=======
+
+	if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
+		voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF; // Get converted value
+		newData = 1;
+		LL_ADC_WriteReg(ADC1, SR, LL_ADC_ReadReg(ADC1,SR) & (~0x02)); // Clear EOC
+	}
+
+	/* USER CODE END ADC_IRQn 0 */
+	/* USER CODE BEGIN ADC_IRQn 1 */
+
+>>>>>>> Stashed changes
 	/* USER CODE END ADC_IRQn 1 */
 }
 
@@ -238,7 +256,11 @@ void TIM3_IRQHandler(void) {
 void TIM4_IRQHandler(void) {
 	/* USER CODE BEGIN TIM4_IRQn 0 */
 	if (LL_TIM_IsActiveFlag_CC2(TIM4)) {
+<<<<<<< Updated upstream
 		LL_TIM_WriteReg(TIM4, CCR2, LL_TIM_ReadReg(TIM4,CCR2) + 1000);// Update CC2
+=======
+		LL_TIM_WriteReg(TIM4, CCR2, LL_TIM_ReadReg(TIM4,CCR2) + ADCINTERVAL);// Update CC2
+>>>>>>> Stashed changes
 		LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | (1 << 30)); // Start conversion of ADC
 		LL_TIM_ClearFlag_CC2(TIM4);								// Clear CC2IF
 	}

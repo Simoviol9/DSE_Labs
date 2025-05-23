@@ -31,10 +31,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+<<<<<<< Updated upstream
 #define INTERVAL1 2000
 #define INTERVAL2 1000
 #define INTERVAL3 500
 #define ADCINTERVAL 1000
+=======
+
+>>>>>>> Stashed changes
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,6 +51,7 @@
 /* USER CODE BEGIN PV */
 uint8_t scalingFactor = 0;
 uint16_t voltage = 0;
+uint8_t newData = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -139,6 +144,14 @@ int main(void) {
 	/* USER CODE BEGIN WHILE */
 	while (1) {
 
+
+<<<<<<< Updated upstream
+=======
+		if(newData == 1){
+			scalingFactor = 1 + (voltage * (10 - 1)) / 255;
+			newData = 0;
+		}
+>>>>>>> Stashed changes
 
 
 		/* USER CODE END WHILE */
