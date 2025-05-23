@@ -34,6 +34,8 @@
 #define INTERVAL1 2000
 #define INTERVAL2 1000
 #define INTERVAL3 500
+//#define ADCINTERVAL 1000 // 0.5 s sampling time
+#define ADCINTERVAL 200 // 0.1 s sampling time
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -247,7 +249,7 @@ void TIM4_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM4_IRQn 0 */
 	if (LL_TIM_IsActiveFlag_CC2(TIM4)) {
-		LL_TIM_WriteReg(TIM4, CCR2, LL_TIM_ReadReg(TIM4,CCR2) + 1000);	// Update CC2
+		LL_TIM_WriteReg(TIM4, CCR2, LL_TIM_ReadReg(TIM4,CCR2) + ADCINTERVAL);	// Update CC2
 		LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | (1 << 30)); // Start conversion of ADC
 		LL_TIM_ClearFlag_CC2(TIM4);								// Clear CC2IF
 	}
