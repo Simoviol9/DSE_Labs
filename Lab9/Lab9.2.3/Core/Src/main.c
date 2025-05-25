@@ -37,8 +37,6 @@
 #define INTERVAL3 500
 #define ADCINTERVAL 1000
 
-
->>>>>>> Stashed changes
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
