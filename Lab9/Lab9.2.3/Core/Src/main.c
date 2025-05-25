@@ -31,12 +31,12 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-<<<<<<< Updated upstream
+
 #define INTERVAL1 2000
 #define INTERVAL2 1000
 #define INTERVAL3 500
 #define ADCINTERVAL 1000
-=======
+
 
 >>>>>>> Stashed changes
 /* USER CODE END PD */
