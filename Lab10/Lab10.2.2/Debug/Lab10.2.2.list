@@ -455,8 +455,8 @@ int main(void)
  800055a:	4b0c      	ldr	r3, [pc, #48]	@ (800058c <main+0x64>)
  800055c:	681b      	ldr	r3, [r3, #0]
  800055e:	635a      	str	r2, [r3, #52]	@ 0x34
-			HAL_Delay(10);
- 8000560:	200a      	movs	r0, #10
+			HAL_Delay(100);
+ 8000560:	2064      	movs	r0, #100	@ 0x64
  8000562:	f000 fb39 	bl	8000bd8 <HAL_Delay>
 			duty++;
  8000566:	79fb      	ldrb	r3, [r7, #7]

@@ -107,6 +107,7 @@ int main(void)
 	while (1) {
 			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty*10);
 			HAL_Delay(10);
+			//HAL_Delay(100); // PWM sweep in 10 seconds, to see the light-up phase
 			duty++;
 			if(duty >= 100){
 				duty = 0;
