@@ -32,6 +32,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+// Define directives in main.h 
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,6 +46,7 @@
 /* USER CODE BEGIN PV */
 uint8_t scalingFactor = 0;
 uint16_t voltage = 0;
+uint8_t newData = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -123,6 +126,7 @@ int main(void) {
 
 	// ---- START ADC1 configuration ----
 	LL_ADC_WriteReg(ADC1, CR2, LL_ADC_ReadReg(ADC1,CR2) | 0x01); // Enable ADC1
+	LL_ADC_WriteReg(ADC1, CR1, LL_ADC_ReadReg(ADC1,CR1) | (1 << 5)); // Enable EOCIF
 	// ---- END ADC1 configuration ----
 
 	// Enable peripherals
@@ -134,11 +138,9 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	while (1) {
-
-		if ((LL_ADC_ReadReg(ADC1,SR) & 0x02) == 0x02) {
-			voltage = LL_ADC_ReadReg(ADC1, DR) & 0x00FF;// Get converted value
+		if(newData == 1){
 			scalingFactor = 1 + (voltage * (10 - 1)) / 255;
-			LL_ADC_WriteReg(ADC1, SR, LL_ADC_ReadReg(ADC1,SR) & (~0x02));// Clear EOC
+			newData = 0;
 		}
 
 		/* USER CODE END WHILE */

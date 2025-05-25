@@ -96,7 +96,7 @@ int main(void) {
 	MX_USART2_UART_Init();
 	MX_TIM3_Init();
 	/* USER CODE BEGIN 2 */
-	LL_TIM_WriteReg(TIM3, PSC, 84);
+	LL_TIM_WriteReg(TIM3, PSC, 83);
 	//LL_TIM_WriteReg(TIM3, PSC, 42000);		// Debug purposes
 	LL_TIM_WriteReg(TIM3, ARR, 0xFFFF);
 	LL_TIM_WriteReg(TIM3, DIER, LL_TIM_ReadReg(TIM3,DIER) | 0b01110);
@@ -104,8 +104,8 @@ int main(void) {
 
 	//LL_TIM_WriteReg(TIM3, CCR1, 800);
 	LL_TIM_WriteReg(TIM3, CCR1, INTERVAL3 -1);
-	LL_TIM_WriteReg(TIM3, CCR1, INTERVAL2 -1);
-	LL_TIM_WriteReg(TIM3, CCR1, INTERVAL1 -1);
+	LL_TIM_WriteReg(TIM3, CCR2, INTERVAL2 -1);
+	LL_TIM_WriteReg(TIM3, CCR3, INTERVAL1 -1);
 	//LL_TIM_WriteReg(TIM3, CCMR1, LL_TIM_ReadReg(TIM3, CCMR1) | 0b010110000);
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01);
 
