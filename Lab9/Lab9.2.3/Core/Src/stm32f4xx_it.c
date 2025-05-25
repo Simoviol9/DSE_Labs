@@ -31,9 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define INTERVAL1 2000
-#define INTERVAL2 1000
-#define INTERVAL3 500
+// Define directives in main.h
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
