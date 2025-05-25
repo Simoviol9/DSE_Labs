@@ -141,16 +141,10 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	while (1) {
-
-
-<<<<<<< Updated upstream
-=======
 		if(newData == 1){
 			scalingFactor = 1 + (voltage * (10 - 1)) / 255;
 			newData = 0;
 		}
->>>>>>> Stashed changes
-
 
 		/* USER CODE END WHILE */
 
