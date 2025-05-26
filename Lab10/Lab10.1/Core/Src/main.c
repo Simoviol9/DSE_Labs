@@ -105,7 +105,6 @@ int main(void) {
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01); // Enable TIM3
 	LL_DBGMCU_APB1_GRP1_FreezePeriph(LL_DBGMCU_APB1_GRP1_TIM3_STOP);
 
-	int i = 0;
 	const float timFreq = (84000000 / 100);
 
 	/* USER CODE END 2 */
@@ -116,9 +115,10 @@ int main(void) {
 		volatile int frequency = timFreq / period;
 		volatile int dutyCycleMain = dutyCycle;
 		char buffer[50];
-		snprintf(buffer, sizeof(buffer), "Period: %d\tDC: %d \n\n", frequency,
+		snprintf(buffer, sizeof(buffer), "Frequency: %d Hz\tDC: %d \n\n", frequency,
 				dutyCycleMain);
 		HAL_UART_Transmit(&huart2, (uint8_t*) buffer, strlen(buffer), 100000);
+		HAL_Delay(500);
 
 		//HAL_UART_Transmit(&huart2,(uint8_t *) "Prova", 5,1);
 

@@ -211,13 +211,13 @@ void TIM3_IRQHandler(void)
 
 	// Check CC1IF
 	if (LL_TIM_IsActiveFlag_CC1(TIM3)) {
-		LL_TIM_ClearFlag_CC1(TIM3);  // Clear capture flag
 
 		interval = LL_TIM_ReadReg(TIM3, CCR1) & 0xFFFF; // Read captured value
+		LL_TIM_ClearFlag_CC1(TIM3);  // Clear capture flag
 
 		if ((LL_GPIO_ReadReg(GPIOA,IDR) & (1<<6)) == (1<<6)) {
 			// Rising edge detected
-			period = ((interval + ovf_cnt * 0xFFFF) - prevInterval);
+			period = ((interval  + ovf_cnt * 0xFFFF) - prevInterval);
 			prevInterval = interval;
 			ovf_cnt = 0;
 
