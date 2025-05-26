@@ -259,7 +259,9 @@ static void MX_TIM3_Init(void)
   LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_TIM3);
 
   /* TIM3 interrupt Init */
-  NVIC_SetPriority(TIM3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
+  //NVIC_SetPriority(TIM3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),1, 0)); // Pre-empitive 0
+  NVIC_SetPriority(TIM3_IRQn,
+          NVIC_EncodePriority(NVIC_GetPriorityGrouping(),1, 0)); // Pre-empitive 1
   NVIC_EnableIRQ(TIM3_IRQn);
 
   /* USER CODE BEGIN TIM3_Init 1 */
