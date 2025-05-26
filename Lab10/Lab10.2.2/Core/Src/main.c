@@ -59,11 +59,7 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-volatile uint16_t ovfCnt = 0;
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	ovfCnt++;
-}
 /* USER CODE END 0 */
 
 /**
@@ -105,17 +101,13 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
-			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty*10);
-			HAL_Delay(10);
-			//HAL_Delay(100); // PWM sweep in 10 seconds, to see the light-up phase
-			duty++;
-			if(duty >= 100){
-				duty = 0;
-			}
-			if (ovfCnt >= 1000){
-				ovfCnt = 0;
-			}
-
+		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty);
+		HAL_Delay(10); // 1 s / 100 increments
+		//HAL_Delay(100); // PWM sweep in 10 seconds, to see the light-up phase
+		duty++;
+		if (duty >= 100) {
+			duty = 0;
+		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -189,9 +181,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 839;
+  htim2.Init.Prescaler = PSC;	// EDITED
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 99;
+  htim2.Init.Period = ARR;		// EDITED
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)

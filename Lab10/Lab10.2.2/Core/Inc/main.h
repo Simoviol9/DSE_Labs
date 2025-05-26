@@ -73,7 +73,10 @@ void Error_Handler(void);
 #define SWO_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+//#define PSC 839		// Original value
+#define PSC 1679	// Doubled value
+//#define ARR 99			// Original value
+#define ARR 49			// Halved value
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
