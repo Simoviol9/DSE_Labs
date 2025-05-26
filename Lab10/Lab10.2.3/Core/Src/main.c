@@ -104,9 +104,9 @@ int main(void)
   //
   for(uint8_t i = 0; i < SAMPLE_SIZE; i++){
 	  sampledSine[i] = sinf(2*M_PI*i/SAMPLE_SIZE) + 1;
-	  SINE_LUT[i] = sampledSine[i]
+	  SINE_LUT[i] = (sampledSine[i]*10000/2);
   }
-
+  HAL_TIM_PWM_Start_DMA(&htim3,TIM_CHANNEL_1,(uint32_t *)SINE_LUT,200);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -187,7 +187,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 83;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 99;
+  htim3.Init.Period = 199;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
