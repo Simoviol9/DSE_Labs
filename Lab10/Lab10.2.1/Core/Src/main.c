@@ -110,7 +110,7 @@ int main(void) {
 	LL_TIM_WriteReg(TIM4, ARR, 99);	// ARR value
 	LL_TIM_WriteReg(TIM4, CCR1, 49);	// CCR1 value
 	//LL_TIM_WriteReg(TIM3, DIER, LL_TIM_ReadReg(TIM3,DIER) | 0b011);	// Enable interrupt for CC1 and UIF
-	LL_TIM_WriteReg(TIM3, CCER, LL_TIM_ReadReg(TIM3, CCER) | 0x01); // Enable CC1
+	LL_TIM_WriteReg(TIM4, CCER, LL_TIM_ReadReg(TIM3, CCER) | 0x01); // Enable CC1
 	// ---- END TIM4 configuration ----
 
 	LL_TIM_WriteReg(TIM3, CR1, LL_TIM_ReadReg(TIM3,CR1) | 0x01); // Enable TIM3
@@ -134,7 +134,7 @@ int main(void) {
 				uint16_t dutyCycle = 25
 						+ (((75 - 25) * (frequency - 800)) / (12000 - 800));
 				uint16_t value = dutyCycle; // CCR! value = (DC/100) * (ARR+1)
-				LL_TIM_WriteReg(TIM3, CCR1, dutyCycle);
+				LL_TIM_WriteReg(TIM4, CCR1, dutyCycle);
 			}
 			updatedValue = 0;
 		}
