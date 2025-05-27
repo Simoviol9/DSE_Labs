@@ -98,7 +98,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  float sampledSine[SAMPLE_SIZE];
   uint16_t SINE_LUT[SAMPLE_SIZE];
   HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)SINE_LUT, SAMPLE_SIZE);
 

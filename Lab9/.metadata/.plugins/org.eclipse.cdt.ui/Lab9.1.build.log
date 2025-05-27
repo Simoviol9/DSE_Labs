@@ -1,0 +1,45 @@
+10:14:26 **** Incremental Build of configuration Debug for project Lab9.1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'UART_SendChar':
+../Core/Src/main.c:51:13: warning: implicit declaration of function 'LL_USART_IsActiveFlag_TXE'; did you mean 'LL_ADC_IsActiveFlag_OVR'? [-Wimplicit-function-declaration]
+   51 |     while (!LL_USART_IsActiveFlag_TXE(USART2));
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |             LL_ADC_IsActiveFlag_OVR
+../Core/Src/main.c:52:5: warning: implicit declaration of function 'LL_USART_TransmitData8' [-Wimplicit-function-declaration]
+   52 |     LL_USART_TransmitData8(USART2, c);
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:3: warning: implicit declaration of function 'LL_TIM_WriteReg'; did you mean 'LL_ADC_WriteReg'? [-Wimplicit-function-declaration]
+  131 |   LL_TIM_WriteReg(TIM3,CR1,(LL_TIM_ReadReg(TIM3,CR1) | 0x01));
+      |   ^~~~~~~~~~~~~~~
+      |   LL_ADC_WriteReg
+../Core/Src/main.c:131:24: error: 'CR1' undeclared (first use in this function); did you mean 'CRC'?
+  131 |   LL_TIM_WriteReg(TIM3,CR1,(LL_TIM_ReadReg(TIM3,CR1) | 0x01));
+      |                        ^~~
+      |                        CRC
+../Core/Src/main.c:131:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:131:29: warning: implicit declaration of function 'LL_TIM_ReadReg'; did you mean 'LL_ADC_ReadReg'? [-Wimplicit-function-declaration]
+  131 |   LL_TIM_WriteReg(TIM3,CR1,(LL_TIM_ReadReg(TIM3,CR1) | 0x01));
+      |                             ^~~~~~~~~~~~~~
+      |                             LL_ADC_ReadReg
+../Core/Src/main.c:132:24: error: 'SR' undeclared (first use in this function)
+  132 |   LL_TIM_WriteReg(TIM3,SR,0X0000);
+      |                        ^~
+../Core/Src/main.c:133:24: error: 'CNT' undeclared (first use in this function)
+  133 |   LL_TIM_WriteReg(TIM3,CNT,0X0000);
+      |                        ^~~
+../Core/Src/main.c:134:24: error: 'CCER' undeclared (first use in this function)
+  134 |   LL_TIM_WriteReg(TIM3,CCER,(LL_TIM_ReadReg(TIM3,CCER) | 0x0001));
+      |                        ^~~~
+../Core/Src/main.c:135:24: error: 'DIER' undeclared (first use in this function)
+  135 |   LL_TIM_WriteReg(TIM3,DIER,(LL_TIM_ReadReg(TIM3,DIER) | 0x0002));
+      |                        ^~~~
+../Core/Src/main.c:129:9: warning: unused variable 'voltage2' [-Wunused-variable]
+  129 |   float voltage2; // debug purpose
+      |         ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+10:14:27 Build Failed. 6 errors, 5 warnings. (took 345ms)
+

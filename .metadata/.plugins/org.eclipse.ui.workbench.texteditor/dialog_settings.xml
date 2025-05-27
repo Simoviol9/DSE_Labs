@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="MX_GPIO_Init"/>
+		<item value="GPIO"/>
+		<item value="PWM"/>
+		<item value="interval"/>
+		<item value="INTERVAL"/>
+	</list>
+</section>
