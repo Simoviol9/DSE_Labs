@@ -94,18 +94,18 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
-	uint8_t duty = 0;
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  int duty = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
-		for (duty = 0; duty < 100; duty++) {
+		for (duty = 0; duty <= 100; duty++) {
 			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty);
 			HAL_Delay(10);
 		}
-		for (duty = 99; duty >= 0; duty--) {
+		for (duty = 100; duty >= 0; duty--) {
 			__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty);
 			HAL_Delay(10);
 		}
